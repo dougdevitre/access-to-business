@@ -1,5 +1,61 @@
 # Ops, Sales & Coaching Commands
 
+```mermaid
+graph TD
+    ops["Ops Commands"] --> metrics["Metrics & Finance"]
+    ops --> sales["Sales & GTM"]
+    ops --> coaching["Coaching & Accountability"]
+    ops --> team["Team Building"]
+
+    metrics --> m1["/metrics"]
+    metrics --> m2["/runway"]
+    metrics --> m3["/burn"]
+    metrics --> m4["/uniteconomics"]
+    metrics --> m5["/model"]
+
+    sales --> s1["/outreach"]
+    sales --> s2["/followup"]
+    sales --> s3["/objection"]
+    sales --> s4["/icp"]
+    sales --> s5["/position"]
+    sales --> s6["/proposal"]
+
+    coaching --> c1["/status"]
+    coaching --> c2["/blockers"]
+    coaching --> c3["/wins"]
+    coaching --> c4["/next"]
+    coaching --> c5["/pivot"]
+    coaching --> c6["/validate"]
+
+    team --> t1["/hire"]
+    team --> t2["/cofounder"]
+
+    style ops fill:#2563eb,stroke:#1e40af,color:#fff
+    style metrics fill:#dc2626,stroke:#991b1b,color:#fff
+    style sales fill:#16a34a,stroke:#166534,color:#fff
+    style coaching fill:#9333ea,stroke:#6b21a8,color:#fff
+    style team fill:#ea580c,stroke:#9a3412,color:#fff
+    style m1 fill:#fca5a5,stroke:#991b1b,color:#000
+    style m2 fill:#fca5a5,stroke:#991b1b,color:#000
+    style m3 fill:#fca5a5,stroke:#991b1b,color:#000
+    style m4 fill:#fca5a5,stroke:#991b1b,color:#000
+    style m5 fill:#fca5a5,stroke:#991b1b,color:#000
+    style s1 fill:#86efac,stroke:#166534,color:#000
+    style s2 fill:#86efac,stroke:#166534,color:#000
+    style s3 fill:#86efac,stroke:#166534,color:#000
+    style s4 fill:#86efac,stroke:#166534,color:#000
+    style s5 fill:#86efac,stroke:#166534,color:#000
+    style s6 fill:#86efac,stroke:#166534,color:#000
+    style c1 fill:#c4b5fd,stroke:#6b21a8,color:#000
+    style c2 fill:#c4b5fd,stroke:#6b21a8,color:#000
+    style c3 fill:#c4b5fd,stroke:#6b21a8,color:#000
+    style c4 fill:#c4b5fd,stroke:#6b21a8,color:#000
+    style c5 fill:#c4b5fd,stroke:#6b21a8,color:#000
+    style c6 fill:#c4b5fd,stroke:#6b21a8,color:#000
+    style t1 fill:#fdba74,stroke:#9a3412,color:#000
+    style t2 fill:#fdba74,stroke:#9a3412,color:#000
+```
+
 Load this file when the user types any of: `/metrics` `/runway` `/burn` `/uniteconomics` `/model`
 `/outreach` `/followup` `/objection` `/icp` `/position` `/proposal`
 `/status` `/blockers` `/wins` `/next` `/pivot` `/validate` `/hire` `/cofounder`

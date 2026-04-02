@@ -1,5 +1,21 @@
 # Internal Communications Templates
 
+```mermaid
+flowchart TD
+    IC["Internal Comms\nTemplates"] --> DM["Decision\nMemos"]
+    IC --> UP["Weekly &\nDaily Updates"]
+    IC --> SP["Sprint Planning\n& Retros"]
+    IC --> AN["Announcements\n& OKRs"]
+    IC --> PM["Post-Mortems\n& 1:1s"]
+
+    style IC fill:#33691e,stroke:#1b5e20,color:#ffffff
+    style DM fill:#558b2f,stroke:#33691e,color:#ffffff
+    style UP fill:#689f38,stroke:#558b2f,color:#ffffff
+    style SP fill:#7cb342,stroke:#689f38,color:#ffffff
+    style AN fill:#8bc34a,stroke:#7cb342,color:#1b5e20
+    style PM fill:#aed581,stroke:#8bc34a,color:#1b5e20
+```
+
 Load this file for decision memos, team rituals, async updates, meeting agendas, and internal announcements.
 
 ---

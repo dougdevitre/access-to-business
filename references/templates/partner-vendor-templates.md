@@ -1,5 +1,21 @@
 # Partner & Vendor Templates
 
+```mermaid
+flowchart TD
+    PV["Partner & Vendor\nTemplates"] --> PI["Partnership\nIntro & Proposal"]
+    PV --> VN["Vendor\nNegotiation"]
+    PV --> SOW["SOW &\nOnboarding"]
+    PV --> VF["Feedback &\nTermination"]
+    PV --> CH["Channel &\nIntegration"]
+
+    style PV fill:#4a148c,stroke:#311b92,color:#ffffff
+    style PI fill:#6a1b9a,stroke:#4a148c,color:#ffffff
+    style VN fill:#7b1fa2,stroke:#6a1b9a,color:#ffffff
+    style SOW fill:#9c27b0,stroke:#7b1fa2,color:#ffffff
+    style VF fill:#ab47bc,stroke:#9c27b0,color:#ffffff
+    style CH fill:#ce93d8,stroke:#ab47bc,color:#4a148c
+```
+
 Load this file for partnership intros, negotiation, SOWs, vendor management, and terminations.
 
 ---

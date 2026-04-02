@@ -1,5 +1,21 @@
 # Patents for Startups
 
+```mermaid
+flowchart LR
+    A["Invention"] --> B["Prior Art\nSearch"]
+    B --> C["Provisional\nFiling"]
+    C --> D["Utility\nApplication"]
+    D --> E["Prosecution"]
+    E --> F["Grant"]
+
+    style A fill:#7b2cbf,stroke:#5a189a,color:#ffffff
+    style B fill:#9d4edd,stroke:#7b2cbf,color:#ffffff
+    style C fill:#c77dff,stroke:#9d4edd,color:#1a1a2e
+    style D fill:#e0aaff,stroke:#c77dff,color:#1a1a2e
+    style E fill:#9d4edd,stroke:#7b2cbf,color:#ffffff
+    style F fill:#5a189a,stroke:#3c096c,color:#ffffff
+```
+
 **Disclaimer:** Patent law is complex. This is educational context. Work with a registered patent attorney or agent for all filing decisions.
 
 ---

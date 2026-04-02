@@ -1,5 +1,23 @@
 # GTM & Sales Playbook
 
+```mermaid
+graph LR
+    A[Define ICP] --> B[Outreach]
+    B --> C[Discovery Call]
+    C --> D[Demo / Proposal]
+    D --> E{Close?}
+    E -- Yes --> F[Onboard Customer]
+    E -- No --> G[Refine & Retry]
+    G --> B
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style C fill:#2563eb,stroke:#1e40af,color:#fff
+    style D fill:#d97706,stroke:#b45309,color:#fff
+    style E fill:#dc2626,stroke:#b91c1c,color:#fff
+    style F fill:#059669,stroke:#047857,color:#fff
+    style G fill:#7c3aed,stroke:#5b21b6,color:#fff
+```
+
 ## Core Rule
 **Revenue solves most startup problems.** When in doubt, go sell something — today.
 

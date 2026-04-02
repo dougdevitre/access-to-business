@@ -1,5 +1,20 @@
 # Marketing Contracts
 
+```mermaid
+graph TD
+    A[Marketing<br>Contracts] --> B[Influencer]
+    A --> C[Agency]
+    A --> D[PR Retainer]
+    A --> E[Co-Marketing]
+    A --> F[Affiliate]
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style C fill:#f5a623,stroke:#c7841a,color:#fff
+    style D fill:#d94a4a,stroke:#a83232,color:#fff
+    style E fill:#7b68ee,stroke:#5a4cbf,color:#fff
+    style F fill:#e06090,stroke:#b04870,color:#fff
+```
+
 **Disclaimer:** These are educational scaffolds. Have a licensed attorney review before execution, especially for deals over $5K or involving exclusivity, IP licensing, or regulatory claims.
 
 ---

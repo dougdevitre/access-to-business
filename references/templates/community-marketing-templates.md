@@ -1,5 +1,21 @@
 # Community & Marketing Templates
 
+```mermaid
+flowchart TD
+    CM["Community &\nMarketing"] --> WL["Waitlist &\nLaunch Emails"]
+    CM --> NL["Newsletter &\nContent"]
+    CM --> CS["Case\nStudies"]
+    CM --> CP["Community\nPosts"]
+    CM --> PH["Product Hunt\n& Sequences"]
+
+    style CM fill:#006064,stroke:#004d40,color:#ffffff
+    style WL fill:#00838f,stroke:#006064,color:#ffffff
+    style NL fill:#0097a7,stroke:#00838f,color:#ffffff
+    style CS fill:#00acc1,stroke:#0097a7,color:#ffffff
+    style CP fill:#26c6da,stroke:#00acc1,color:#004d40
+    style PH fill:#80deea,stroke:#26c6da,color:#004d40
+```
+
 Load this file for waitlist emails, newsletters, community posts, launch sequences, case studies, and content.
 
 ---

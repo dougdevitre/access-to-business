@@ -1,5 +1,23 @@
 # Resilience Playbook
 
+```mermaid
+graph LR
+    A[Rejection / Setback] --> B[Acknowledge]
+    B --> C[Extract Signal]
+    C --> D{Useful Data?}
+    D -- Yes --> E[Adapt & Act]
+    D -- No --> F[Discard & Move On]
+    E --> G[Next Action in 5 min]
+    F --> G
+    style A fill:#dc2626,stroke:#b91c1c,color:#fff
+    style B fill:#d97706,stroke:#b45309,color:#fff
+    style C fill:#2563eb,stroke:#1e40af,color:#fff
+    style D fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style E fill:#059669,stroke:#047857,color:#fff
+    style F fill:#2563eb,stroke:#1e40af,color:#fff
+    style G fill:#059669,stroke:#047857,color:#fff
+```
+
 ## Core Rule
 **The startup is the test. You are not the startup.**  
 Founders who survive long enough to find PMF usually win. The main thing is staying in the game.

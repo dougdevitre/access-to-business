@@ -1,5 +1,17 @@
 # Marketing Copy Library
 
+```mermaid
+flowchart LR
+    A[Brand Message\nCore Identity] --> B[Pillars\nKey Themes]
+    B --> C[Variants\nby Length]
+    C --> D[Platform\nAdaptation]
+
+    style A fill:#1e3a5f,stroke:#4a90d9,color:#ffffff
+    style B fill:#2d5a27,stroke:#5cb85c,color:#ffffff
+    style C fill:#7a4f00,stroke:#f0ad4e,color:#ffffff
+    style D fill:#5a1a2a,stroke:#d9534f,color:#ffffff
+```
+
 ## How to Use This File
 
 Every asset below has **multiple character-count variants** for different platforms and contexts. Fill in the [brackets] with your company's specifics. Build these in order — each longer version builds on the shorter ones.

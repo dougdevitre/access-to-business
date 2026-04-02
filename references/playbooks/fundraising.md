@@ -1,5 +1,23 @@
 # Fundraising Playbook
 
+```mermaid
+graph LR
+    A[Validate Traction] --> B{Ready to Raise?}
+    B -- Yes --> C[Build Target List]
+    B -- No --> D[Grow Revenue First]
+    C --> E[Pitch & Follow Up]
+    E --> F[Term Sheet]
+    F --> G[Close Round]
+    D --> A
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#d97706,stroke:#b45309,color:#fff
+    style C fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style D fill:#dc2626,stroke:#b91c1c,color:#fff
+    style E fill:#2563eb,stroke:#1e40af,color:#fff
+    style F fill:#059669,stroke:#047857,color:#fff
+    style G fill:#059669,stroke:#047857,color:#fff
+```
+
 ## Core Rule
 **Raise when you have traction, not when you're desperate.** Investors fund momentum.  
 Your binder is the paperwork. Your traction is the pitch.

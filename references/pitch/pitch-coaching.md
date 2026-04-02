@@ -1,5 +1,19 @@
 # Pitch Coaching — Verbal Delivery System
 
+```mermaid
+flowchart LR
+    A[Context\nGather Story] --> B[Script\nDraft Pitch]
+    B --> C[Practice\nRefine Delivery]
+    C --> D[Deliver\nPresent Live]
+    D --> E[Q&A\nHandle Questions]
+
+    style A fill:#1e3a5f,stroke:#4a90d9,color:#ffffff
+    style B fill:#2d5a27,stroke:#5cb85c,color:#ffffff
+    style C fill:#7a4f00,stroke:#f0ad4e,color:#ffffff
+    style D fill:#5a1a2a,stroke:#d9534f,color:#ffffff
+    style E fill:#4a2d6e,stroke:#9b59b6,color:#ffffff
+```
+
 ## How to Use This File
 
 Work through this file section by section with the founder. Don't dump everything at once. Start with the 30-second pitch, nail it, then build up to longer formats.

@@ -1,5 +1,21 @@
 # SOC 2 for Startups
 
+```mermaid
+graph LR
+    A[Readiness Assessment] --> B[Gap Analysis]
+    B --> C[Remediation]
+    C --> D[Type I Audit]
+    D --> E[Observation Period]
+    E --> F[Type II Audit]
+
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#e8a838,stroke:#b8832c,color:#fff
+    style C fill:#d94a4a,stroke:#a83232,color:#fff
+    style D fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style E fill:#7b68ae,stroke:#5a4d82,color:#fff
+    style F fill:#2c8c6e,stroke:#1d6b53,color:#fff
+```
+
 **Disclaimer:** SOC 2 is a significant undertaking. Cost and timeline vary widely. This is educational context — work with a qualified auditor for your actual compliance program.
 
 ---

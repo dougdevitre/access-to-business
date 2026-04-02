@@ -46,10 +46,7 @@ graph LR
 |------|----------|
 | `README.md` (this file) | IP strategy overview, priority framework, key principles |
 | `patents.md` | Patent strategy, provisional applications, when to file, costs |
-| `trademarks.md` | Trademark search, registration, enforcement, brand protection |
-| `trade-secrets.md` | Trade secret protection, NDA strategy, employee obligations |
-| `copyright.md` | Copyright basics, software copyright, open source risk |
-| `ip-assignments.md` | Why IP assignment matters, what to require from founders/employees/contractors |
+| `trademarks-trade-secrets-copyright.md` | Trademarks, trade secrets, copyright, IP assignments |
 
 ---
 

@@ -1,5 +1,21 @@
 # Sales Templates
 
+```mermaid
+flowchart TD
+    S["Sales\nTemplates"] --> CO["Cold Outreach\nEmail & DM"]
+    S --> DIS["Discovery\nCall Script"]
+    S --> PRO["Proposal &\nInvoice"]
+    S --> FU["Follow-Up\n& Referral"]
+    S --> OBJ["Objection\nHandling"]
+
+    style S fill:#e65100,stroke:#bf360c,color:#ffffff
+    style CO fill:#f57c00,stroke:#e65100,color:#ffffff
+    style DIS fill:#fb8c00,stroke:#f57c00,color:#ffffff
+    style PRO fill:#ffa726,stroke:#fb8c00,color:#4e342e
+    style FU fill:#ffb74d,stroke:#ffa726,color:#4e342e
+    style OBJ fill:#ffcc80,stroke:#ffb74d,color:#4e342e
+```
+
 Load this file for cold outreach, discovery scripts, proposals, follow-ups, and objection handling.
 
 ---

@@ -1,5 +1,23 @@
 # Industry-Specific Compliance
 
+```mermaid
+graph TD
+    A[Your Startup] --> B{Industry?}
+    B -->|Education| C[FERPA]
+    B -->|Payments| D[PCI-DSS]
+    B -->|Finance| E[FINRA / SEC]
+    B -->|Children| F[COPPA]
+    B -->|Government| G[FedRAMP / CMMC]
+
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#e8a838,stroke:#b8832c,color:#fff
+    style C fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style D fill:#d94a4a,stroke:#a83232,color:#fff
+    style E fill:#7b68ae,stroke:#5a4d82,color:#fff
+    style F fill:#d97a4a,stroke:#a85a32,color:#fff
+    style G fill:#2c8c6e,stroke:#1d6b53,color:#fff
+```
+
 **Disclaimer:** Industry regulations change and enforcement varies by context. Consult a compliance specialist or attorney for your specific situation.
 
 ---

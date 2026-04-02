@@ -1,5 +1,24 @@
 # Trademarks, Trade Secrets, Copyright & IP Assignments
 
+```mermaid
+flowchart TD
+    IP["IP Protection"] --> TM["Trademark\nBrand Identity"]
+    IP --> TS["Trade Secret\nConfidential Info"]
+    IP --> CR["Copyright\nCreative Works"]
+
+    TM --> TM1["Names & Logos"]
+    TS --> TS1["Formulas & Processes"]
+    CR --> CR1["Code & Content"]
+
+    style IP fill:#264653,stroke:#1a323d,color:#ffffff
+    style TM fill:#2a9d8f,stroke:#21867a,color:#ffffff
+    style TS fill:#e9c46a,stroke:#d4a843,color:#264653
+    style CR fill:#e76f51,stroke:#d45a3b,color:#ffffff
+    style TM1 fill:#2a9d8f,stroke:#21867a,color:#ffffff
+    style TS1 fill:#e9c46a,stroke:#d4a843,color:#264653
+    style CR1 fill:#e76f51,stroke:#d45a3b,color:#ffffff
+```
+
 ---
 
 ## TRADEMARKS

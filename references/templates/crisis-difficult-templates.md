@@ -1,5 +1,21 @@
 # Crisis & Difficult Conversation Templates
 
+```mermaid
+flowchart TD
+    CR["Crisis &\nDifficult"] --> LY["Layoff\nAnnouncements"]
+    CR --> CF["Co-Founder\nConflict"]
+    CR --> RW["Runway\nEmergency"]
+    CR --> PV["Hard Pivot &\nDepartures"]
+    CR --> AP["Apology &\nDemand Letters"]
+
+    style CR fill:#b71c1c,stroke:#7f0000,color:#ffffff
+    style LY fill:#c62828,stroke:#b71c1c,color:#ffffff
+    style CF fill:#d84315,stroke:#bf360c,color:#ffffff
+    style RW fill:#e65100,stroke:#d84315,color:#ffffff
+    style PV fill:#f57f17,stroke:#f9a825,color:#4e342e
+    style AP fill:#ff8f00,stroke:#ff6f00,color:#4e342e
+```
+
 Load this file for layoffs, co-founder conflict, bad press, apologies, runway emergencies, and hard pivots.
 
 ---

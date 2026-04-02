@@ -1,5 +1,21 @@
 # Investor Templates
 
+```mermaid
+flowchart TD
+    INV["Investor\nTemplates"] --> ES["Executive\nSummary"]
+    INV --> OUT["Outreach\n& Intros"]
+    INV --> UPD["Monthly\nUpdates"]
+    INV --> LOI["LOI &\nFollow-Up"]
+    INV --> DR["Deck &\nData Room"]
+
+    style INV fill:#0d47a1,stroke:#002171,color:#ffffff
+    style ES fill:#1565c0,stroke:#0d47a1,color:#ffffff
+    style OUT fill:#1976d2,stroke:#1565c0,color:#ffffff
+    style UPD fill:#1e88e5,stroke:#1976d2,color:#ffffff
+    style LOI fill:#42a5f5,stroke:#1e88e5,color:#0d47a1
+    style DR fill:#64b5f6,stroke:#42a5f5,color:#0d47a1
+```
+
 Load this file when building investor-facing documents: executive summary, cold outreach, monthly updates, LOIs, pitch intros.
 
 ---

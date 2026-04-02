@@ -1,8 +1,14 @@
 # Access to Business
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
+[![Pillar](https://img.shields.io/badge/Access%20To-Pillar%207-purple.svg)](https://github.com/dougdevitre)
+
 **AI-powered startup coach, execution engine, pitch generator, and investor binder builder.**
 
-Part of the [Access To](https://github.com/cotrackpro) open-source civic tech initiative by [CoTrackPro](https://cotrackpro.com).
+Part of the [Access To](https://github.com/dougdevitre) open-source civic tech initiative.
+
+> [Getting Started Guide](GETTING_STARTED.md) | [Architecture](docs/architecture.md) | [Contributing](CONTRIBUTING.md) | [Changelog](CHANGELOG.md)
 
 ---
 
@@ -122,7 +128,7 @@ graph TD
 ## Install
 
 ### Claude.ai (Recommended)
-1. Download the latest `.skill` file from [Releases](https://github.com/cotrackpro/access-to-business/releases)
+1. Download the latest `.skill` file from [Releases](https://github.com/dougdevitre/access-to-business/releases)
 2. Go to **Claude.ai → Settings → Skills**
 3. Upload the `.skill` file
 
@@ -144,12 +150,12 @@ Just type one of these to get started:
 
 | Pillar | Repo | Focus |
 |--------|------|-------|
-| 1 | [access-to-justice](https://github.com/cotrackpro/access-to-justice) | Legal aid navigation |
-| 2 | [access-to-education](https://github.com/cotrackpro/access-to-education) | K-12 standards & educator tools |
-| 3 | [access-to-housing](https://github.com/cotrackpro/access-to-housing) | Real estate intelligence |
-| 4 | [access-to-services](https://github.com/cotrackpro/access-to-services) | Social services navigation |
-| 5 | [access-to-peace](https://github.com/cotrackpro/access-to-peace) | Conflict resolution |
-| 6 | [access-to-safety](https://github.com/cotrackpro/access-to-safety) | Domestic violence resources |
+| 1 | [access-to-justice](https://github.com/dougdevitre/access-to-justice) | Legal aid navigation |
+| 2 | [access-to-education](https://github.com/dougdevitre/access-to-education) | K-12 standards & educator tools |
+| 3 | [access-to-housing](https://github.com/dougdevitre/access-to-housing) | Real estate intelligence |
+| 4 | [access-to-services](https://github.com/dougdevitre/access-to-services) | Social services navigation |
+| 5 | [access-to-peace](https://github.com/dougdevitre/access-to-peace) | Conflict resolution |
+| 6 | [access-to-safety](https://github.com/dougdevitre/access-to-safety) | Domestic violence resources |
 | **7** | **access-to-business** | **Startup coaching & execution** |
 
 ## State Deployment
@@ -173,4 +179,4 @@ MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
-**Built by [CoTrackPro](https://cotrackpro.com) | Part of the Access To Initiative**
+**Built by [Doug DeVitre](https://github.com/dougdevitre) | Part of the Access To Initiative**

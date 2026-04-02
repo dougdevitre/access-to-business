@@ -1,5 +1,21 @@
 # Board & Advisor Templates
 
+```mermaid
+flowchart TD
+    BA["Board & Advisor\nTemplates"] --> BU["Board\nUpdates"]
+    BA --> BM["Meeting\nAgenda & Deck"]
+    BA --> AA["Advisor\nAsks"]
+    BA --> AC["Advisor\nCheck-Ins"]
+    BA --> GV["Governance\n& Consent"]
+
+    style BA fill:#1a237e,stroke:#0d1147,color:#ffffff
+    style BU fill:#283593,stroke:#1a237e,color:#ffffff
+    style BM fill:#303f9f,stroke:#283593,color:#ffffff
+    style AA fill:#3949ab,stroke:#303f9f,color:#ffffff
+    style AC fill:#5c6bc0,stroke:#3949ab,color:#ffffff
+    style GV fill:#9fa8da,stroke:#5c6bc0,color:#1a237e
+```
+
 Load this file for board updates, meeting prep, advisor asks, and governance communications.
 
 ---

@@ -1,5 +1,22 @@
 # Data Processing Agreement (DPA), NDA Library & Term Sheet Guide
 
+```mermaid
+graph TD
+    A[Contract<br>Need] --> B[DPA]
+    A --> C[NDA]
+    A --> D[Term Sheet]
+    B --> B1[Processing<br>personal data]
+    C --> C1[Sharing<br>confidential info]
+    D --> D1[Outlining<br>deal terms]
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style C fill:#f5a623,stroke:#c7841a,color:#fff
+    style D fill:#7b68ee,stroke:#5a4cbf,color:#fff
+    style B1 fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style C1 fill:#f5a623,stroke:#c7841a,color:#fff
+    style D1 fill:#7b68ee,stroke:#5a4cbf,color:#fff
+```
+
 ---
 
 # PART 1: DATA PROCESSING AGREEMENT (DPA)

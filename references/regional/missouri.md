@@ -1,5 +1,21 @@
 # Missouri — Regional Deployment (Reference Implementation)
 
+```mermaid
+flowchart TD
+    MO["Missouri\nEcosystem"] --> F["Formation\nLLC / C-Corp"]
+    MO --> I["Incentives\n& Grants"]
+    MO --> L["Legal\nResources"]
+    MO --> T["Talent\nPipeline"]
+    MO --> R["Real Estate\n& Cost"]
+
+    style MO fill:#c62828,stroke:#8e0000,color:#ffffff
+    style F fill:#1565c0,stroke:#0d47a1,color:#ffffff
+    style I fill:#2e7d32,stroke:#1b5e20,color:#ffffff
+    style L fill:#6a1b9a,stroke:#4a148c,color:#ffffff
+    style T fill:#e65100,stroke:#bf360c,color:#ffffff
+    style R fill:#00838f,stroke:#006064,color:#ffffff
+```
+
 **Part of Access to Business — Pillar 7 of the Access To Initiative**
 
 **Disclaimer:** Program details, availability, fees, and contact information change.
