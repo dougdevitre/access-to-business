@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Access to Business — Startup Intake Assessment</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --accent: #7c3aed;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+  h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+  .subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
+  .progress { display: flex; gap: 4px; margin-bottom: 24px; }
+  .progress-dot { height: 4px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
+  .progress-dot.active { background: var(--primary); }
+  .progress-dot.done { background: var(--success); }
+  label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 6px; }
+  input, textarea, select { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
+  input:focus, textarea:focus, select:focus { border-color: var(--primary); }
+  textarea { resize: vertical; min-height: 80px; }
+  .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .option-btn { padding: 12px; border: 2px solid var(--border); border-radius: 8px; background: var(--card); cursor: pointer; text-align: center; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
+  .option-btn:hover { border-color: var(--primary); background: #eff6ff; }
+  .option-btn.selected { border-color: var(--primary); background: #eff6ff; color: var(--primary); }
+  .option-btn .icon { font-size: 1.3rem; display: block; margin-bottom: 4px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: var(--primary-hover); }
+  .btn-outline { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+  .btn-outline:hover { background: var(--bg); }
+  .btn-row { display: flex; justify-content: space-between; margin-top: 20px; }
+  .field-group { margin-bottom: 16px; }
+  .result-section { margin-bottom: 16px; }
+  .result-section h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+  .result-section p { font-size: 0.875rem; color: var(--text-muted); }
+  .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .badge-amber { background: #fef3c7; color: #92400e; }
+  .badge-purple { background: #ede9fe; color: #5b21b6; }
+  .command-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .command { background: var(--bg); padding: 4px 10px; border-radius: 6px; font-family: monospace; font-size: 0.8rem; color: var(--primary); }
+  .copy-block { background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.8rem; white-space: pre-wrap; position: relative; margin-top: 8px; }
+  .copy-btn { position: absolute; top: 8px; right: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 0.7rem; cursor: pointer; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState } = React;
+
+const STAGES = [
+  { id: 0, label: "Idea", icon: "💡", desc: "I have an idea but haven't started" },
+  { id: 1, label: "Pre-Revenue", icon: "🔨", desc: "Building but no paying customers yet" },
+  { id: 2, label: "Early Revenue", icon: "💰", desc: "A few paying customers" },
+  { id: 3, label: "Growth", icon: "📈", desc: "Scaling and/or raising capital" },
+  { id: 4, label: "Scaling", icon: "🚀", desc: "Series A+ or ops complexity" },
+];
+
+const PRIORITIES = [
+  { id: "customers", label: "Get Customers", icon: "🎯" },
+  { id: "funding", label: "Raise Funding", icon: "🏦" },
+  { id: "product", label: "Build Product", icon: "⚙️" },
+  { id: "team", label: "Build Team", icon: "👥" },
+];
+
+const TIME_OPTIONS = [
+  { id: "5min", label: "5 minutes", icon: "⚡" },
+  { id: "20min", label: "20 minutes", icon: "⏱" },
+  { id: "60min", label: "1 hour", icon: "🕐" },
+  { id: "sprint", label: "Full sprint", icon: "🏃" },
+];
+
+function App() {
+  const [step, setStep] = useState(0);
+  const [data, setData] = useState({
+    name: "", startup: "", stage: null, priority: null, time: null, challenge: ""
+  });
+
+  const totalSteps = 5;
+
+  const update = (field, value) => setData(prev => ({ ...prev, [field]: value }));
+  const canNext = () => {
+    if (step === 0) return data.name && data.startup;
+    if (step === 1) return data.stage !== null;
+    if (step === 2) return data.priority !== null;
+    if (step === 3) return data.time !== null;
+    return true;
+  };
+
+  const getRouting = () => {
+    const s = data.stage;
+    const p = data.priority;
+    const routes = [];
+    const commands = [];
+
+    if (s === 0) {
+      routes.push({ title: "Start with Validation", desc: "Talk to 10 potential customers before writing code." });
+      commands.push("/validate", "/icp", "/focus validation");
+    } else if (s === 1 && p === "customers") {
+      routes.push({ title: "Get Your First 10 Customers", desc: "Focus on outreach and discovery calls." });
+      commands.push("/outreach", "/icp", "/sprint sales");
+    } else if (s === 1 && p === "funding") {
+      routes.push({ title: "Build Traction First", desc: "Investors want to see early signals before pre-seed." });
+      commands.push("/validate", "/metrics", "/binder");
+    } else if (s >= 2 && p === "funding") {
+      routes.push({ title: "Investor Binder Build", desc: "Build your 17-section investor binder." });
+      commands.push("/binder", "/score", "/pitch", "/deck");
+    } else if (p === "product") {
+      routes.push({ title: "Ship Fast, Validate Often", desc: "Build the smallest thing that tests your riskiest assumption." });
+      commands.push("/focus mvp", "/validate", "/sprint product");
+    } else if (p === "team") {
+      routes.push({ title: "Make Your First Hire", desc: "Define the role, set equity, and start recruiting." });
+      commands.push("/hire", "/cofounder", "/focus hiring");
+    } else {
+      routes.push({ title: "Build Momentum", desc: "Pick one thing and ship it today." });
+      commands.push("/start", "/focus", "/next");
+    }
+
+    if (data.time === "5min") commands.unshift("/focus");
+    if (data.time === "sprint") commands.unshift("/sprint");
+
+    return { routes, commands: [...new Set(commands)].slice(0, 5) };
+  };
+
+  const getCopyText = () => {
+    const stageLabel = STAGES.find(s => s.id === data.stage)?.label || "Unknown";
+    const priorityLabel = PRIORITIES.find(p => p.id === data.priority)?.label || "Unknown";
+    return `/start
+Startup: ${data.startup}
+Stage: ${stageLabel}
+Priority: ${priorityLabel}
+Time: ${data.time}
+Challenge: ${data.challenge || "None specified"}`;
+  };
+
+  const renderStep = () => {
+    switch (step) {
+      case 0:
+        return (
+          <div className="card">
+            <h2>Tell me about your startup</h2>
+            <div className="field-group">
+              <label>Your name</label>
+              <input value={data.name} onChange={e => update("name", e.target.value)} placeholder="First name" />
+            </div>
+            <div className="field-group">
+              <label>What's your startup? (one sentence)</label>
+              <input value={data.startup} onChange={e => update("startup", e.target.value)} placeholder="e.g. A platform that helps co-parents document safely" />
+            </div>
+          </div>
+        );
+      case 1:
+        return (
+          <div className="card">
+            <h2>What stage are you at?</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {STAGES.map(s => (
+                <div key={s.id} className={`option-btn ${data.stage === s.id ? "selected" : ""}`}
+                  onClick={() => update("stage", s.id)} style={{ textAlign: "left", display: "flex", alignItems: "center", gap: 10 }}>
+                  <span style={{ fontSize: "1.3rem" }}>{s.icon}</span>
+                  <div><strong>{s.label}</strong><br /><span style={{ fontWeight: 400, color: "var(--text-muted)" }}>{s.desc}</span></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      case 2:
+        return (
+          <div className="card">
+            <h2>What matters most right now?</h2>
+            <div className="option-grid">
+              {PRIORITIES.map(p => (
+                <div key={p.id} className={`option-btn ${data.priority === p.id ? "selected" : ""}`}
+                  onClick={() => update("priority", p.id)}>
+                  <span className="icon">{p.icon}</span>{p.label}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      case 3:
+        return (
+          <div className="card">
+            <h2>How much time do you have?</h2>
+            <div className="option-grid">
+              {TIME_OPTIONS.map(t => (
+                <div key={t.id} className={`option-btn ${data.time === t.id ? "selected" : ""}`}
+                  onClick={() => update("time", t.id)}>
+                  <span className="icon">{t.icon}</span>{t.label}
+                </div>
+              ))}
+            </div>
+            <div className="field-group" style={{ marginTop: 16 }}>
+              <label>Biggest challenge right now (optional)</label>
+              <textarea value={data.challenge} onChange={e => update("challenge", e.target.value)}
+                placeholder="e.g. I can't figure out pricing, I'm scared to reach out to investors..." />
+            </div>
+          </div>
+        );
+      case 4: {
+        const { routes, commands } = getRouting();
+        const stageInfo = STAGES.find(s => s.id === data.stage);
+        return (
+          <div>
+            <div className="card">
+              <h2>Your Startup Profile</h2>
+              <div className="result-section">
+                <p><strong>{data.name}</strong> — {data.startup}</p>
+                <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
+                  <span className="badge badge-blue">{stageInfo?.icon} Stage {data.stage}: {stageInfo?.label}</span>
+                  <span className="badge badge-green">{PRIORITIES.find(p => p.id === data.priority)?.icon} {PRIORITIES.find(p => p.id === data.priority)?.label}</span>
+                  <span className="badge badge-amber">{TIME_OPTIONS.find(t => t.id === data.time)?.icon} {TIME_OPTIONS.find(t => t.id === data.time)?.label}</span>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <h2>Recommended Path</h2>
+              {routes.map((r, i) => (
+                <div key={i} className="result-section">
+                  <h3>{r.title}</h3>
+                  <p>{r.desc}</p>
+                </div>
+              ))}
+              <div className="result-section">
+                <h3>Start with these commands:</h3>
+                <div className="command-list">
+                  {commands.map((c, i) => <span key={i} className="command">{c}</span>)}
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <h2>Copy to Claude</h2>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginBottom: 8 }}>
+                Paste this into a new Claude conversation with Access to Business:
+              </p>
+              <div className="copy-block">
+                <button className="copy-btn" onClick={() => {
+                  navigator.clipboard?.writeText(getCopyText());
+                }}>Copy</button>
+                {getCopyText()}
+              </div>
+            </div>
+          </div>
+        );
+      }
+    }
+  };
+
+  return (
+    <div className="container">
+      <h1>Access to Business</h1>
+      <p className="subtitle">Startup Intake Assessment — let's figure out where to focus</p>
+      <div className="progress">
+        {Array.from({ length: totalSteps }).map((_, i) => (
+          <div key={i} className={`progress-dot ${i === step ? "active" : i < step ? "done" : ""}`} />
+        ))}
+      </div>
+      {renderStep()}
+      <div className="btn-row">
+        {step > 0 && step < totalSteps ? (
+          <button className="btn btn-outline" onClick={() => setStep(s => s - 1)}>Back</button>
+        ) : <div />}
+        {step < totalSteps - 1 ? (
+          <button className="btn btn-primary" disabled={!canNext()} onClick={() => setStep(s => s + 1)}
+            style={{ opacity: canNext() ? 1 : 0.5 }}>Next →</button>
+        ) : step === totalSteps - 1 ? null : (
+          <button className="btn btn-primary" onClick={() => { setStep(0); setData({ name: "", startup: "", stage: null, priority: null, time: null, challenge: "" }); }}>
+            Start Over
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+</script>
+</body>
+</html>

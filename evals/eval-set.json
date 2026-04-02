@@ -1,0 +1,156 @@
+{
+  "skill_name": "access-to-business",
+  "description": "Triggering eval set for Access to Business skill",
+  "test_cases": [
+    {
+      "id": "atb-001",
+      "prompt": "I have a startup idea and need help figuring out if it's worth pursuing",
+      "should_trigger": true,
+      "expected_route": "validation"
+    },
+    {
+      "id": "atb-002",
+      "prompt": "Help me build my investor binder for a pre-seed round",
+      "should_trigger": true,
+      "expected_route": "binder-build"
+    },
+    {
+      "id": "atb-003",
+      "prompt": "I need to calculate my burn rate and runway",
+      "should_trigger": true,
+      "expected_route": "metrics-finance"
+    },
+    {
+      "id": "atb-004",
+      "prompt": "Write me a cold email to send to potential customers",
+      "should_trigger": true,
+      "expected_route": "sales-templates"
+    },
+    {
+      "id": "atb-005",
+      "prompt": "Should I form an LLC or a C-Corp?",
+      "should_trigger": true,
+      "expected_route": "legal-formation"
+    },
+    {
+      "id": "atb-006",
+      "prompt": "I'm stuck and overwhelmed with my startup. I don't know what to do next.",
+      "should_trigger": true,
+      "expected_route": "recovery-mode"
+    },
+    {
+      "id": "atb-007",
+      "prompt": "/pitch",
+      "should_trigger": true,
+      "expected_route": "pitch-coaching"
+    },
+    {
+      "id": "atb-008",
+      "prompt": "Help me write a pitch deck for my SaaS startup",
+      "should_trigger": true,
+      "expected_route": "deck-design-system"
+    },
+    {
+      "id": "atb-009",
+      "prompt": "What's my unit economics — CAC, LTV, payback period?",
+      "should_trigger": true,
+      "expected_route": "ops-commands"
+    },
+    {
+      "id": "atb-010",
+      "prompt": "I need to hire my first employee. What should I offer for equity?",
+      "should_trigger": true,
+      "expected_route": "team-hiring"
+    },
+    {
+      "id": "atb-011",
+      "prompt": "Do I need to be HIPAA compliant if I'm building a health tech app?",
+      "should_trigger": true,
+      "expected_route": "compliance-hipaa"
+    },
+    {
+      "id": "atb-012",
+      "prompt": "Help me draft a SaaS subscription agreement for my first enterprise customer",
+      "should_trigger": true,
+      "expected_route": "contracts-saas"
+    },
+    {
+      "id": "atb-013",
+      "prompt": "What accelerators and grants are available in Missouri?",
+      "should_trigger": true,
+      "expected_route": "regional-missouri"
+    },
+    {
+      "id": "atb-014",
+      "prompt": "I need to write a monthly investor update email",
+      "should_trigger": true,
+      "expected_route": "investor-templates"
+    },
+    {
+      "id": "atb-015",
+      "prompt": "/start",
+      "should_trigger": true,
+      "expected_route": "session-start"
+    },
+    {
+      "id": "atb-016",
+      "prompt": "I need to make money fast. What's the quickest revenue I can generate?",
+      "should_trigger": true,
+      "expected_route": "gtm-sales"
+    },
+    {
+      "id": "atb-017",
+      "prompt": "Help me set up my bookkeeping and chart of accounts",
+      "should_trigger": true,
+      "expected_route": "accounting"
+    },
+    {
+      "id": "atb-018",
+      "prompt": "Should I file a provisional patent for my software?",
+      "should_trigger": true,
+      "expected_route": "ip-patents"
+    },
+    {
+      "id": "atb-019",
+      "prompt": "I'm a founder dealing with burnout and rejection. How do I keep going?",
+      "should_trigger": true,
+      "expected_route": "resilience"
+    },
+    {
+      "id": "atb-020",
+      "prompt": "What's the weather in St. Louis today?",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-021",
+      "prompt": "Help me write a co-parenting communication log",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-022",
+      "prompt": "Write me a one-sheet for my startup to leave behind after investor meetings",
+      "should_trigger": true,
+      "expected_route": "one-sheet-system"
+    },
+    {
+      "id": "atb-023",
+      "prompt": "I need to negotiate my first enterprise contract. They sent their paper.",
+      "should_trigger": true,
+      "expected_route": "contract-negotiation"
+    },
+    {
+      "id": "atb-024",
+      "prompt": "Help me prepare for a board meeting and draft an update",
+      "should_trigger": true,
+      "expected_route": "board-advisor-templates"
+    },
+    {
+      "id": "atb-025",
+      "prompt": "We need to lay off 3 people. Help me handle this.",
+      "should_trigger": true,
+      "expected_route": "crisis-difficult-templates"
+    }
+  ]
+}
