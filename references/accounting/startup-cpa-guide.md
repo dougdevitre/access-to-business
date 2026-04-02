@@ -1,5 +1,19 @@
 # Finding and Working With a Startup CPA
 
+```mermaid
+flowchart LR
+    A["Identify Need"] --> B["Research"]
+    B --> C["Interview"]
+    C --> D["Engage"]
+    D --> E["Quarterly Review"]
+
+    style A fill:#2d6a4f,stroke:#1b4332,color:#ffffff
+    style B fill:#40916c,stroke:#2d6a4f,color:#ffffff
+    style C fill:#52b788,stroke:#40916c,color:#ffffff
+    style D fill:#74c69d,stroke:#52b788,color:#1b4332
+    style E fill:#95d5b2,stroke:#74c69d,color:#1b4332
+```
+
 **The right CPA pays for themselves many times over through tax credits, strategic decisions, and avoiding costly mistakes.**
 
 ---

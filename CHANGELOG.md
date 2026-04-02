@@ -2,6 +2,14 @@
 
 All notable changes to Access to Business will be documented in this file.
 
+```mermaid
+flowchart LR
+    A["v1.0.0\n2025-03-31"] --> B["Initial Release\n57 files, 35+ commands"]
+
+    style A fill:#27ae60,stroke:#1a7a42,color:#fff
+    style B fill:#4a90d9,stroke:#2c5f8a,color:#fff
+```
+
 ## [1.0.0] — 2025-03-31
 
 ### Added

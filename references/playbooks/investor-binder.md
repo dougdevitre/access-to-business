@@ -1,5 +1,22 @@
 # Investor Binder Playbook
 
+```mermaid
+graph LR
+    A[Readiness Assessment] --> B[Exec Summary + Deck]
+    B --> C[Financials & Cap Table]
+    C --> D[Legal & Corporate Docs]
+    D --> E[Customer Evidence]
+    E --> F[Data Room Package]
+    F --> G[Investor Meetings]
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style C fill:#d97706,stroke:#b45309,color:#fff
+    style D fill:#2563eb,stroke:#1e40af,color:#fff
+    style E fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style F fill:#059669,stroke:#047857,color:#fff
+    style G fill:#059669,stroke:#047857,color:#fff
+```
+
 ## What Is the Investor Binder?
 
 The investor binder (also called a fundraising package or data room) is the complete set of materials a founder prepares to support a raise. It serves two functions:

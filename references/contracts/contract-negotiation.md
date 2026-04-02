@@ -1,5 +1,23 @@
 # Contract Negotiation Guide
 
+```mermaid
+graph LR
+    A[Review<br>Contract] --> B[Redline<br>Issues]
+    B --> C[Negotiate]
+    C --> D{Decision}
+    D -->|Concede| E[Accept<br>Terms]
+    D -->|Hold| F[Counter]
+    F --> C
+    E --> G[Execute]
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#f5a623,stroke:#c7841a,color:#fff
+    style C fill:#7b68ee,stroke:#5a4cbf,color:#fff
+    style D fill:#d94a4a,stroke:#a83232,color:#fff
+    style E fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style F fill:#e06090,stroke:#b04870,color:#fff
+    style G fill:#5ba85b,stroke:#3d7a3d,color:#fff
+```
+
 **For startup founders negotiating customer contracts, vendor agreements, and partnership deals.**
 
 ---

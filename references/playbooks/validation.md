@@ -1,5 +1,19 @@
 # Validation Playbook
 
+```mermaid
+graph LR
+    A[Assumptions] --> B[Customer Interviews]
+    B --> C[Pattern Recognition]
+    C --> D{PMF Signal?}
+    D -- Yes --> E[Build MVP]
+    D -- No --> A
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style C fill:#2563eb,stroke:#1e40af,color:#fff
+    style D fill:#d97706,stroke:#b45309,color:#fff
+    style E fill:#059669,stroke:#047857,color:#fff
+```
+
 ## Core Rule
 **Never build before you validate.** Talk to 10 customers before writing 1 line of code.
 

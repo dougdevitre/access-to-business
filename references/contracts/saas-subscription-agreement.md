@@ -1,5 +1,18 @@
 # SaaS Subscription Agreement
 
+```mermaid
+graph LR
+    A[Terms &<br>Definitions] --> B[Subscription<br>& Access]
+    B --> C[SLA &<br>Support]
+    C --> D[Liability<br>& Indemnity]
+    D --> E[Order<br>Form]
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style C fill:#f5a623,stroke:#c7841a,color:#fff
+    style D fill:#d94a4a,stroke:#a83232,color:#fff
+    style E fill:#7b68ee,stroke:#5a4cbf,color:#fff
+```
+
 **Disclaimer:** This is an educational scaffold. Have a licensed attorney review before using with paying customers, especially enterprise deals.
 
 ---

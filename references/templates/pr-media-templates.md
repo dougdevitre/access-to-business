@@ -1,5 +1,21 @@
 # PR & Media Templates
 
+```mermaid
+flowchart TD
+    PR["PR & Media\nTemplates"] --> REL["Press\nReleases"]
+    PR --> PIT["Journalist\nPitches"]
+    PR --> SOC["Social\nAnnouncements"]
+    PR --> TL["Thought\nLeadership"]
+    PR --> BIO["Speaker Bio\n& Awards"]
+
+    style PR fill:#b71c1c,stroke:#7f0000,color:#ffffff
+    style REL fill:#c62828,stroke:#b71c1c,color:#ffffff
+    style PIT fill:#d32f2f,stroke:#c62828,color:#ffffff
+    style SOC fill:#e53935,stroke:#d32f2f,color:#ffffff
+    style TL fill:#ef5350,stroke:#e53935,color:#ffffff
+    style BIO fill:#ef9a9a,stroke:#ef5350,color:#7f0000
+```
+
 Load this file for press releases, journalist pitches, social announcements, and public communications.
 
 ---

@@ -1,5 +1,31 @@
 # Binder & Fundraising Commands
 
+```mermaid
+graph LR
+    binder["/binder"] --> sections["17 Sections"]
+    sections --> score["/score"]
+    score --> pitch["/pitch"]
+    pitch --> deck["/deck"]
+    deck --> exec["/exec"]
+    exec --> ask["/ask"]
+    ask --> dataroom["/dataroom"]
+    dataroom --> ready["Investor Ready"]
+    simulate["/simulate"] --> pitch
+    update["/update"] --> ready
+
+    style binder fill:#2563eb,stroke:#1e40af,color:#fff
+    style sections fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style score fill:#dc2626,stroke:#991b1b,color:#fff
+    style pitch fill:#ea580c,stroke:#9a3412,color:#fff
+    style deck fill:#d97706,stroke:#92400e,color:#fff
+    style exec fill:#16a34a,stroke:#166534,color:#fff
+    style ask fill:#0891b2,stroke:#155e75,color:#fff
+    style dataroom fill:#4f46e5,stroke:#3730a3,color:#fff
+    style ready fill:#059669,stroke:#065f46,color:#fff
+    style simulate fill:#64748b,stroke:#334155,color:#fff
+    style update fill:#64748b,stroke:#334155,color:#fff
+```
+
 Load this file when the user types: `/binder` `/score` `/pitch` `/deck` `/exec` `/ask` `/dataroom` `/update` `/simulate`
 
 For deep content on any section, also load: `references/playbooks/investor-binder.md`

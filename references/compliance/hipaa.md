@@ -1,5 +1,21 @@
 # HIPAA Compliance for Startups
 
+```mermaid
+graph LR
+    A[PHI Identification] --> B[Technical Safeguards]
+    B --> C[Administrative Safeguards]
+    C --> D[BAA Execution]
+    D --> E[Risk Assessment]
+    E --> F[Ongoing Audit]
+
+    style A fill:#d94a4a,stroke:#a83232,color:#fff
+    style B fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style C fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style D fill:#e8a838,stroke:#b8832c,color:#fff
+    style E fill:#7b68ae,stroke:#5a4d82,color:#fff
+    style F fill:#d97a4a,stroke:#a85a32,color:#fff
+```
+
 **Disclaimer:** HIPAA is complex and penalties are severe. This is educational context only. Engage a HIPAA compliance specialist or healthcare attorney before handling PHI.
 
 ---

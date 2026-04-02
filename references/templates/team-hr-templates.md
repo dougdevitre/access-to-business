@@ -1,5 +1,21 @@
 # Team & HR Templates
 
+```mermaid
+flowchart TD
+    HR["Team & HR\nTemplates"] --> OF["Offers &\nOnboarding"]
+    HR --> PF["Performance\n& Feedback"]
+    HR --> PIP["PIP &\nTermination"]
+    HR --> EQ["Equity &\nCompensation"]
+    HR --> CT["Contractor &\nReference"]
+
+    style HR fill:#4e342e,stroke:#3e2723,color:#ffffff
+    style OF fill:#5d4037,stroke:#4e342e,color:#ffffff
+    style PF fill:#6d4c41,stroke:#5d4037,color:#ffffff
+    style PIP fill:#795548,stroke:#6d4c41,color:#ffffff
+    style EQ fill:#8d6e63,stroke:#795548,color:#ffffff
+    style CT fill:#a1887f,stroke:#8d6e63,color:#3e2723
+```
+
 Load this file for offer letters, onboarding, performance conversations, compensation, and exits.
 
 **Disclaimer:** Employment law varies by state. Review with an employment attorney before sending any offer, termination, or equity-related document.

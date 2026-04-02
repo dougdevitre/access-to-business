@@ -1,5 +1,21 @@
 # Metrics & Finance Playbook
 
+```mermaid
+graph LR
+    A[Track MRR & Burn] --> B[Calculate Runway]
+    B --> C{Runway > 12mo?}
+    C -- Yes --> D[Optimize CAC/LTV]
+    C -- No --> E[Cut Burn or Raise]
+    D --> F[Monitor Churn & NRR]
+    F --> A
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style C fill:#d97706,stroke:#b45309,color:#fff
+    style D fill:#059669,stroke:#047857,color:#fff
+    style E fill:#dc2626,stroke:#b91c1c,color:#fff
+    style F fill:#2563eb,stroke:#1e40af,color:#fff
+```
+
 ## Core Rule
 **Know your numbers. Founders who don't know their burn rate lose their company by surprise.**
 

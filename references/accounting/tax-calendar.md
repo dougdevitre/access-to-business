@@ -1,5 +1,17 @@
 # Startup Tax Calendar — Missouri & Federal
 
+```mermaid
+flowchart LR
+    A["Quarterly\nEstimates"] --> B["Annual\nFiling"]
+    B --> C["Payroll\nDeposits"]
+    C --> D["State\nDeadlines"]
+
+    style A fill:#1d3557,stroke:#0d1b2a,color:#ffffff
+    style B fill:#457b9d,stroke:#1d3557,color:#ffffff
+    style C fill:#a8dadc,stroke:#457b9d,color:#1d3557
+    style D fill:#e63946,stroke:#c1121f,color:#ffffff
+```
+
 **Disclaimer:** Tax deadlines change. Verify all dates with your CPA and at irs.gov and dor.mo.gov each year. Missing tax deadlines results in penalties and interest.
 
 ---

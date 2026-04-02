@@ -2,6 +2,20 @@
 
 Thank you for helping make startup coaching more accessible.
 
+```mermaid
+flowchart LR
+    A["Fork Repo"] --> B["Edit Files"]
+    B --> C["Open PR"]
+    C --> D["Review"]
+    D --> E["Merge"]
+
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#f5a623,stroke:#c47d10,color:#fff
+    style C fill:#7b68ee,stroke:#5a4abf,color:#fff
+    style D fill:#e67e22,stroke:#b35e0a,color:#fff
+    style E fill:#27ae60,stroke:#1a7a42,color:#fff
+```
+
 ## How to Contribute
 
 ### Report Issues

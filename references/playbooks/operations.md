@@ -1,5 +1,21 @@
 # Operations Playbook
 
+```mermaid
+graph LR
+    A[Identify Process] --> B[Document SOP]
+    B --> C[Automate]
+    C --> D{Still Manual?}
+    D -- Yes --> E[Hire for Role]
+    D -- No --> F[Monitor & Improve]
+    F --> A
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style C fill:#2563eb,stroke:#1e40af,color:#fff
+    style D fill:#d97706,stroke:#b45309,color:#fff
+    style E fill:#dc2626,stroke:#b91c1c,color:#fff
+    style F fill:#059669,stroke:#047857,color:#fff
+```
+
 ## Core Rule
 **Build systems that run without you. Every manual process is technical debt.**  
 Document before you automate. Automate before you hire.

@@ -1,5 +1,23 @@
 # Product & MVP Playbook
 
+```mermaid
+graph LR
+    A[Identify Riskiest Assumption] --> B[Pick MVP Type]
+    B --> C[Build Minimum Scope]
+    C --> D[Ship to 10 Users]
+    D --> E[Collect Feedback]
+    E --> F{Learning Achieved?}
+    F -- Yes --> G[Iterate / Scale]
+    F -- No --> A
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style C fill:#2563eb,stroke:#1e40af,color:#fff
+    style D fill:#059669,stroke:#047857,color:#fff
+    style E fill:#d97706,stroke:#b45309,color:#fff
+    style F fill:#dc2626,stroke:#b91c1c,color:#fff
+    style G fill:#059669,stroke:#047857,color:#fff
+```
+
 ## Core Rule
 **Ship fast. Learn fast. Kill features that don't serve the core job.**  
 The goal of an MVP is to learn, not to impress.

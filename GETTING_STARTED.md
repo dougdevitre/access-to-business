@@ -4,6 +4,20 @@
 
 Access to Business is a Claude AI skill that acts as your hands-on startup coach. It doesn't just advise — it builds with you. Every session ends with something shipped.
 
+```mermaid
+flowchart LR
+    A["Install Skill"] --> B["/start"]
+    B --> C["Answer 3 Questions"]
+    C --> D["Route to Mode"]
+    D --> E["Build"]
+
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#7b68ee,stroke:#5a4abf,color:#fff
+    style C fill:#f5a623,stroke:#c47d10,color:#fff
+    style D fill:#e67e22,stroke:#b35e0a,color:#fff
+    style E fill:#27ae60,stroke:#1a7a42,color:#fff
+```
+
 ## Installation
 
 ### Option 1: Claude.ai (Recommended)

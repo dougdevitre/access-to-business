@@ -1,5 +1,23 @@
 # One-Sheet System
 
+```mermaid
+flowchart TD
+    A[One-Sheet\nSystem] --> B[Investor\nOne-Sheet]
+    A --> C[Product\nOne-Sheet]
+    A --> D[Speaker\nOne-Sheet]
+    B --> E[Fundraising\nLeave-Behind]
+    C --> F[Customer\nLeave-Behind]
+    D --> G[Event Booking\nLeave-Behind]
+
+    style A fill:#1e3a5f,stroke:#4a90d9,color:#ffffff
+    style B fill:#2d5a27,stroke:#5cb85c,color:#ffffff
+    style C fill:#7a4f00,stroke:#f0ad4e,color:#ffffff
+    style D fill:#5a1a2a,stroke:#d9534f,color:#ffffff
+    style E fill:#2d5a27,stroke:#5cb85c,color:#ffffff
+    style F fill:#7a4f00,stroke:#f0ad4e,color:#ffffff
+    style G fill:#5a1a2a,stroke:#d9534f,color:#ffffff
+```
+
 ## What Is a One-Sheet?
 
 A one-sheet is a single-page document that delivers a complete, compelling story in under 60 seconds of reading. It is the physical or digital leave-behind after a pitch, call, or meeting.

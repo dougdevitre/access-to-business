@@ -1,5 +1,23 @@
 # Customer Communications Templates
 
+```mermaid
+flowchart TD
+    C["Customer\nTemplates"] --> OB["Onboarding\n& Welcome"]
+    C --> CS["Check-Ins\n& Success"]
+    C --> CH["Churn &\nCancellation"]
+    C --> NPS["NPS &\nFeedback"]
+    C --> PR["Pricing &\nRenewals"]
+    C --> SUP["Support &\nApology"]
+
+    style C fill:#1b5e20,stroke:#0d3d12,color:#ffffff
+    style OB fill:#2e7d32,stroke:#1b5e20,color:#ffffff
+    style CS fill:#388e3c,stroke:#2e7d32,color:#ffffff
+    style CH fill:#43a047,stroke:#388e3c,color:#ffffff
+    style NPS fill:#66bb6a,stroke:#43a047,color:#1b5e20
+    style PR fill:#81c784,stroke:#66bb6a,color:#1b5e20
+    style SUP fill:#a5d6a7,stroke:#81c784,color:#1b5e20
+```
+
 Load this file for onboarding, check-ins, churn recovery, NPS, price increases, support, and renewals.
 
 ---

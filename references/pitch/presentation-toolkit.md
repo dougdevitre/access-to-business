@@ -1,5 +1,17 @@
 # Presentation Toolkit
 
+```mermaid
+flowchart LR
+    A[Speaker Notes\nPrompt System] --> B[Handouts\nLeave-Behinds]
+    B --> C[Demo\nLive Walkthrough]
+    C --> D[Follow-Up\nClose the Loop]
+
+    style A fill:#1e3a5f,stroke:#4a90d9,color:#ffffff
+    style B fill:#2d5a27,stroke:#5cb85c,color:#ffffff
+    style C fill:#7a4f00,stroke:#f0ad4e,color:#ffffff
+    style D fill:#5a1a2a,stroke:#d9534f,color:#ffffff
+```
+
 ## Purpose
 
 This file covers everything that happens around the pitch — before, during, and after. Speaker notes, handouts, supporting materials, and the follow-up system that closes deals.

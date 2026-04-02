@@ -4,6 +4,18 @@
 
 Test cases for verifying that the Access to Business skill triggers correctly on various user inputs.
 
+```mermaid
+flowchart LR
+    A["Load Skill"] --> B["Send Trigger"]
+    B --> C["Check Activation"]
+    C --> D["Verify Route"]
+
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#f5a623,stroke:#c47d10,color:#fff
+    style C fill:#e67e22,stroke:#b35e0a,color:#fff
+    style D fill:#27ae60,stroke:#1a7a42,color:#fff
+```
+
 ### What It Tests
 
 The eval set covers trigger phrases across all skill capabilities:

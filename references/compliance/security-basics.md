@@ -1,5 +1,19 @@
 # Security Basics for Early-Stage Startups
 
+```mermaid
+graph TD
+    A[Authentication] --> B[Encryption]
+    B --> C[Access Control]
+    C --> D[Monitoring]
+    D --> E[Incident Response]
+
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style C fill:#e8a838,stroke:#b8832c,color:#fff
+    style D fill:#7b68ae,stroke:#5a4d82,color:#fff
+    style E fill:#d94a4a,stroke:#a83232,color:#fff
+```
+
 **Build security in from day one. Retrofitting security is 10x more expensive than starting right.**
 
 ---

@@ -1,5 +1,21 @@
 # Legal Templates
 
+```mermaid
+flowchart TD
+    LG["Legal\nTemplates"] --> CF["Co-Founder\nAgreement"]
+    LG --> NDA["Mutual\nNDA"]
+    LG --> VS["Vesting\nSchedule"]
+    LG --> EQ["Equity Offer\nConversation"]
+    LG --> AD["Advisor\nAgreement"]
+
+    style LG fill:#37474f,stroke:#263238,color:#ffffff
+    style CF fill:#455a64,stroke:#37474f,color:#ffffff
+    style NDA fill:#546e7a,stroke:#455a64,color:#ffffff
+    style VS fill:#607d8b,stroke:#546e7a,color:#ffffff
+    style EQ fill:#78909c,stroke:#607d8b,color:#ffffff
+    style AD fill:#90a4ae,stroke:#78909c,color:#263238
+```
+
 Load this file for co-founder agreements, NDAs, vesting schedules, and equity offer conversations.
 
 **Disclaimer:** These are starter templates for educational context. Always review with a licensed attorney before signing or sending legal documents.

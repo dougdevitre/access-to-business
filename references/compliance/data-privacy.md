@@ -1,5 +1,22 @@
 # Data Privacy Compliance
 
+```mermaid
+graph LR
+    A[Data Collection] --> B[Privacy Policy]
+    B --> C{Jurisdiction}
+    C --> D[GDPR]
+    C --> E[CCPA]
+    D --> F[DPA with Vendors]
+    E --> F
+
+    style A fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style B fill:#5ba85b,stroke:#3d7a3d,color:#fff
+    style C fill:#e8a838,stroke:#b8832c,color:#fff
+    style D fill:#d94a4a,stroke:#a83232,color:#fff
+    style E fill:#d94a4a,stroke:#a83232,color:#fff
+    style F fill:#7b68ae,stroke:#5a4d82,color:#fff
+```
+
 **Disclaimer:** Privacy law is jurisdiction-specific and evolves rapidly. This is educational context. Consult a privacy attorney for compliance decisions.
 
 ---

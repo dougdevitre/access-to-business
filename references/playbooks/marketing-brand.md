@@ -1,5 +1,21 @@
 # Marketing & Brand Playbook
 
+```mermaid
+graph LR
+    A[Positioning] --> B[Pick 1 Channel]
+    B --> C[Create Content]
+    C --> D[Measure Results]
+    D --> E{Working?}
+    E -- Yes --> F[Double Down]
+    E -- No --> B
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style C fill:#2563eb,stroke:#1e40af,color:#fff
+    style D fill:#d97706,stroke:#b45309,color:#fff
+    style E fill:#dc2626,stroke:#b91c1c,color:#fff
+    style F fill:#059669,stroke:#047857,color:#fff
+```
+
 ## Core Rule
 **Pick one channel. Go deep before going wide.** Most early startups fail at marketing by spreading thin across 5 channels instead of dominating 1.
 

@@ -1,5 +1,23 @@
 # Legal & Formation Playbook
 
+```mermaid
+graph LR
+    A[Choose Entity Type] --> B{Raising VC?}
+    B -- Yes --> C[Delaware C-Corp]
+    B -- No --> D[LLC]
+    C --> E[File + EIN + Bank]
+    D --> E
+    E --> F[Operating / Equity Agreements]
+    F --> G[Licenses & Compliance]
+    style A fill:#2563eb,stroke:#1e40af,color:#fff
+    style B fill:#d97706,stroke:#b45309,color:#fff
+    style C fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style D fill:#7c3aed,stroke:#5b21b6,color:#fff
+    style E fill:#2563eb,stroke:#1e40af,color:#fff
+    style F fill:#059669,stroke:#047857,color:#fff
+    style G fill:#059669,stroke:#047857,color:#fff
+```
+
 **Disclaimer:** This is educational context only — not legal advice. Always consult a licensed attorney for entity formation, equity, and compliance decisions.
 
 ---

@@ -1,5 +1,26 @@
 # Session & Flow Commands
 
+```mermaid
+graph LR
+    start["/start"] --> focus["/focus"]
+    start --> sprint["/sprint"]
+    focus --> next["Task complete"]
+    sprint --> next
+    recover["/recover"] --> focus
+    decide["/decide"] --> focus
+    energy["/energy"] --> focus
+    help["/help"] --> start
+
+    style start fill:#2563eb,stroke:#1e40af,color:#fff
+    style focus fill:#16a34a,stroke:#166534,color:#fff
+    style sprint fill:#16a34a,stroke:#166534,color:#fff
+    style recover fill:#dc2626,stroke:#991b1b,color:#fff
+    style decide fill:#9333ea,stroke:#6b21a8,color:#fff
+    style energy fill:#ea580c,stroke:#9a3412,color:#fff
+    style help fill:#64748b,stroke:#334155,color:#fff
+    style next fill:#059669,stroke:#065f46,color:#fff
+```
+
 Load this file when the user types: `/start` `/focus` `/sprint` `/recover` `/decide` `/energy` `/help`
 
 ---
