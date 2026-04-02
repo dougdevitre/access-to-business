@@ -9,6 +9,7 @@ Access to Business is a Claude AI skill that acts as your hands-on startup coach
 ### Option 1: Claude.ai (Recommended)
 
 1. Download the latest `.skill` file from [Releases](https://github.com/dougdevitre/access-to-business/releases)
+
 2. Go to **Claude.ai > Settings > Skills**
 3. Upload the `.skill` file
 4. Start a new conversation and type `/start`

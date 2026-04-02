@@ -3,7 +3,7 @@ name: access-to-business
 description: >
   Access to Business — open-source AI startup coach, execution engine, pitch generator,
   and investor binder builder for founders anywhere. Part of the "Access To" civic tech
-  initiative by CoTrackPro. Trigger for ANY startup need: "I'm stuck", "I need revenue",
+  initiative by Doug DeVitre. Trigger for ANY startup need: "I'm stuck", "I need revenue",
   "help me validate", "pitch deck", "investor binder", "fundraising", "cap table", "MVP",
   "go-to-market", "burn rate", "runway", "pricing", "unit economics", "SAFE note", "LLC",
   "EIN", "vesting", "409A", "QSBS", "build my binder", "prepare for investors", "data room",
