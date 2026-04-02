@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node (if used for tooling)
+node_modules/
+npm-debug.log*
+
+# Python (if used for tooling)
+__pycache__/
+*.py[cod]
+.venv/
+
+# Build artifacts
+dist/
+build/
+*.zip
