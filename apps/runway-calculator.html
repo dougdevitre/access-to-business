@@ -9,186 +9,155 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: #0f1117;
-    color: #e1e4e8;
+    color: #e2e4e9;
     min-height: 100vh;
     padding: 20px;
   }
   .container { max-width: 640px; margin: 0 auto; }
   h1 {
-    text-align: center;
     font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
     margin-bottom: 8px;
-    color: #58a6ff;
+    color: #fff;
   }
   .subtitle {
     text-align: center;
-    color: #8b949e;
-    margin-bottom: 32px;
+    color: #8b8fa3;
     font-size: 0.9rem;
+    margin-bottom: 32px;
   }
   .card {
-    background: #161b22;
-    border: 1px solid #30363d;
+    background: #1a1d27;
+    border: 1px solid #2a2d3a;
     border-radius: 12px;
     padding: 24px;
     margin-bottom: 20px;
   }
   .card h2 {
     font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 20px;
-    color: #c9d1d9;
+    color: #c0c3ce;
   }
-  .input-group {
-    margin-bottom: 16px;
-  }
+  .input-group { margin-bottom: 16px; }
   .input-group label {
     display: block;
     font-size: 0.85rem;
-    color: #8b949e;
+    color: #8b8fa3;
     margin-bottom: 6px;
   }
   .input-group input[type="number"] {
     width: 100%;
-    padding: 10px 14px;
-    background: #0d1117;
-    border: 1px solid #30363d;
+    padding: 12px 14px;
+    background: #12141c;
+    border: 1px solid #2a2d3a;
     border-radius: 8px;
-    color: #e1e4e8;
+    color: #e2e4e9;
     font-size: 1rem;
     outline: none;
     transition: border-color 0.2s;
   }
-  .input-group input:focus {
-    border-color: #58a6ff;
-  }
-  .results {
+  .input-group input[type="number"]:focus { border-color: #6366f1; }
+  .results-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     margin-bottom: 20px;
   }
-  @media (max-width: 480px) {
-    .results { grid-template-columns: 1fr; }
-  }
   .result-item {
-    background: #0d1117;
-    border-radius: 8px;
+    background: #12141c;
+    border-radius: 10px;
     padding: 16px;
     text-align: center;
   }
-  .result-item .label {
-    font-size: 0.75rem;
-    color: #8b949e;
+  .result-item.full { grid-column: 1 / -1; }
+  .result-label {
+    font-size: 0.8rem;
+    color: #8b8fa3;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 6px;
   }
-  .result-item .value {
+  .result-value {
     font-size: 1.5rem;
     font-weight: 700;
-  }
-  .result-item .unit {
-    font-size: 0.8rem;
-    color: #8b949e;
+    color: #fff;
   }
   .runway-bar-container {
-    margin: 20px 0;
-  }
-  .runway-bar-bg {
-    width: 100%;
-    height: 24px;
-    background: #21262d;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-  }
-  .runway-bar-fill {
-    height: 100%;
-    border-radius: 12px;
-    transition: width 0.4s ease, background 0.4s ease;
-    min-width: 2%;
+    background: #12141c;
+    border-radius: 10px;
+    padding: 16px;
   }
   .runway-bar-label {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
-    color: #8b949e;
-    margin-top: 6px;
-  }
-  .green { color: #3fb950; }
-  .yellow { color: #d29922; }
-  .red { color: #f85149; }
-  .bg-green { background: #238636; }
-  .bg-yellow { background: #9e6a03; }
-  .bg-red { background: #da3633; }
-  .whatif-section {
-    margin-top: 8px;
-  }
-  .slider-group {
-    margin-bottom: 16px;
-  }
-  .slider-group .slider-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 0.8rem;
+    color: #8b8fa3;
     margin-bottom: 8px;
   }
+  .runway-bar {
+    height: 20px;
+    background: #2a2d3a;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .runway-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.4s ease, background 0.4s ease;
+  }
+  .green { background: #22c55e; }
+  .yellow { background: #eab308; }
+  .red { background: #ef4444; }
+  .color-green { color: #22c55e; }
+  .color-yellow { color: #eab308; }
+  .color-red { color: #ef4444; }
+  .slider-group { margin-bottom: 16px; }
   .slider-group label {
+    display: flex;
+    justify-content: space-between;
     font-size: 0.85rem;
-    color: #8b949e;
+    color: #8b8fa3;
+    margin-bottom: 8px;
   }
-  .slider-group .slider-value {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #58a6ff;
-  }
+  .slider-group label span { color: #6366f1; font-weight: 600; }
   input[type="range"] {
-    width: 100%;
     -webkit-appearance: none;
-    appearance: none;
+    width: 100%;
     height: 6px;
-    background: #30363d;
+    background: #2a2d3a;
     border-radius: 3px;
     outline: none;
   }
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
     width: 20px;
     height: 20px;
+    background: #6366f1;
     border-radius: 50%;
-    background: #58a6ff;
     cursor: pointer;
   }
   input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
+    background: #6366f1;
     border-radius: 50%;
-    background: #58a6ff;
     cursor: pointer;
     border: none;
   }
   .whatif-result {
-    background: #0d1117;
-    border-radius: 8px;
+    background: #12141c;
+    border-radius: 10px;
     padding: 16px;
-    display: flex;
-    justify-content: space-around;
     text-align: center;
+    margin-top: 12px;
   }
-  .whatif-result .wi-label {
-    font-size: 0.75rem;
-    color: #8b949e;
-    margin-bottom: 4px;
-  }
-  .whatif-result .wi-value {
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
+  .whatif-result .result-value { font-size: 1.25rem; }
   .disclaimer {
     text-align: center;
     font-size: 0.75rem;
-    color: #484f58;
+    color: #555;
     margin-top: 24px;
   }
 </style>
@@ -201,83 +170,59 @@
   <div class="card">
     <h2>Your Numbers</h2>
     <div class="input-group">
-      <label>Current Cash Balance ($)</label>
-      <input type="number" id="cash" placeholder="500000" min="0" step="1000">
+      <label for="cash">Current Cash Balance ($)</label>
+      <input type="number" id="cash" placeholder="e.g. 500000" oninput="calculate()">
     </div>
     <div class="input-group">
-      <label>Monthly Burn Rate ($)</label>
-      <input type="number" id="burn" placeholder="50000" min="0" step="1000">
+      <label for="burn">Monthly Burn Rate ($)</label>
+      <input type="number" id="burn" placeholder="e.g. 40000" oninput="calculate()">
     </div>
     <div class="input-group">
-      <label>Monthly Revenue ($)</label>
-      <input type="number" id="revenue" placeholder="10000" min="0" step="1000">
+      <label for="revenue">Monthly Revenue ($)</label>
+      <input type="number" id="revenue" placeholder="e.g. 10000" value="0" oninput="calculate()">
     </div>
   </div>
 
-  <div class="card">
-    <h2>Runway Overview</h2>
-    <div class="results">
+  <div class="card" id="resultsCard" style="display:none;">
+    <h2>Runway Analysis</h2>
+    <div class="results-grid">
       <div class="result-item">
-        <div class="label">Net Burn</div>
-        <div class="value" id="netBurn">--</div>
-        <div class="unit">/ month</div>
+        <div class="result-label">Net Burn / Mo</div>
+        <div class="result-value" id="netBurn">--</div>
       </div>
       <div class="result-item">
-        <div class="label">Runway</div>
-        <div class="value" id="runway">--</div>
-        <div class="unit">months</div>
+        <div class="result-label">Months of Runway</div>
+        <div class="result-value" id="months">--</div>
       </div>
-      <div class="result-item">
-        <div class="label">Runs Out</div>
-        <div class="value" id="endDate">--</div>
-        <div class="unit" id="endDateYear"></div>
+      <div class="result-item full">
+        <div class="result-label">Cash Runs Out</div>
+        <div class="result-value" id="endDate">--</div>
       </div>
     </div>
     <div class="runway-bar-container">
-      <div class="runway-bar-bg">
-        <div class="runway-bar-fill" id="runwayBar" style="width:0%"></div>
-      </div>
       <div class="runway-bar-label">
-        <span>0 mo</span>
-        <span>6 mo</span>
-        <span>12 mo</span>
-        <span>18 mo</span>
-        <span>24 mo</span>
+        <span>Now</span>
+        <span id="barLabel">-- months</span>
+      </div>
+      <div class="runway-bar">
+        <div class="runway-bar-fill" id="barFill" style="width:0%"></div>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <h2>What If?</h2>
-    <div class="whatif-section">
-      <div class="slider-group">
-        <div class="slider-header">
-          <label>Adjust Burn Rate</label>
-          <span class="slider-value" id="sliderBurnLabel">--</span>
-        </div>
-        <input type="range" id="burnSlider" min="0" max="200000" step="1000" value="50000">
-      </div>
-      <div class="slider-group">
-        <div class="slider-header">
-          <label>Adjust Revenue</label>
-          <span class="slider-value" id="sliderRevLabel">--</span>
-        </div>
-        <input type="range" id="revSlider" min="0" max="200000" step="1000" value="10000">
-      </div>
-      <div class="whatif-result">
-        <div>
-          <div class="wi-label">New Net Burn</div>
-          <div class="wi-value" id="wiNetBurn">--</div>
-        </div>
-        <div>
-          <div class="wi-label">New Runway</div>
-          <div class="wi-value" id="wiRunway">--</div>
-        </div>
-        <div>
-          <div class="wi-label">Change</div>
-          <div class="wi-value" id="wiDelta">--</div>
-        </div>
-      </div>
+  <div class="card" id="whatifCard" style="display:none;">
+    <h2>What If? Adjust Burn Rate</h2>
+    <div class="slider-group">
+      <label>Adjusted Monthly Burn <span id="sliderVal">$0</span></label>
+      <input type="range" id="burnSlider" min="0" max="200000" step="1000" oninput="whatif()">
+    </div>
+    <div class="whatif-result">
+      <div class="result-label">Adjusted Runway</div>
+      <div class="result-value" id="whatifMonths">--</div>
+    </div>
+    <div class="whatif-result" style="margin-top:8px;">
+      <div class="result-label">Adjusted End Date</div>
+      <div class="result-value" id="whatifDate">--</div>
     </div>
   </div>
 
@@ -285,119 +230,81 @@
 </div>
 
 <script>
-  const $ = id => document.getElementById(id);
-  const fmt = n => {
-    if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
-    if (n >= 1e3) return '$' + (n / 1e3).toFixed(0) + 'K';
-    return '$' + n.toLocaleString();
-  };
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
 
-  function getInputs() {
-    return {
-      cash: parseFloat($('cash').value) || 0,
-      burn: parseFloat($('burn').value) || 0,
-      revenue: parseFloat($('revenue').value) || 0
-    };
+function getColorClass(months) {
+  if (months < 6) return { text: 'color-red', bar: 'red' };
+  if (months < 12) return { text: 'color-yellow', bar: 'yellow' };
+  return { text: 'color-green', bar: 'green' };
+}
+
+function endDateStr(months) {
+  if (months === Infinity) return 'Never (profitable)';
+  var d = new Date();
+  d.setMonth(d.getMonth() + Math.floor(months));
+  d.setDate(d.getDate() + Math.round((months % 1) * 30));
+  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
+function calculate() {
+  var cash = parseFloat(document.getElementById('cash').value) || 0;
+  var burn = parseFloat(document.getElementById('burn').value) || 0;
+  var revenue = parseFloat(document.getElementById('revenue').value) || 0;
+  if (cash <= 0 || burn <= 0) {
+    document.getElementById('resultsCard').style.display = 'none';
+    document.getElementById('whatifCard').style.display = 'none';
+    return;
   }
+  document.getElementById('resultsCard').style.display = '';
+  document.getElementById('whatifCard').style.display = '';
 
-  function calcRunway(cash, netBurn) {
-    if (netBurn <= 0) return Infinity;
-    return cash / netBurn;
-  }
+  var net = burn - revenue;
+  var months = net <= 0 ? Infinity : cash / net;
+  var monthsDisplay = net <= 0 ? 'Infinite' : months.toFixed(1);
 
-  function runwayColor(months) {
-    if (months > 12) return 'green';
-    if (months >= 6) return 'yellow';
-    return 'red';
-  }
+  document.getElementById('netBurn').textContent = net <= 0 ? 'Cash-flow positive' : fmt(net);
 
-  function update() {
-    const { cash, burn, revenue } = getInputs();
-    const netBurn = Math.max(burn - revenue, 0);
-    const months = calcRunway(cash, netBurn);
+  var colors = months === Infinity ? { text: 'color-green', bar: 'green' } : getColorClass(months);
 
-    $('netBurn').textContent = fmt(netBurn);
-    const color = runwayColor(months);
-    $('netBurn').className = 'value ' + color;
+  var mEl = document.getElementById('months');
+  mEl.textContent = monthsDisplay;
+  mEl.className = 'result-value ' + colors.text;
 
-    if (months === Infinity) {
-      $('runway').textContent = '\u221e';
-      $('runway').className = 'value green';
-      $('endDate').textContent = 'Never';
-      $('endDateYear').textContent = '';
-    } else {
-      $('runway').textContent = months.toFixed(1);
-      $('runway').className = 'value ' + color;
-      const end = new Date();
-      end.setMonth(end.getMonth() + Math.floor(months));
-      const moNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      $('endDate').textContent = moNames[end.getMonth()] + ' ' + end.getDate();
-      $('endDateYear').textContent = end.getFullYear();
-    }
+  document.getElementById('endDate').textContent = endDateStr(months);
+  document.getElementById('endDate').className = 'result-value ' + colors.text;
 
-    // Bar: 24 months = 100%
-    const pct = months === Infinity ? 100 : Math.min((months / 24) * 100, 100);
-    const bar = $('runwayBar');
-    bar.style.width = pct + '%';
-    bar.className = 'runway-bar-fill bg-' + color;
+  var pct = months === Infinity ? 100 : Math.min(100, (months / 24) * 100);
+  var fill = document.getElementById('barFill');
+  fill.style.width = pct + '%';
+  fill.className = 'runway-bar-fill ' + colors.bar;
+  document.getElementById('barLabel').textContent = months === Infinity ? 'Profitable' : monthsDisplay + ' months';
 
-    // Sync sliders
-    $('burnSlider').value = burn;
-    $('burnSlider').max = Math.max(burn * 2, 200000);
-    $('revSlider').value = revenue;
-    $('revSlider').max = Math.max(revenue * 2, 200000);
-    updateWhatIf();
-  }
+  var slider = document.getElementById('burnSlider');
+  slider.max = Math.max(burn * 2, 10000);
+  slider.value = burn;
+  whatif();
+}
 
-  function updateWhatIf() {
-    const cash = parseFloat($('cash').value) || 0;
-    const origBurn = parseFloat($('burn').value) || 0;
-    const origRev = parseFloat($('revenue').value) || 0;
-    const origNet = Math.max(origBurn - origRev, 0);
-    const origMonths = calcRunway(cash, origNet);
+function whatif() {
+  var cash = parseFloat(document.getElementById('cash').value) || 0;
+  var revenue = parseFloat(document.getElementById('revenue').value) || 0;
+  var adjBurn = parseFloat(document.getElementById('burnSlider').value) || 0;
 
-    const newBurn = parseFloat($('burnSlider').value);
-    const newRev = parseFloat($('revSlider').value);
-    const newNet = Math.max(newBurn - newRev, 0);
-    const newMonths = calcRunway(cash, newNet);
+  document.getElementById('sliderVal').textContent = fmt(adjBurn);
 
-    $('sliderBurnLabel').textContent = fmt(newBurn);
-    $('sliderRevLabel').textContent = fmt(newRev);
-    $('wiNetBurn').textContent = fmt(newNet);
+  var net = adjBurn - revenue;
+  var months = net <= 0 ? Infinity : cash / net;
+  var colors = months === Infinity ? { text: 'color-green', bar: 'green' } : getColorClass(months);
 
-    const color = runwayColor(newMonths);
-    if (newMonths === Infinity) {
-      $('wiRunway').textContent = '\u221e';
-      $('wiRunway').className = 'wi-value green';
-    } else {
-      $('wiRunway').textContent = newMonths.toFixed(1) + ' mo';
-      $('wiRunway').className = 'wi-value ' + color;
-    }
+  var mEl = document.getElementById('whatifMonths');
+  mEl.textContent = months === Infinity ? 'Infinite' : months.toFixed(1) + ' months';
+  mEl.className = 'result-value ' + colors.text;
 
-    let delta;
-    if (newMonths === Infinity && origMonths === Infinity) delta = 0;
-    else if (newMonths === Infinity) delta = Infinity;
-    else if (origMonths === Infinity) delta = -Infinity;
-    else delta = newMonths - origMonths;
-
-    if (delta === Infinity) {
-      $('wiDelta').textContent = '+\u221e';
-      $('wiDelta').className = 'wi-value green';
-    } else if (delta === -Infinity) {
-      $('wiDelta').textContent = '-\u221e';
-      $('wiDelta').className = 'wi-value red';
-    } else {
-      const sign = delta >= 0 ? '+' : '';
-      $('wiDelta').textContent = sign + delta.toFixed(1) + ' mo';
-      $('wiDelta').className = 'wi-value ' + (delta >= 0 ? 'green' : 'red');
-    }
-  }
-
-  $('cash').addEventListener('input', update);
-  $('burn').addEventListener('input', update);
-  $('revenue').addEventListener('input', update);
-  $('burnSlider').addEventListener('input', updateWhatIf);
-  $('revSlider').addEventListener('input', updateWhatIf);
+  document.getElementById('whatifDate').textContent = endDateStr(months);
+  document.getElementById('whatifDate').className = 'result-value ' + colors.text;
+}
 </script>
 </body>
 </html>
