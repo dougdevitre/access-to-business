@@ -1,32 +1,52 @@
-# Advisor Toolkit Directory
+# Advisor Toolkit
+
+Tools, frameworks, and templates for startup advisors and mentors working with early-stage founders.
 
 ```mermaid
-graph TD
-    PREP[session-prep.md\nSession Preparation] --> DIAG[diagnostic-frameworks.md\nQuick Diagnostics]
-    DIAG --> ACTION[Identify Top Issue]
-    ACTION --> ADVISE[Give Direct Feedback]
-    ADVISE --> TRACK[portfolio-tools.md\nPortfolio Tracking]
-    TRACK --> CONNECT[Make Intros & Connections]
-    CONNECT --> REVIEW[Quarterly Portfolio Review]
-    REVIEW --> PREP
+flowchart TD
+    ATK["Advisor Toolkit"] --> SP["Session Prep\nsession-prep.md"]
+    ATK --> DF["Diagnostic Frameworks\ndiagnostic-frameworks.md"]
+    ATK --> PT["Portfolio Tools\nportfolio-tools.md"]
 
-    style PREP fill:#2563eb,stroke:#1e40af,color:#fff
-    style DIAG fill:#d97706,stroke:#b45309,color:#fff
-    style ACTION fill:#dc2626,stroke:#b91c1c,color:#fff
-    style ADVISE fill:#7c3aed,stroke:#5b21b6,color:#fff
-    style TRACK fill:#059669,stroke:#047857,color:#fff
-    style CONNECT fill:#fb923c,stroke:#ea580c,color:#000
-    style REVIEW fill:#22c55e,stroke:#16a34a,color:#fff
+    SP --> PRE["Pre-Session\nAssessment"]
+    SP --> AGD["Agenda\nTemplates"]
+    SP --> FBK["Feedback\nMethods"]
+
+    DF --> VS["5 Vital Signs\nCheck"]
+    DF --> BN["Bottleneck\nIdentifier"]
+    DF --> SM["Stage Mismatch\nDetector"]
+
+    PT --> TRK["Portfolio\nTracker"]
+    PT --> INTRO["Intro Email\nTemplates"]
+    PT --> QR["Quarterly\nReview"]
+
+    style ATK fill:#1a237e,stroke:#0d1147,color:#ffffff
+    style SP fill:#283593,stroke:#1a237e,color:#ffffff
+    style DF fill:#303f9f,stroke:#283593,color:#ffffff
+    style PT fill:#3949ab,stroke:#303f9f,color:#ffffff
+    style PRE fill:#5c6bc0,stroke:#3949ab,color:#ffffff
+    style AGD fill:#5c6bc0,stroke:#3949ab,color:#ffffff
+    style FBK fill:#5c6bc0,stroke:#3949ab,color:#ffffff
+    style VS fill:#7986cb,stroke:#5c6bc0,color:#ffffff
+    style BN fill:#7986cb,stroke:#5c6bc0,color:#ffffff
+    style SM fill:#7986cb,stroke:#5c6bc0,color:#ffffff
+    style TRK fill:#9fa8da,stroke:#7986cb,color:#1a237e
+    style INTRO fill:#9fa8da,stroke:#7986cb,color:#1a237e
+    style QR fill:#9fa8da,stroke:#7986cb,color:#1a237e
 ```
 
 ## Files in This Directory
 
-| File | Focus | Use When |
-|------|-------|----------|
-| `session-prep.md` | Pre-session diagnostics, agenda templates, feedback methods | Preparing for any founder meeting |
-| `diagnostic-frameworks.md` | 5 Vital Signs, bottleneck ID, stage mismatch detection | Running a quick health check on a startup |
-| `portfolio-tools.md` | Portfolio tracker, intro templates, quarterly review | Managing multiple founders or making connections |
+| File | Purpose |
+|------|---------|
+| `session-prep.md` | Pre-session assessment, agenda templates, bottleneck questions, feedback methods |
+| `diagnostic-frameworks.md` | 15-minute diagnostic frameworks: vital signs, bottleneck ID, stage mismatch detection |
+| `portfolio-tools.md` | Portfolio tracker, intro email templates, quarterly review template |
 
-## Loading Rule
+## When to Load
 
-Load only the advisor tool relevant to the current task. Never load all advisor files at once.
+Load these files when:
+- An advisor or mentor asks how to run effective founder sessions
+- Someone needs diagnostic frameworks for evaluating startups quickly
+- An advisor is managing multiple founders and needs tracking tools
+- A founder asks how to get the most out of their advisor relationship
