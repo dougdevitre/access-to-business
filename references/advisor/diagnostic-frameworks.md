@@ -1,155 +1,304 @@
 # Quick Diagnostic Frameworks
 
-Run any of these in 15 minutes or less. Designed for advisors who need to assess a startup's health fast and pinpoint where to focus.
+Run any of these in 15 minutes or less. Designed for advisors who need to assess a startup fast.
 
 ```mermaid
-graph TD
-    START[Start Diagnostic] --> VITALS[5 Vital Signs Check]
-    VITALS --> HEALTHY{All Signs Healthy?}
-    HEALTHY -- Yes --> STAGE[Stage Mismatch Detector]
-    HEALTHY -- No --> BOTTLENECK[Bottleneck Identifier]
-    BOTTLENECK --> ROOT[Root Cause Found]
-    STAGE --> MISMATCH{Mismatch Detected?}
-    MISMATCH -- Yes --> REALIGN[Realign Founder to Correct Stage Work]
-    MISMATCH -- No --> OPTIMIZE[Optimize Current Trajectory]
-    ROOT --> PRESCRIBE[Prescribe 1-3 Actions]
-    REALIGN --> PRESCRIBE
-    OPTIMIZE --> PRESCRIBE
+flowchart TD
+    DIAG["15-Minute\nDiagnostics"] --> VS["5 Vital Signs\nCheck"]
+    DIAG --> BN["Bottleneck\nIdentifier"]
+    DIAG --> SM["Stage Mismatch\nDetector"]
 
-    style START fill:#2563eb,stroke:#1e40af,color:#fff
-    style VITALS fill:#d97706,stroke:#b45309,color:#fff
-    style HEALTHY fill:#fbbf24,stroke:#d97706,color:#000
-    style BOTTLENECK fill:#dc2626,stroke:#b91c1c,color:#fff
-    style ROOT fill:#dc2626,stroke:#b91c1c,color:#fff
-    style STAGE fill:#7c3aed,stroke:#5b21b6,color:#fff
-    style MISMATCH fill:#fbbf24,stroke:#d97706,color:#000
-    style REALIGN fill:#fb923c,stroke:#ea580c,color:#000
-    style OPTIMIZE fill:#059669,stroke:#047857,color:#fff
-    style PRESCRIBE fill:#22c55e,stroke:#16a34a,color:#fff
+    VS --> REV["Revenue\nTrend"]
+    VS --> BURN["Burn\nRate"]
+    VS --> PIPE["Pipeline\nHealth"]
+    VS --> TEAM["Team\nHealth"]
+    VS --> ENERGY["Founder\nEnergy"]
+
+    BN --> PROD["Product"]
+    BN --> MKT["Market"]
+    BN --> PPL["Team"]
+    BN --> CAP["Capital"]
+    BN --> FDR["Founder"]
+
+    SM --> S1["Stage 1\nProblem-Solution"]
+    SM --> S2["Stage 2\nProduct-Market Fit"]
+    SM --> S3["Stage 3\nScale"]
+
+    VS --> SCORE["Score:\nHealthy / Warning / Critical"]
+    BN --> ROOT["Root Cause\nIdentified"]
+    SM --> FIX["Realign Work\nto Actual Stage"]
+
+    style DIAG fill:#1a237e,stroke:#0d1147,color:#ffffff
+    style VS fill:#22c55e,stroke:#16a34a,color:#ffffff
+    style BN fill:#f59e0b,stroke:#d97706,color:#ffffff
+    style SM fill:#8b5cf6,stroke:#7c3aed,color:#ffffff
+    style SCORE fill:#22c55e,stroke:#16a34a,color:#ffffff
+    style ROOT fill:#f59e0b,stroke:#d97706,color:#ffffff
+    style FIX fill:#8b5cf6,stroke:#7c3aed,color:#ffffff
+    style REV fill:#86efac,stroke:#22c55e,color:#1a237e
+    style BURN fill:#86efac,stroke:#22c55e,color:#1a237e
+    style PIPE fill:#86efac,stroke:#22c55e,color:#1a237e
+    style TEAM fill:#86efac,stroke:#22c55e,color:#1a237e
+    style ENERGY fill:#86efac,stroke:#22c55e,color:#1a237e
+    style PROD fill:#fcd34d,stroke:#f59e0b,color:#1a237e
+    style MKT fill:#fcd34d,stroke:#f59e0b,color:#1a237e
+    style PPL fill:#fcd34d,stroke:#f59e0b,color:#1a237e
+    style CAP fill:#fcd34d,stroke:#f59e0b,color:#1a237e
+    style FDR fill:#fcd34d,stroke:#f59e0b,color:#1a237e
+    style S1 fill:#c4b5fd,stroke:#8b5cf6,color:#1a237e
+    style S2 fill:#c4b5fd,stroke:#8b5cf6,color:#1a237e
+    style S3 fill:#c4b5fd,stroke:#8b5cf6,color:#1a237e
 ```
 
 ---
 
 ## Framework 1: The 5 Vital Signs Check
 
-Like a doctor checking pulse, temperature, and blood pressure, these five metrics tell you whether a startup is healthy, struggling, or in crisis.
+Like a doctor checking pulse, temperature, and blood pressure, these five metrics give you a fast read on startup health.
 
 ### How to Run It
 
-Ask the founder for each vital sign. Score each one Green / Yellow / Red. Two or more Reds = crisis mode. Two or more Yellows = course correction needed.
-
-| # | Vital Sign | Green | Yellow | Red |
-|---|-----------|-------|--------|-----|
-| 1 | **Revenue Trend** | Growing MoM (even slowly) | Flat for 2+ months | Declining or zero after 6+ months in market |
-| 2 | **Burn Rate** | 12+ months runway | 6-12 months runway | Under 6 months runway |
-| 3 | **Pipeline** | Active conversations, demos, or trials | Some inbound but nothing closing | No pipeline. Waiting for leads to appear. |
-| 4 | **Team Health** | Aligned, shipping, low conflict | One key role missing or one simmering conflict | Co-founder dispute, key departure, or founder doing everything alone |
-| 5 | **Founder Energy** | Motivated, clear-headed, sleeping | Tired but functional, some doubt | Burnt out, dreading work, unable to make decisions |
-
-### Vital Signs Scorecard Template
+Ask the founder for each vital sign. Score each as Healthy, Warning, or Critical.
 
 ```
-Company: [COMPANY NAME]
+5 VITAL SIGNS — QUICK CHECK
+
+Company: [COMPANY]
 Date: [DATE]
-Advisor: [YOUR NAME]
+Advisor: [NAME]
 
-Revenue Trend:   [ ] Green  [ ] Yellow  [ ] Red
-  Notes: _______________________________________________
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VITAL SIGN 1: REVENUE TREND
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Burn Rate:       [ ] Green  [ ] Yellow  [ ] Red
-  Notes: _______________________________________________
+Current MRR/Revenue:  $[AMOUNT]
+3-month trend:        [UP / FLAT / DOWN]  [X%]
+Target:               $[AMOUNT]
 
-Pipeline:        [ ] Green  [ ] Yellow  [ ] Red
-  Notes: _______________________________________________
+Scoring:
+  Healthy  — Growing 10%+ MoM (early stage) or on plan
+  Warning  — Flat for 2+ months or 20%+ below plan
+  Critical — Declining for 2+ months
 
-Team Health:     [ ] Green  [ ] Yellow  [ ] Red
-  Notes: _______________________________________________
+Score: [ HEALTHY / WARNING / CRITICAL ]
 
-Founder Energy:  [ ] Green  [ ] Yellow  [ ] Red
-  Notes: _______________________________________________
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VITAL SIGN 2: BURN RATE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Overall Assessment: ____________________________________
-Top Priority: _________________________________________
+Monthly burn:    $[AMOUNT]
+Cash in bank:    $[AMOUNT]
+Runway:          [X] months
+
+Scoring:
+  Healthy  — 12+ months runway
+  Warning  — 6-12 months runway
+  Critical — Under 6 months and not actively raising
+
+Score: [ HEALTHY / WARNING / CRITICAL ]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VITAL SIGN 3: PIPELINE HEALTH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Active leads/opportunities:  [NUMBER]
+Conversion rate:             [X%]
+Average deal cycle:          [X] days/weeks
+Pipeline coverage:           [X]x of target
+
+Scoring:
+  Healthy  — 3x+ pipeline coverage, stable conversion
+  Warning  — Under 2x coverage or conversion dropping
+  Critical — No pipeline, relying on 1-2 deals, or no outbound activity
+
+Score: [ HEALTHY / WARNING / CRITICAL ]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VITAL SIGN 4: TEAM HEALTH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Team size:           [NUMBER]
+Recent departures:   [NUMBER] in last 90 days
+Open critical roles: [NUMBER]
+Co-founder alignment: [STRONG / STRAINED / BROKEN]
+
+Scoring:
+  Healthy  — Team stable, co-founders aligned, key roles filled
+  Warning  — 1 key departure or open critical role, or co-founder tension
+  Critical — Multiple departures, co-founder conflict, or cannot hire
+
+Score: [ HEALTHY / WARNING / CRITICAL ]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VITAL SIGN 5: FOUNDER ENERGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Self-reported energy (1-10):  [SCORE]
+Hours working per week:       [NUMBER]
+Last full day off:            [DATE]
+Sleep quality:                [GOOD / OK / POOR]
+
+Scoring:
+  Healthy  — Energy 7+, sustainable pace, regular recovery
+  Warning  — Energy 4-6, working 70+ hrs, no recent break
+  Critical — Energy 1-3, signs of burnout, health issues
+
+Score: [ HEALTHY / WARNING / CRITICAL ]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OVERALL ASSESSMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Healthy count:  [X] / 5
+Warning count:  [X] / 5
+Critical count: [X] / 5
+
+Interpretation:
+  5 Healthy          — Maintain cadence. Focus on growth strategy.
+  3-4 Healthy        — Address warnings before they become critical.
+  Any 1 Critical     — This session's entire focus should be the critical item.
+  2+ Critical        — Survival mode. Triage. Focus on the one that buys time.
 ```
 
 ---
 
 ## Framework 2: Bottleneck Identifier
 
-Every startup has one primary constraint at any given time. Find it, and everything else gets easier. This framework sorts the bottleneck into one of five categories.
+Every startup has one root bottleneck at any given time. This framework identifies which of five categories it falls into.
 
-### The 5-Question Sort
+### The Five Bottleneck Categories
 
-Ask these questions in order. The first "yes" reveals the bottleneck category.
+| Category | Symptoms | Key Question |
+|----------|----------|--------------|
+| **Product** | Low engagement, high churn, weak NPS, users not coming back | "Do customers love the product?" |
+| **Market** | Low awareness, hard to find customers, small TAM, no pull | "Can you find and reach customers who want this?" |
+| **Team** | Execution gaps, missed deadlines, key roles empty, conflict | "Do you have the right people doing the right work?" |
+| **Capital** | Running out of money, cannot hire, cannot invest in growth | "Do you have enough money to reach the next milestone?" |
+| **Founder** | Decision paralysis, burnout, skill gaps, avoiding hard conversations | "Is the founder the bottleneck?" |
 
-| # | Question | If Yes, the Bottleneck Is... |
-|---|----------|------------------------------|
-| 1 | "Are people using your product and then leaving?" | **Product** — You have a retention problem. Fix the product before anything else. |
-| 2 | "Do you have a good product but can't find enough customers?" | **Market** — You have a distribution problem. Fix positioning, channel, or ICP. |
-| 3 | "Do you know what to do but can't execute fast enough?" | **Team** — You have a capacity problem. Hire, delegate, or cut scope. |
-| 4 | "Do you have traction but can't afford to grow?" | **Capital** — You have a funding problem. Raise, cut burn, or find non-dilutive money. |
-| 5 | "Do you feel stuck, overwhelmed, or unable to make decisions?" | **Founder** — You have an energy problem. Address this before any business tactic. |
+### How to Run It
 
-### Bottleneck Response Playbook
+```
+BOTTLENECK IDENTIFIER
 
-| Bottleneck | First Action | Second Action | Do NOT Do |
-|-----------|-------------|---------------|-----------|
-| **Product** | Talk to 5 churned users this week | Identify the one feature gap causing churn | Build more features without user input |
-| **Market** | Narrow your ICP to one specific persona | Test 3 new outreach messages this week | "Rebrand" or redesign your website |
-| **Team** | Write a job description for the one hire that unblocks you | Post it in 3 places by Friday | Hire a generalist when you need a specialist |
-| **Capital** | Calculate exact runway in weeks, not months | Decide: raise or cut? No middle ground. | Spend time on anything except extending runway |
-| **Founder** | Take 48 hours off completely | Talk to a founder peer or coach | Push through with willpower alone |
+Step 1: Ask these five questions. The founder rates each 1-5.
+        (1 = severe problem, 5 = no problem)
+
+        Product fit and quality:       [1-5]
+        Market access and demand:      [1-5]
+        Team capability and stability: [1-5]
+        Capital and runway:            [1-5]
+        Founder effectiveness:         [1-5]
+
+Step 2: The lowest score is your primary bottleneck.
+        If two are tied, ask: "Which one, if solved, would fix the other?"
+
+Step 3: Confirm with evidence.
+        "You scored [CATEGORY] lowest. Tell me more about that.
+         What specific evidence do you see?"
+
+Step 4: Check for root cause.
+        Often the visible bottleneck is not the root cause.
+        - Product problem might be caused by Team (wrong engineers)
+        - Market problem might be caused by Product (wrong features for wrong segment)
+        - Capital problem might be caused by Founder (avoiding fundraising)
+
+        Ask: "WHY is [CATEGORY] the bottleneck? What is causing it?"
+
+Step 5: Define the unblock.
+        "What is the single smallest action that would start to unblock this?"
+```
+
+### Common Bottleneck Patterns by Stage
+
+| Stage | Most Common Bottleneck | Second Most Common |
+|-------|----------------------|-------------------|
+| Pre-revenue | Product or Market | Founder |
+| First customers ($0-$10K MRR) | Market | Product |
+| Growth ($10K-$100K MRR) | Team | Capital |
+| Scale ($100K+ MRR) | Team | Founder |
 
 ---
 
 ## Framework 3: Stage Mismatch Detector
 
-The most common advisor finding: the founder is doing work from the wrong stage. Building a sales team at Stage 0 (validation). Obsessing over brand at Stage 1 (product). Raising a Series A with no revenue.
+The most common mistake founders make is doing work that belongs to a different stage. This framework identifies mismatches fast.
 
-### Startup Stage Map
+### The Three Stages
 
-| Stage | Name | Core Job | You're Done When... |
-|-------|------|----------|---------------------|
-| 0 | **Idea** | Validate the problem exists | 10+ people describe the same pain unprompted |
-| 1 | **Validation** | Find product-market fit | Users retain, pay, or refer without being asked |
-| 2 | **Traction** | Build repeatable acquisition | You can predict revenue 30 days out |
-| 3 | **Growth** | Scale what works | Unit economics are positive at 3x current volume |
-| 4 | **Scale** | Build the organization | Company runs without founder in every meeting |
+**Stage 1: Problem-Solution Fit**
+- Goal: Prove the problem exists and someone will pay for a solution
+- Right work: Customer interviews, MVPs, manual delivery, first 5 paying customers
+- Wrong work: Building a sales team, perfecting the brand, optimizing pricing tiers
 
-### Mismatch Detection Questions
+**Stage 2: Product-Market Fit**
+- Goal: Find repeatable acquisition and prove unit economics work
+- Right work: Iterating on product, finding scalable channels, proving retention
+- Wrong work: International expansion, conference speaking, complex partnerships
 
-| Question | If They Say... | Mismatch Signal |
-|----------|---------------|-----------------|
-| "What are you spending most of your time on?" | "Hiring a VP of Sales" | Mismatch if Stage 0-1. You sell first. |
-| "What are you spending most of your time on?" | "Redesigning the logo and website" | Mismatch if Stage 0-1. Nobody cares about your logo yet. |
-| "What are you spending most of your time on?" | "Building features" | Mismatch if they have zero users. Ship and talk to people. |
-| "What are you spending most of your time on?" | "Fundraising" | Mismatch if no revenue and no clear use of funds. |
-| "What are you spending most of your time on?" | "Everything" | Mismatch at any stage. Founders must ruthlessly prioritize. |
+**Stage 3: Scale**
+- Goal: Grow fast with proven unit economics
+- Right work: Hiring, process, systems, expanding channels, raising growth capital
+- Wrong work: Pivoting the product, questioning the market, doing everything yourself
 
-### How to Redirect
+### How to Run It
 
-When you spot a mismatch, use this script:
+```
+STAGE MISMATCH DETECTOR
 
-> "I notice you're spending a lot of time on [ACTIVITY]. That's typically Stage [X] work. Based on what you've told me, you're at Stage [Y]. The single most important thing at Stage [Y] is [CORE JOB]. Can we talk about how to refocus your time on that?"
+Step 1: Determine actual stage.
+        Revenue:     $[AMOUNT] MRR
+        Customers:   [NUMBER] paying
+        Retention:   [X]% monthly
+        Acquisition: [REPEATABLE / EXPERIMENTAL / UNKNOWN]
 
-This is not a criticism. It's a recalibration. Most founders feel relief when someone gives them permission to stop doing the wrong work.
+        Based on these numbers, the company is at Stage: [1 / 2 / 3]
+
+Step 2: List the founder's top 5 activities this week.
+        1. [ACTIVITY]
+        2. [ACTIVITY]
+        3. [ACTIVITY]
+        4. [ACTIVITY]
+        5. [ACTIVITY]
+
+Step 3: Score each activity.
+        For each activity, mark which stage it belongs to.
+
+        Activity 1: Stage [1 / 2 / 3]
+        Activity 2: Stage [1 / 2 / 3]
+        Activity 3: Stage [1 / 2 / 3]
+        Activity 4: Stage [1 / 2 / 3]
+        Activity 5: Stage [1 / 2 / 3]
+
+Step 4: Count mismatches.
+        Activities matching current stage:    [X] / 5
+        Activities from an earlier stage:     [X] / 5  (holding on)
+        Activities from a later stage:        [X] / 5  (jumping ahead)
+
+Step 5: Interpret.
+        4-5 match:   Good stage alignment. Focus on execution.
+        2-3 match:   Moderate mismatch. Redirect 1-2 activities.
+        0-1 match:   Severe mismatch. The founder is working on
+                     the wrong things. This is the session's focus.
+```
+
+### Common Mismatches and Fixes
+
+| Mismatch | What It Looks Like | What to Say |
+|----------|--------------------|-------------|
+| Stage 1 founder doing Stage 3 work | Building a sales team with 2 customers | "You do not have a repeatable sales process to hand off yet. Sell the next 10 yourself." |
+| Stage 2 founder doing Stage 1 work | Still interviewing customers at $50K MRR | "You have product-market fit evidence. Stop validating and start scaling what works." |
+| Stage 3 founder doing Stage 1 work | CEO personally closing every deal at $200K MRR | "You are the bottleneck. Hire a sales leader and give them 90 days to own it." |
+| Stage 1 founder doing Stage 2 work | Optimizing ad spend with 3 customers | "You do not know your ICP yet. Talk to 20 more prospects before spending on ads." |
 
 ---
 
-## Running All Three Together (15 Minutes)
+## Using These Frameworks Together
 
-| Time | Framework | Goal |
-|------|-----------|------|
-| 0-5 min | 5 Vital Signs | Understand overall health |
-| 5-10 min | Bottleneck Identifier | Find the primary constraint |
-| 10-15 min | Stage Mismatch Detector | Verify they're doing the right work for their stage |
+**Recommended sequence for a first diagnostic session:**
 
-After 15 minutes, you should be able to complete this sentence:
+1. Run the **5 Vital Signs** first (5 minutes) to get the overall picture
+2. Run the **Bottleneck Identifier** (5 minutes) to find the root constraint
+3. Run the **Stage Mismatch Detector** (5 minutes) to check if the founder is working on the right things
 
-> "This company is at Stage [X]. Their primary bottleneck is [CATEGORY]. The one thing that would move the needle most is [ACTION]."
-
-If you can say that, you've done your job as a diagnostician. Now switch to advisor mode and help them execute.
-
----
-
-> **Disclaimer:** These diagnostic frameworks are educational tools designed to structure advisory conversations. They do not replace professional business, legal, or financial advice from qualified practitioners.
+If the bottleneck and the stage mismatch point to the same issue, you have high confidence in your diagnosis. If they point to different things, dig deeper -- one is likely the cause of the other.
