@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Economics Calculator</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .container { max-width: 640px; margin: 0 auto; }
+  h1 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+    color: #58a6ff;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8b949e;
+    margin-bottom: 32px;
+    font-size: 0.9rem;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #c9d1d9;
+  }
+  .input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 480px) {
+    .input-grid { grid-template-columns: 1fr; }
+  }
+  .input-group {
+    margin-bottom: 0;
+  }
+  .input-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #8b949e;
+    margin-bottom: 6px;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 10px 14px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #e1e4e8;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .input-group input:focus { border-color: #58a6ff; }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 480px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+  }
+  .metric-card {
+    background: #0d1117;
+    border-radius: 10px;
+    padding: 18px;
+    border-left: 4px solid #30363d;
+    transition: border-color 0.3s;
+  }
+  .metric-card.status-green { border-left-color: #238636; }
+  .metric-card.status-yellow { border-left-color: #9e6a03; }
+  .metric-card.status-red { border-left-color: #da3633; }
+  .metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .metric-label {
+    font-size: 0.8rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .status-dot.green { background: #3fb950; box-shadow: 0 0 6px #3fb95088; }
+  .status-dot.yellow { background: #d29922; box-shadow: 0 0 6px #d2992288; }
+  .status-dot.red { background: #f85149; box-shadow: 0 0 6px #f8514988; }
+  .status-dot.neutral { background: #484f58; }
+  .metric-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .metric-benchmark {
+    font-size: 0.72rem;
+    color: #6e7681;
+  }
+  .green { color: #3fb950; }
+  .yellow { color: #d29922; }
+  .red { color: #f85149; }
+  .neutral { color: #8b949e; }
+  .formula-card {
+    background: #0d1117;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-top: 16px;
+  }
+  .formula-card h3 {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-bottom: 10px;
+  }
+  .formula-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 0.85rem;
+  }
+  .formula-row .f-label { color: #6e7681; }
+  .formula-row .f-value { color: #c9d1d9; font-weight: 500; }
+  .disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #484f58;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Unit Economics Calculator</h1>
+  <p class="subtitle">Understand the real economics of each customer</p>
+
+  <div class="card">
+    <h2>Inputs</h2>
+    <div class="input-grid">
+      <div class="input-group">
+        <label>Customer Acquisition Cost ($)</label>
+        <input type="number" id="cac" placeholder="200" min="0" step="10">
+      </div>
+      <div class="input-group">
+        <label>Avg Revenue Per User / mo ($)</label>
+        <input type="number" id="arpu" placeholder="50" min="0" step="5">
+      </div>
+      <div class="input-group">
+        <label>Monthly Churn Rate (%)</label>
+        <input type="number" id="churn" placeholder="5" min="0" max="100" step="0.5">
+      </div>
+      <div class="input-group">
+        <label>Gross Margin (%)</label>
+        <input type="number" id="margin" placeholder="75" min="0" max="100" step="1">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Key Metrics</h2>
+    <div class="metrics-grid">
+      <div class="metric-card" id="ltvCard">
+        <div class="metric-header">
+          <span class="metric-label">Lifetime Value (LTV)</span>
+          <span class="status-dot neutral" id="ltvDot"></span>
+        </div>
+        <div class="metric-value" id="ltvValue">--</div>
+        <div class="metric-benchmark">Gross-margin-adjusted LTV</div>
+      </div>
+      <div class="metric-card" id="ratioCard">
+        <div class="metric-header">
+          <span class="metric-label">LTV : CAC</span>
+          <span class="status-dot neutral" id="ratioDot"></span>
+        </div>
+        <div class="metric-value" id="ratioValue">--</div>
+        <div class="metric-benchmark">Target: > 3:1</div>
+      </div>
+      <div class="metric-card" id="paybackCard">
+        <div class="metric-header">
+          <span class="metric-label">CAC Payback</span>
+          <span class="status-dot neutral" id="paybackDot"></span>
+        </div>
+        <div class="metric-value" id="paybackValue">--</div>
+        <div class="metric-benchmark">Target: &lt; 12 months</div>
+      </div>
+      <div class="metric-card" id="churnCard">
+        <div class="metric-header">
+          <span class="metric-label">Monthly Churn</span>
+          <span class="status-dot neutral" id="churnDot"></span>
+        </div>
+        <div class="metric-value" id="churnValue">--</div>
+        <div class="metric-benchmark">Target: &lt; 5%</div>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <h3>Breakdown</h3>
+      <div class="formula-row">
+        <span class="f-label">Avg Customer Lifespan</span>
+        <span class="f-value" id="lifespan">--</span>
+      </div>
+      <div class="formula-row">
+        <span class="f-label">Gross Profit / User / mo</span>
+        <span class="f-value" id="gppu">--</span>
+      </div>
+      <div class="formula-row">
+        <span class="f-label">Monthly Recurring Revenue / Customer</span>
+        <span class="f-value" id="mrr">--</span>
+      </div>
+      <div class="formula-row">
+        <span class="f-label">Annual Revenue / Customer</span>
+        <span class="f-value" id="annualRev">--</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="disclaimer">For educational purposes only. Not financial advice.</p>
+</div>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const fmtDollar = n => {
+    if (!isFinite(n)) return '\u221e';
+    if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+    if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+    return '$' + n.toFixed(0);
+  };
+
+  function setMetric(cardId, dotId, valueId, value, statusColor) {
+    $(cardId).className = 'metric-card status-' + statusColor;
+    $(dotId).className = 'status-dot ' + statusColor;
+    $(valueId).textContent = value;
+    $(valueId).className = 'metric-value ' + statusColor;
+  }
+
+  function calculate() {
+    const cac = parseFloat($('cac').value) || 0;
+    const arpu = parseFloat($('arpu').value) || 0;
+    const churn = parseFloat($('churn').value) || 0;
+    const margin = parseFloat($('margin').value) || 0;
+
+    const churnDec = churn / 100;
+    const marginDec = margin / 100;
+
+    // Avg lifespan in months
+    const lifespan = churnDec > 0 ? 1 / churnDec : Infinity;
+    // Gross profit per user per month
+    const gppu = arpu * marginDec;
+    // LTV = ARPU * Gross Margin / Churn
+    const ltv = churnDec > 0 ? (arpu * marginDec) / churnDec : Infinity;
+    // LTV:CAC
+    const ratio = cac > 0 ? ltv / cac : (ltv > 0 ? Infinity : 0);
+    // Payback in months
+    const payback = gppu > 0 ? cac / gppu : Infinity;
+
+    // LTV display
+    setMetric('ltvCard', 'ltvDot', 'ltvValue', fmtDollar(ltv), 'neutral');
+
+    // LTV:CAC
+    let ratioColor = 'red';
+    if (ratio >= 3) ratioColor = 'green';
+    else if (ratio >= 1) ratioColor = 'yellow';
+    const ratioText = isFinite(ratio) ? ratio.toFixed(1) + 'x' : '\u221ex';
+    setMetric('ratioCard', 'ratioDot', 'ratioValue', ratioText, ratioColor);
+
+    // Payback
+    let paybackColor = 'red';
+    if (isFinite(payback) && payback <= 12) paybackColor = 'green';
+    else if (isFinite(payback) && payback <= 18) paybackColor = 'yellow';
+    const paybackText = isFinite(payback) ? payback.toFixed(1) + ' mo' : '\u221e';
+    setMetric('paybackCard', 'paybackDot', 'paybackValue', paybackText, paybackColor);
+
+    // Churn
+    let churnColor = 'red';
+    if (churn > 0 && churn < 5) churnColor = 'green';
+    else if (churn >= 5 && churn <= 10) churnColor = 'yellow';
+    else if (churn === 0) churnColor = 'green';
+    setMetric('churnCard', 'churnDot', 'churnValue', churn.toFixed(1) + '%', churnColor);
+
+    // Breakdown
+    $('lifespan').textContent = isFinite(lifespan) ? lifespan.toFixed(1) + ' months' : '\u221e';
+    $('gppu').textContent = fmtDollar(gppu);
+    $('mrr').textContent = fmtDollar(arpu);
+    $('annualRev').textContent = fmtDollar(arpu * 12);
+  }
+
+  document.querySelectorAll('input').forEach(el => el.addEventListener('input', calculate));
+</script>
+</body>
+</html>
