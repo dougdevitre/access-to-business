@@ -126,11 +126,31 @@ access-to-business/
 │   │   ├── README.md                 ← IP strategy overview
 │   │   ├── patents.md                ← Patent strategy, provisional applications
 │   │   └── trademarks-trade-secrets-copyright.md
-│   └── regional/
-│       ├── README.md                 ← How to create a state/region deployment
-│       └── missouri.md               ← Reference implementation: Missouri ecosystem
+│   ├── regional/
+│   │   ├── README.md                 ← How to create a state/region deployment
+│   │   └── missouri.md               ← Reference implementation: Missouri ecosystem
+│   ├── advisor/
+│   │   ├── README.md                 ← Advisor toolkit overview
+│   │   ├── diagnostic-frameworks.md  ← Founder assessment, stage validation
+│   │   ├── portfolio-tools.md        ← Portfolio tracking, batch management
+│   │   └── session-prep.md           ← Meeting agendas, follow-up templates
+│   ├── decisions/
+│   │   ├── README.md                 ← Decision flowchart index
+│   │   ├── should-i-raise.md         ← Fundraising decision framework
+│   │   ├── entity-type.md            ← LLC vs C-Corp vs S-Corp
+│   │   ├── when-to-hire.md           ← First hire timing framework
+│   │   └── build-vs-buy.md           ← Build vs buy vs partner analysis
+│   ├── integrations/
+│   │   ├── README.md                 ← Integrations overview
+│   │   ├── stripe-setup.md           ← Payments, billing, subscriptions
+│   │   └── airtable-starter-bases.md ← CRM, pipeline, tracking bases
+│   ├── checklists.md                 ← Weekly/monthly checklists by stage
+│   └── glossary.md                   ← Startup terminology definitions
 ├── apps/
-│   └── intake-app.html               ← React intake assessment (self-contained)
+│   ├── intake-app.html               ← React intake assessment (self-contained)
+│   ├── pitch-timer.html              ← Pitch practice timer with speaker notes
+│   ├── runway-calculator.html        ← Burn rate and runway calculator
+│   └── unit-economics-calculator.html ← CAC, LTV, payback period calculator
 └── evals/
     └── eval-set.json                 ← Triggering eval test cases
 ```
@@ -332,6 +352,45 @@ Load when location-specific startup ecosystem questions arise.
 |-------|-----------|
 | How to deploy for a new state/region | `references/regional/README.md` |
 | Missouri ecosystem, accelerators, formation, incentives | `references/regional/missouri.md` |
+
+## Advisor & Investor Toolkit Routing
+
+Load when an advisor, mentor, or investor is using the skill to support a founder.
+
+| Topic | Load File |
+|-------|-----------|
+| Advisor toolkit overview, how to use with portfolio | `references/advisor/README.md` |
+| Diagnostic frameworks, founder assessment, stage validation | `references/advisor/diagnostic-frameworks.md` |
+| Portfolio tracking, batch management, investor tools | `references/advisor/portfolio-tools.md` |
+| Session prep, meeting agendas, follow-up templates | `references/advisor/session-prep.md` |
+
+## Decision Flowchart Routing
+
+Load when a founder is stuck on a major either/or decision.
+
+| Topic | Load File |
+|-------|-----------|
+| "Should I raise?" decision framework | `references/decisions/should-i-raise.md` |
+| LLC vs C-Corp vs S-Corp entity selection | `references/decisions/entity-type.md` |
+| When to make your first hire | `references/decisions/when-to-hire.md` |
+| Build vs buy vs partner analysis | `references/decisions/build-vs-buy.md` |
+
+## Integrations Routing
+
+Load when connecting startup tools or setting up infrastructure.
+
+| Topic | Load File |
+|-------|-----------|
+| Integrations overview | `references/integrations/README.md` |
+| Stripe setup, payments, billing, subscriptions | `references/integrations/stripe-setup.md` |
+| Airtable starter bases, CRM, pipeline tracking | `references/integrations/airtable-starter-bases.md` |
+
+## Checklists & Glossary
+
+| Topic | Load File |
+|-------|-----------|
+| Weekly/monthly startup checklists by stage | `references/checklists.md` |
+| Startup terminology and definitions | `references/glossary.md` |
 
 ---
 

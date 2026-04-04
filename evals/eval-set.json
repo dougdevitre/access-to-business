@@ -211,6 +211,48 @@
       "prompt": "I can't manage my time. How should a founder structure their week?",
       "should_trigger": true,
       "expected_route": "time-blocking"
+    },
+    {
+      "id": "atb-036",
+      "prompt": "I'm an advisor working with 5 portfolio companies. Help me run a diagnostic.",
+      "should_trigger": true,
+      "expected_route": "advisor-diagnostic-frameworks"
+    },
+    {
+      "id": "atb-037",
+      "prompt": "Should I raise funding or bootstrap? I can't decide.",
+      "should_trigger": true,
+      "expected_route": "decisions-should-i-raise"
+    },
+    {
+      "id": "atb-038",
+      "prompt": "Should I build my own analytics or buy a tool? Build vs buy decision.",
+      "should_trigger": true,
+      "expected_route": "decisions-build-vs-buy"
+    },
+    {
+      "id": "atb-039",
+      "prompt": "Help me set up Stripe for my SaaS billing and subscriptions",
+      "should_trigger": true,
+      "expected_route": "integrations-stripe"
+    },
+    {
+      "id": "atb-040",
+      "prompt": "What should I be checking off each week as a seed-stage founder?",
+      "should_trigger": true,
+      "expected_route": "checklists"
+    },
+    {
+      "id": "atb-041",
+      "prompt": "What does SAFE note mean? I keep hearing startup terms I don't understand.",
+      "should_trigger": true,
+      "expected_route": "glossary"
+    },
+    {
+      "id": "atb-042",
+      "prompt": "Help me prepare for my advisor session with a founder tomorrow",
+      "should_trigger": true,
+      "expected_route": "advisor-session-prep"
     }
   ]
 }
