@@ -35,7 +35,7 @@ Ask honestly:
 **Alternatives to VC:**
 - Revenue-based financing (Clearco, Pipe, Arc)
 - SBIR / STTR grants (up to $2M for tech + research)
-- Missouri-specific: Arch Grants ($50K non-dilutive), ITEN, Capital Innovators
+- State/local non-dilutive grants and accelerators (check your regional playbook)
 - Grow to ramen profitability → raise from position of strength
 - Angel investors — faster, less dilutive than institutional
 

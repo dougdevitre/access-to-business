@@ -62,6 +62,7 @@ access-to-business/
 │   │                                    /followup /objection /icp /position /status /blockers
 │   │                                    /wins /next /pivot /validate /hire /cofounder /proposal
 │   ├── playbooks/
+│   │   ├── README.md                 ← Playbook directory index
 │   │   ├── investor-binder.md        ← Full 17-section binder build system + templates
 │   │   ├── validation.md             ← Customer discovery, assumption mapping, PMF signals
 │   │   ├── gtm-sales.md              ← Outreach, pipeline, pricing, closing
@@ -72,7 +73,17 @@ access-to-business/
 │   │   ├── team-hiring.md            ← First hire, co-founder, equity, culture
 │   │   ├── fundraising.md            ← Fundraising strategy and round planning
 │   │   ├── operations.md             ← SOPs, automation, tool stack, systems
-│   │   └── resilience.md             ← Founder psychology, rejection, pivots, burnout
+│   │   ├── resilience.md             ← Founder psychology, rejection, pivots, burnout
+│   │   ├── first-revenue.md          ← Pre-revenue to first dollar strategies
+│   │   ├── customer-discovery.md     ← Interview scripts, discovery frameworks
+│   │   ├── pricing-strategy.md       ← Pricing models, packaging, optimization
+│   │   ├── competitive-intelligence.md ← Competitor research, positioning, battlecards
+│   │   ├── network-building.md       ← Relationship building, intros, community
+│   │   ├── ninety-day-sprints.md     ← 90-day execution plans by stage
+│   │   ├── automation.md             ← Workflow automation, tools, integrations
+│   │   ├── tool-stack.md             ← Recommended tools by stage and function
+│   │   ├── funding-types.md          ← Funding options: bootstrap to Series A+
+│   │   └── time-blocking.md          ← Founder time management and scheduling
 │   ├── pitch/
 │   │   ├── README.md                 ← Pitch system index and quick-start
 │   │   ├── pitch-coaching.md         ← Verbal pitch scripts, timing, delivery, Q&A
@@ -226,6 +237,16 @@ Load the matching playbook when a topic comes up organically (outside of a /comm
 | Fundraising strategy and rounds | `references/playbooks/fundraising.md` |
 | SOPs, tools, automation | `references/playbooks/operations.md` |
 | Burnout, rejection, pivot, psychology | `references/playbooks/resilience.md` |
+| First dollar, pre-revenue monetization | `references/playbooks/first-revenue.md` |
+| Customer interviews, discovery scripts | `references/playbooks/customer-discovery.md` |
+| Pricing models, packaging, price optimization | `references/playbooks/pricing-strategy.md` |
+| Competitor analysis, battlecards, market positioning | `references/playbooks/competitive-intelligence.md` |
+| Networking, intros, community, relationship building | `references/playbooks/network-building.md` |
+| 90-day planning, quarterly sprints, milestones | `references/playbooks/ninety-day-sprints.md` |
+| Workflow automation, Zapier, Make, integrations | `references/playbooks/automation.md` |
+| Tool recommendations, SaaS stack, software by stage | `references/playbooks/tool-stack.md` |
+| Funding options, bootstrapping, grants, angels, VC | `references/playbooks/funding-types.md` |
+| Time management, scheduling, founder calendar | `references/playbooks/time-blocking.md` |
 
 ## Pitch Generator Routing
 
