@@ -151,6 +151,108 @@
       "prompt": "We need to lay off 3 people. Help me handle this.",
       "should_trigger": true,
       "expected_route": "crisis-difficult-templates"
+    },
+    {
+      "id": "atb-026",
+      "prompt": "I have no revenue yet. What's the fastest way to make my first dollar?",
+      "should_trigger": true,
+      "expected_route": "first-revenue"
+    },
+    {
+      "id": "atb-027",
+      "prompt": "Give me customer interview scripts for discovery calls",
+      "should_trigger": true,
+      "expected_route": "customer-discovery"
+    },
+    {
+      "id": "atb-028",
+      "prompt": "How should I price my SaaS product? I'm not sure about tiers vs flat rate.",
+      "should_trigger": true,
+      "expected_route": "pricing-strategy"
+    },
+    {
+      "id": "atb-029",
+      "prompt": "I need to analyze my competitors and build a battlecard",
+      "should_trigger": true,
+      "expected_route": "competitive-intelligence"
+    },
+    {
+      "id": "atb-030",
+      "prompt": "How do I build a network as a first-time founder? I don't know anyone in the startup world.",
+      "should_trigger": true,
+      "expected_route": "network-building"
+    },
+    {
+      "id": "atb-031",
+      "prompt": "Help me plan a 90-day sprint for my pre-seed startup",
+      "should_trigger": true,
+      "expected_route": "ninety-day-sprints"
+    },
+    {
+      "id": "atb-032",
+      "prompt": "What should I automate first? I'm doing everything manually and it's killing me.",
+      "should_trigger": true,
+      "expected_route": "automation"
+    },
+    {
+      "id": "atb-033",
+      "prompt": "What tools and software should I use as an early-stage startup?",
+      "should_trigger": true,
+      "expected_route": "tool-stack"
+    },
+    {
+      "id": "atb-034",
+      "prompt": "What are my options for funding besides VC? I'm considering grants and bootstrapping.",
+      "should_trigger": true,
+      "expected_route": "funding-types"
+    },
+    {
+      "id": "atb-035",
+      "prompt": "I can't manage my time. How should a founder structure their week?",
+      "should_trigger": true,
+      "expected_route": "time-blocking"
+    },
+    {
+      "id": "atb-036",
+      "prompt": "I'm an advisor working with 5 portfolio companies. Help me run a diagnostic.",
+      "should_trigger": true,
+      "expected_route": "advisor-diagnostic-frameworks"
+    },
+    {
+      "id": "atb-037",
+      "prompt": "Should I raise funding or bootstrap? I can't decide.",
+      "should_trigger": true,
+      "expected_route": "decisions-should-i-raise"
+    },
+    {
+      "id": "atb-038",
+      "prompt": "Should I build my own analytics or buy a tool? Build vs buy decision.",
+      "should_trigger": true,
+      "expected_route": "decisions-build-vs-buy"
+    },
+    {
+      "id": "atb-039",
+      "prompt": "Help me set up Stripe for my SaaS billing and subscriptions",
+      "should_trigger": true,
+      "expected_route": "integrations-stripe"
+    },
+    {
+      "id": "atb-040",
+      "prompt": "What should I be checking off each week as a seed-stage founder?",
+      "should_trigger": true,
+      "expected_route": "checklists"
+    },
+    {
+      "id": "atb-041",
+      "prompt": "What does SAFE note mean? I keep hearing startup terms I don't understand.",
+      "should_trigger": true,
+      "expected_route": "glossary"
+    },
+    {
+      "id": "atb-042",
+      "prompt": "Help me prepare for my advisor session with a founder tomorrow",
+      "should_trigger": true,
+      "expected_route": "advisor-session-prep"
     }
   ]
 }

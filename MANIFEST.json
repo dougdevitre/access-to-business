@@ -18,8 +18,8 @@
     "templates",
     "regional-ecosystems"
   ],
-  "commands": 35,
-  "playbooks": 11,
+  "commands": 36,
+  "playbooks": 21,
   "templates": 100,
   "reference_directories": [
     "references/commands",
@@ -30,7 +30,10 @@
     "references/contracts",
     "references/accounting",
     "references/ip",
-    "references/regional"
+    "references/regional",
+    "references/advisor",
+    "references/decisions",
+    "references/integrations"
   ],
   "regional_deployments": [
     "missouri"

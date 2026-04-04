@@ -29,6 +29,8 @@ graph TD
 
 ## Files in This Directory
 
+### Core Lifecycle Playbooks
+
 | File | Focus | Stage |
 |------|-------|-------|
 | `validation.md` | Customer discovery, assumption mapping, PMF signals | 0-1 |
@@ -42,6 +44,21 @@ graph TD
 | `fundraising.md` | Fundraising strategy and round planning | 2-4 |
 | `investor-binder.md` | Full 17-section binder build system + templates | 2-4 |
 | `resilience.md` | Founder psychology, rejection, pivots, burnout | All |
+
+### Specialized Playbooks
+
+| File | Focus | Stage |
+|------|-------|-------|
+| `first-revenue.md` | Pre-revenue to first dollar strategies | 0-1 |
+| `customer-discovery.md` | Interview scripts, discovery frameworks | 0-1 |
+| `pricing-strategy.md` | Pricing models, packaging, optimization | 1-3 |
+| `competitive-intelligence.md` | Competitor research, positioning, battlecards | 1-3 |
+| `network-building.md` | Relationship building, intros, community | All |
+| `ninety-day-sprints.md` | 90-day execution plans by stage | All |
+| `automation.md` | Workflow automation, tools, integrations | 2-4 |
+| `tool-stack.md` | Recommended tools by stage and function | All |
+| `funding-types.md` | Funding options: bootstrap to Series A+ | 1-4 |
+| `time-blocking.md` | Founder time management and scheduling | All |
 
 ## Loading Rule
 
