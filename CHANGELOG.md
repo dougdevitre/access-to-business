@@ -4,11 +4,28 @@ All notable changes to Access to Business will be documented in this file.
 
 ```mermaid
 flowchart LR
-    A["v1.0.0\n2025-03-31"] --> B["Initial Release\n57 files, 35+ commands"]
+    A["v1.0.0\n2025-03-31"] --> B["v1.1.0\n2026-04-05"]
 
     style A fill:#27ae60,stroke:#1a7a42,color:#fff
     style B fill:#4a90d9,stroke:#2c5f8a,color:#fff
 ```
+
+## [1.1.0] — 2026-04-05
+
+### Added
+- 10 new playbooks: first-revenue, customer-discovery, pricing-strategy, competitive-intelligence, network-building, ninety-day-sprints, automation, tool-stack, funding-types, time-blocking
+- Routing tables in SKILL.md for advisor toolkit (4 files), decision flowcharts (4 files), integrations (3 files), checklists, and glossary
+- 17 new eval test cases (atb-026 to atb-042) covering all previously untested content
+- 3 additional apps documented in file tree: pitch-timer, runway-calculator, unit-economics-calculator
+
+### Changed
+- Split 8 oversized playbooks into progressive-disclosure pairs (main + advanced), bringing most under the 300-line convention
+- Updated MANIFEST.json: playbooks 11→21, commands 35→36, added 3 reference directories
+- Updated playbooks/README.md with all 21 playbooks in two tables (core + specialized)
+- Replaced Missouri-specific content in fundraising.md with generic regional pointer
+- Bumped version from 1.0.0 to 1.1.0
+
+---
 
 ## [1.0.0] — 2025-03-31
 
