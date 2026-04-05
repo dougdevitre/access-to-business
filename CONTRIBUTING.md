@@ -58,6 +58,50 @@ flowchart LR
 2. Focus on diagnostic frameworks, session prep, or portfolio tracking
 3. Update the Advisor & Investor Toolkit Routing table in `SKILL.md`
 
+## New Contributors — Start Here
+
+If you're contributing for the first time, welcome! Here's how to get oriented:
+
+### 1. Understand the Architecture
+- Read `CLAUDE.md` for project conventions (5 min)
+- Skim `SKILL.md` to understand how routing works (10 min)
+- Browse the `references/` directory to see the content structure
+
+### 2. Pick a Good First Issue
+Look for issues labeled **`good first issue`** on GitHub. These are self-contained tasks designed for new contributors. Common good first issues:
+
+**State deployments** (most popular contribution):
+- Copy `references/regional/missouri.md` as a template
+- Replace with your state's ecosystem data
+- Each state needs: accelerators, formation guide, incentives, legal resources, talent, real estate
+- See `references/regional/README.md` for the full guide
+
+**Template additions:**
+- Add a new template to an existing category in `references/templates/`
+- Examples: a specific industry proposal template, a fundraising update variant, a customer win announcement
+
+**Eval cases:**
+- Add test cases to `evals/eval-set.json` for scenarios not yet covered
+- Each case needs: id, prompt, should_trigger, expected_route
+- Run `python3 -c "import json; json.load(open('evals/eval-set.json'))"` to validate
+
+**Glossary terms:**
+- Add missing startup terms to `references/glossary.md`
+- Follow the existing format: `**Term** -- Definition in plain language.`
+
+### 3. Before You Submit a PR
+- [ ] Your changes follow the style guidelines below
+- [ ] You've tested that JSON files are valid (if you edited them)
+- [ ] Your PR title is descriptive (e.g., "Add regional deployment: Colorado")
+- [ ] You've described what changed and why in the PR body
+
+### 4. What Happens After You Submit
+- CI runs automatically and checks JSON validity, file references, and cross-links
+- A maintainer will review within a few days
+- Small changes merge quickly; larger ones may get feedback for revision
+
+---
+
 ## Style Guidelines
 
 - **Tone:** Calm, direct, practical. No hype.
