@@ -156,6 +156,9 @@ Ask (10 sec): "We're raising [amount] to [milestone]."
 
 4. Deliver the draft pitch
 5. Offer to practice: *"Want to simulate an investor responding to this?"* → route to `/simulate`
+6. Offer the timer: *"Ready to rehearse? Open `apps/pitch-timer.html` to practice with a countdown timer."*
+
+**Deep dive:** For verbal delivery coaching, load `references/pitch/pitch-coaching.md`. For deck design, load `references/pitch/deck-design-system.md`.
 
 ---
 
