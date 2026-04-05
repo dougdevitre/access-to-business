@@ -74,6 +74,8 @@ SECTION                          STATUS
 4. Ask: *"Which section do you want to work on first?"*
 5. Load `references/playbooks/investor-binder.md` and execute that section
 
+**Related:** `/score` to rate readiness | `/pitch` to draft verbal pitch | `traction-benchmarks.md` for stage-appropriate metrics | `decisions/should-i-raise.md` if unsure about fundraising
+
 ---
 
 ## `/binder [section]`
@@ -127,6 +129,8 @@ Legal + cap table is clean                     10%      [ ]
 
 4. Give the 2–3 most impactful improvements ranked by score × weight
 
+**Related:** `/binder` to work on weak sections | `/pitch` + `/deck` to strengthen presentation | `traction-benchmarks.md` for what "good" looks like at each stage
+
 ---
 
 ## `/pitch`
@@ -158,7 +162,7 @@ Ask (10 sec): "We're raising [amount] to [milestone]."
 5. Offer to practice: *"Want to simulate an investor responding to this?"* → route to `/simulate`
 6. Offer the timer: *"Ready to rehearse? Open `apps/pitch-timer.html` to practice with a countdown timer."*
 
-**Deep dive:** For verbal delivery coaching, load `references/pitch/pitch-coaching.md`. For deck design, load `references/pitch/deck-design-system.md`.
+**Related:** `/simulate` to pressure-test | `/deck` for slide-by-slide build | `pitch-coaching.md` for delivery coaching | `deck-design-system.md` for visual design | `apps/pitch-timer.html` for timed rehearsal
 
 ---
 
@@ -188,6 +192,8 @@ SLIDE BUILD ORDER
 
 3. For each slide: show the template → ask for their inputs → draft the content → confirm → move to next
 4. After all 12: *"Your deck is outlined. Do you want to refine any slide?"*
+
+**Related:** `/pitch` for verbal pitch | `/exec` for executive summary | `pitch/deck-design-system.md` for typography, color, and layout rules | `pitch/one-sheet-system.md` for leave-behind docs
 
 **Deck rules (enforce throughout):**
 - One idea per slide
@@ -246,6 +252,8 @@ Milestone: [Specific goal this round funds]
 
 3. Deliver the draft → ask: *"What needs to change?"* → revise
 
+**Related:** `/pitch` for verbal version | `/binder` for full binder context | `investor-templates.md` for outreach templates | `pitch/marketing-copy-library.md` for taglines and positioning
+
 ---
 
 ## `/ask`
@@ -288,6 +296,8 @@ Total soft-circled: $[X]
 
 3. Flag any gaps: *"Your valuation cap anchors the whole round. Have you stress-tested it against your projected Series A?"*
 
+**Related:** `/score` to check overall readiness | `/model` to build the financial model | `fundraising.md` for round strategy | `funding-types.md` for instrument options
+
 ---
 
 ## `/dataroom`
@@ -324,6 +334,8 @@ Total soft-circled: $[X]
 
 2. Ask which sections they have ready vs. missing
 3. For each missing section, offer to create it now or queue it
+
+**Related:** `/binder` for section-by-section build | `investor-binder-due-diligence.md` for Sections 12–17 detail | `/score` before sharing with investors
 
 **Hosting options:**
 - Google Drive (free, familiar)
@@ -365,6 +377,8 @@ Thank you,
 
 3. Remind: *"Send this even when things aren't great. Silence breeds anxiety. Transparency builds trust."*
 
+**Related:** `/metrics` to pull your numbers | `investor-templates.md` for more update formats | `board-advisor-templates.md` for board-level updates
+
 ---
 
 ## `/simulate [role]`
@@ -390,3 +404,5 @@ Thank you,
 **Strategic:** Corporate investor focused on fit with their portfolio. Asks: *"How does this integrate with our existing offerings?"*
 
 **Skeptic (default):** Challenges every assumption. Asks: *"Why hasn't this been built already?"* and *"What happens when Google builds this?"*
+
+**Related:** `/pitch` to draft the pitch first | `/objection` for specific objection coaching | `investor-binder.md` Section 17 for Q&A prep | `apps/pitch-timer.html` for timed practice
