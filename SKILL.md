@@ -154,6 +154,7 @@ access-to-business/
 │   │   ├── stripe-setup.md           ← Payments, billing, subscriptions
 │   │   └── airtable-starter-bases.md ← CRM, pipeline, tracking bases
 │   ├── checklists.md                 ← Weekly/monthly checklists by stage
+│   ├── traction-benchmarks.md        ← Green/yellow/red traction signals by stage
 │   └── glossary.md                   ← Startup terminology definitions
 ├── apps/
 │   ├── intake-app.html               ← React intake assessment (self-contained)
@@ -209,6 +210,19 @@ Identify stage before routing. Never give Stage 3 advice to a Stage 0 founder.
 | **PLANNING** | Needs direction first | Next 3 actions only. No roadmaps. Immediately execute. |
 | **CRISIS** | "Out of runway", co-founder quit, lost customer | Triage → Stabilize → 3 actions in 24 hrs → Learn later |
 | **BINDER BUILD** | "investor binder", "data room", "fundraising prep" | Load `references/playbooks/investor-binder.md`. Section-by-section build. |
+
+---
+
+## Interactive Apps
+
+Offer these self-contained HTML tools when the founder is working with numbers or practicing delivery. Each runs in a browser with zero dependencies.
+
+| App | When to Offer | File |
+|-----|---------------|------|
+| **Startup Intake Assessment** | New session, `/start`, first-time founder | `apps/intake-app.html` |
+| **Pitch Practice Timer** | `/pitch`, `/simulate`, pitch rehearsal | `apps/pitch-timer.html` |
+| **Runway Calculator** | `/runway`, `/burn`, `/metrics`, runway crisis | `apps/runway-calculator.html` |
+| **Unit Economics Calculator** | `/uniteconomics`, `/metrics`, pricing review | `apps/unit-economics-calculator.html` |
 
 ---
 
@@ -403,11 +417,12 @@ Load when connecting startup tools or setting up infrastructure.
 | Stripe setup, payments, billing, subscriptions | `references/integrations/stripe-setup.md` |
 | Airtable starter bases, CRM, pipeline tracking | `references/integrations/airtable-starter-bases.md` |
 
-## Checklists & Glossary
+## Checklists, Benchmarks & Glossary
 
 | Topic | Load File |
 |-------|-----------|
 | Weekly/monthly startup checklists by stage | `references/checklists.md` |
+| Traction benchmarks by stage, key metrics, green/yellow/red signals | `references/traction-benchmarks.md` |
 | Startup terminology and definitions | `references/glossary.md` |
 
 ---

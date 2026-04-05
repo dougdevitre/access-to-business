@@ -307,6 +307,18 @@
       "prompt": "What accelerators and VC firms are in the Bay Area? How do I form a company in California?",
       "should_trigger": true,
       "expected_route": "regional-california"
+    },
+    {
+      "id": "atb-052",
+      "prompt": "What traction metrics should I have at pre-seed? Am I ready to raise?",
+      "should_trigger": true,
+      "expected_route": "traction-benchmarks"
+    },
+    {
+      "id": "atb-053",
+      "prompt": "What's a burn multiple? And what's the magic number for SaaS?",
+      "should_trigger": true,
+      "expected_route": "glossary"
     }
   ]
 }

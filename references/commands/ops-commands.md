@@ -103,7 +103,8 @@ Cash:
    - Runway < 6 months → crisis territory
    - MoM growth < 5% → GTM issue
 4. Output a clean metrics summary formatted for investor communication
-5. Ask: *"Which number concerns you most right now?"* → route to fix
+5. Offer interactive tools: *"Want to model your runway? Open `apps/runway-calculator.html`. For unit economics, try `apps/unit-economics-calculator.html`."*
+6. Ask: *"Which number concerns you most right now?"* → route to fix
 
 ---
 
@@ -120,6 +121,7 @@ Cash:
    - 6–12 months → *"Start raising immediately. This window closes fast."*
    - < 6 months → *"Crisis mode. See /pivot or cut burn today."*
 4. Give 3 specific actions based on their runway situation
+5. Offer: *"Want to model scenarios? Open `apps/runway-calculator.html` for an interactive calculator."*
 
 ---
 
@@ -163,6 +165,7 @@ CAC Payback = CAC ÷ (ARPU × Gross Margin %)
    - Payback > 18 months → too long for most SaaS
 
 4. Give 1–2 specific levers to improve the weakest metric
+5. Offer: *"Want to play with the numbers? Open `apps/unit-economics-calculator.html` for interactive modeling."*
 
 ---
 

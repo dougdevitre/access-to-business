@@ -141,7 +141,11 @@ graph TD
 
 **TCV (Total Contract Value)** -- The full value of a customer contract over its entire duration, including all years and one-time fees.
 
-**Payback Period** -- The number of months it takes for the revenue from a new customer to cover the cost of acquiring them.
+**Payback Period (CAC Payback)** -- The number of months it takes for the revenue from a new customer to cover the cost of acquiring them. Calculated as CAC divided by (ARPU times gross margin). Under 12 months is healthy for most SaaS.
+
+**Burn Multiple** -- The ratio of net cash burned to net new ARR added. Measures how efficiently you convert spending into growth. Calculated as Net Burn divided by Net New ARR. Under 2x is efficient; over 3x means you're burning cash faster than you're growing.
+
+**Magic Number** -- A measure of sales efficiency. Calculated as net new ARR in a quarter divided by sales and marketing spend in the prior quarter. Above 0.75 means your GTM spend is efficient enough to invest more aggressively.
 
 **Rule of 40** -- A benchmark where your revenue growth rate plus your profit margin should exceed 40%, indicating a healthy balance between growth and profitability.
 

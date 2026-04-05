@@ -175,6 +175,19 @@ graph LR
 - [ ] Benchmark your metrics against industry peers using public data or investor input
 - [ ] Plan for the next 6-12 months: what needs to be true for the company to reach the next milestone?
 
+### Quarterly Checklist (Post-Series A)
+
+- [ ] Prepare and send board update: financials, KPIs, wins, challenges, asks
+- [ ] Review cap table: any upcoming option expirations, refresh grants needed, or 409A due?
+- [ ] Conduct quarterly business review (QBR) with each department lead
+- [ ] Review burn multiple and magic number: is growth spend efficient?
+- [ ] Assess whether current pricing supports scale or needs revision
+- [ ] Evaluate investor relations: any follow-up asks, warm intro requests, or strategic help needed?
+- [ ] Run an equity refresh analysis: are key employees approaching full vest? Plan retention grants.
+- [ ] Review vendor contracts: any renewals coming up that should be renegotiated at scale?
+- [ ] Audit data governance: are customer data practices ready for enterprise scrutiny?
+- [ ] Plan hiring for next quarter against budget and revenue targets
+
 ---
 
 ## How to Use These Checklists

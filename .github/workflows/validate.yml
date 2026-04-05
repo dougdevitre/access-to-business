@@ -1,0 +1,107 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating JSON files..."
+          for f in $(find . -name "*.json" -not -path "./.git/*"); do
+            echo "  Checking $f"
+            python3 -c "import json; json.load(open('$f'))" || exit 1
+          done
+          echo "All JSON files valid."
+
+      - name: Check MANIFEST.json counts
+        run: |
+          echo "Checking MANIFEST.json accuracy..."
+          PLAYBOOK_COUNT=$(find references/playbooks -name "*.md" ! -name "README.md" | wc -l)
+          MANIFEST_PLAYBOOKS=$(python3 -c "import json; print(json.load(open('MANIFEST.json'))['playbooks'])")
+          echo "  Playbooks on disk: $PLAYBOOK_COUNT"
+          echo "  MANIFEST claims: $MANIFEST_PLAYBOOKS"
+          if [ "$PLAYBOOK_COUNT" -lt "$MANIFEST_PLAYBOOKS" ]; then
+            echo "ERROR: MANIFEST.json claims $MANIFEST_PLAYBOOKS playbooks but only $PLAYBOOK_COUNT found"
+            exit 1
+          fi
+
+          DIR_COUNT=$(python3 -c "import json; dirs=json.load(open('MANIFEST.json'))['reference_directories']; print(len(dirs))")
+          echo "  Reference directories in MANIFEST: $DIR_COUNT"
+          python3 -c "
+          import json, os
+          dirs = json.load(open('MANIFEST.json'))['reference_directories']
+          missing = [d for d in dirs if not os.path.isdir(d)]
+          if missing:
+              print(f'ERROR: Missing directories: {missing}')
+              exit(1)
+          print('  All reference directories exist.')
+          "
+
+      - name: Check for broken internal links in SKILL.md
+        run: |
+          echo "Checking SKILL.md internal file references..."
+          python3 -c "
+          import re, os
+          with open('SKILL.md') as f:
+              content = f.read()
+          paths = re.findall(r'\x60(references/[^\x60\s]+\.md)\x60', content)
+          missing = [p for p in paths if not os.path.exists(p)]
+          if missing:
+              print('ERROR: SKILL.md references files that do not exist:')
+              for m in missing:
+                  print(f'  - {m}')
+              exit(1)
+          print(f'  All {len(paths)} file references in SKILL.md exist.')
+          "
+
+      - name: Validate eval test cases
+        run: |
+          echo "Validating eval-set.json..."
+          python3 -c "
+          import json
+          data = json.load(open('evals/eval-set.json'))
+          cases = data['test_cases']
+          ids = [c['id'] for c in cases]
+          dupes = [i for i in ids if ids.count(i) > 1]
+          if dupes:
+              print(f'ERROR: Duplicate eval IDs: {set(dupes)}')
+              exit(1)
+          positive = sum(1 for c in cases if c['should_trigger'])
+          negative = sum(1 for c in cases if not c['should_trigger'])
+          print(f'  {len(cases)} test cases ({positive} positive, {negative} negative)')
+          for c in cases:
+              if c['should_trigger'] and not c.get('expected_route'):
+                  print(f'ERROR: {c[\"id\"]} triggers but has no expected_route')
+                  exit(1)
+          print('  All test cases valid.')
+          "
+
+      - name: Check playbook cross-references
+        run: |
+          echo "Checking playbook cross-references..."
+          python3 -c "
+          import re, os, glob
+          errors = []
+          for f in glob.glob('references/playbooks/*.md'):
+              with open(f) as fh:
+                  content = fh.read()
+              links = re.findall(r'\[([^\]]+)\]\(([^)]+\.md)\)', content)
+              for text, target in links:
+                  target_path = os.path.join(os.path.dirname(f), target)
+                  if not os.path.exists(target_path):
+                      errors.append(f'{f}: broken link to {target}')
+          if errors:
+              print('ERROR: Broken cross-references:')
+              for e in errors:
+                  print(f'  - {e}')
+              exit(1)
+          print('  All playbook cross-references valid.')
+          "

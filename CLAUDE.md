@@ -9,16 +9,19 @@ Access to Business is an open-source Claude AI skill (Pillar 7 of the Access To 
 - `SKILL.md` — Core skill logic and router. Always loaded in context.
 - `references/` — Reference files loaded on demand by topic/command.
   - `commands/` — Slash command definitions (session, binder, ops)
-  - `playbooks/` — 11 startup lifecycle playbooks
+  - `playbooks/` — 21 startup playbooks (11 core + 10 specialized, with 8 advanced companions)
   - `pitch/` — 5-module pitch preparation system
   - `templates/` — 11 categories of copy-paste-ready templates
   - `compliance/` — HIPAA, SOC2, GDPR, PCI-DSS, security
   - `contracts/` — SaaS, MSA, DPA, NDA, negotiation
   - `accounting/` — Bookkeeping, tax calendar, CPA guide
   - `ip/` — Patents, trademarks, trade secrets, copyright
-  - `regional/` — State-specific deployments (Missouri is reference)
-- `apps/` — Self-contained HTML apps (intake assessment)
-- `evals/` — Eval test cases for skill triggering
+  - `advisor/` — Diagnostic frameworks, portfolio tools, session prep
+  - `decisions/` — Decision flowcharts (should-i-raise, entity-type, build-vs-buy, when-to-hire)
+  - `integrations/` — Stripe setup, Airtable starter bases
+  - `regional/` — State-specific deployments (Missouri, California)
+- `apps/` — Self-contained HTML apps (intake, pitch timer, runway calculator, unit economics)
+- `evals/` — 51 eval test cases for skill triggering
 - `docs/` — Architecture documentation
 
 ## Key Conventions
@@ -37,7 +40,14 @@ Access to Business is an open-source Claude AI skill (Pillar 7 of the Access To 
 
 ## Testing
 
-There are no automated tests. Verify changes by:
+CI runs automatically on push to `main` and on pull requests (`.github/workflows/validate.yml`). It checks:
+1. JSON validity (MANIFEST.json, eval-set.json)
+2. MANIFEST.json counts match actual files on disk
+3. All file paths referenced in SKILL.md exist
+4. Eval test case IDs are unique and well-formed
+5. Playbook cross-references (markdown links between split files) resolve
+
+Additionally, verify changes by:
 1. Reviewing markdown rendering on GitHub
 2. Running eval triggers from `evals/eval-set.json` against the skill
 3. Checking that mermaid diagrams render correctly
