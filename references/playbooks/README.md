@@ -74,6 +74,7 @@ These files extend a parent playbook with advanced content. Load when the founde
 | `network-building-advisors.md` | `network-building.md` | Mentor/advisor asks, advisory agreement terms, equity, relationship tracking |
 | `ninety-day-sprints-growth.md` | `ninety-day-sprints.md` | Stage 3 growth sprint, scale-readiness scorecard, weekly checkpoint template |
 | `automation-advanced.md` | `automation.md` | Admin automation, quick wins, stack by stage, monthly audit, common traps |
+| `resilience-advanced.md` | `resilience.md` | Co-founder conflict, isolation, impostor syndrome, identity, crisis protocols |
 
 ## Loading Rule
 
