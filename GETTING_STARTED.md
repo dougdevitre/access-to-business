@@ -57,11 +57,17 @@ Then it routes you to the right mode and gets to work.
 | `/help` | See all available commands |
 | `/focus [topic]` | Lock into one task until it's done |
 | `/sprint [topic]` | 60-minute deep work session with 3-5 micro-tasks |
+| `/recover` | Get unstuck with the smallest possible next step |
+| `/decide` | Compare options and commit to one |
+| `/energy` | Route tasks based on your current energy level |
 | `/binder` | Start building your 17-section investor binder |
+| `/score` | Rate your investor binder readiness |
 | `/pitch` | Draft your pitch (verbal, deck, or one-sheet) |
+| `/deck` | Build or review your pitch deck |
 | `/metrics` | Review your key startup metrics |
 | `/runway` | Calculate your burn rate and runway |
-| `/recover` | Get unstuck with the smallest possible next step |
+| `/outreach` | Draft sales or investor outreach messages |
+| `/validate` | Run customer validation exercises |
 
 ## Startup Stages
 
@@ -82,8 +88,11 @@ The skill adapts to your stage:
 - Financial models and unit economics
 - Sales outreach and pipeline templates
 - Legal formation checklists
-- Contract templates
-- Compliance frameworks (HIPAA, SOC2, GDPR)
+- Contract templates (SaaS, MSA, NDA, DPA)
+- Compliance frameworks (HIPAA, SOC2, GDPR, PCI-DSS)
+- Decision frameworks (should I raise, entity type, build vs buy, when to hire)
+- Advisor session prep and diagnostic tools
+- Integration guides (Stripe, Airtable)
 - State-specific resource guides
 
 ## Contributing

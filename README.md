@@ -1,7 +1,7 @@
 # Access to Business
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](CHANGELOG.md)
 [![Pillar](https://img.shields.io/badge/Access%20To-Pillar%207-purple.svg)](https://github.com/dougdevitre)
 
 **AI-powered startup coach, execution engine, pitch generator, and investor binder builder.**
@@ -99,7 +99,7 @@ graph TD
     REF --> RGN[regional]
 
     CMD --> CMD1[session / binder / ops]
-    PB --> PB1[11 startup playbooks]
+    PB --> PB1[21 startup playbooks]
     PT --> PT1[5 pitch modules]
     TMP --> TMP1[11 template categories]
     CMP --> CMP1[HIPAA / SOC2 / GDPR / PCI]

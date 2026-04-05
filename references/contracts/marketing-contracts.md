@@ -639,7 +639,7 @@ Creator will provide:
 
 2. SHOOT DETAILS
 Date(s): [Date]
-Location(s): [Address or TBD]
+Location(s): [ADDRESS OR "Virtual"]
 Call time: [Time]
 Estimated wrap: [Time]
 Subjects/Products: [What is being photographed or filmed]

@@ -253,6 +253,60 @@
       "prompt": "Help me prepare for my advisor session with a founder tomorrow",
       "should_trigger": true,
       "expected_route": "advisor-session-prep"
+    },
+    {
+      "id": "atb-043",
+      "prompt": "What's a good recipe for chicken parmesan?",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-044",
+      "prompt": "Help me plan my wedding budget and timeline",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-045",
+      "prompt": "I need help with my college application essay",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-046",
+      "prompt": "Can you explain quantum computing to me?",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-047",
+      "prompt": "Help me write a resume for a software engineering job",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-048",
+      "prompt": "I need a personal budget spreadsheet for my household",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-049",
+      "prompt": "Help me file my personal tax return",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-050",
+      "prompt": "How do I train for a marathon?",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-051",
+      "prompt": "What accelerators and VC firms are in the Bay Area? How do I form a company in California?",
+      "should_trigger": true,
+      "expected_route": "regional-california"
     }
   ]
 }

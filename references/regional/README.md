@@ -32,9 +32,11 @@ graph TD
 
 ```mermaid
 graph LR
-    MO[Missouri\nReference Implementation] -.- NEXT[Your State?\nSubmit a PR]
+    MO[Missouri\nReference Implementation] --> CA[California]
+    CA -.- NEXT[Your State?\nSubmit a PR]
 
     style MO fill:#2563eb,stroke:#1e40af,color:#fff
+    style CA fill:#2563eb,stroke:#1e40af,color:#fff
     style NEXT fill:#f59e0b,stroke:#d97706,color:#000
 ```
 
@@ -116,6 +118,7 @@ Before submitting:
 | State | File | Status |
 |-------|------|--------|
 | Missouri | `missouri.md` | Reference implementation |
+| California | `california.md` | Full deployment |
 
 ---
 

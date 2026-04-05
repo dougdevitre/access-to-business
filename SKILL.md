@@ -18,7 +18,7 @@ description: >
 
 # Access to Business — Startup Execution Engine + Investor Binder Coach
 
-**Version:** 1.0.0 | **Family:** Access To (Pillar 7)
+**Version:** 1.1.0 | **Family:** Access To (Pillar 7)
 **Persona:** Calm, direct, founder-smart. No hype. No fluff. Moves fast.
 **License:** MIT — deploy for any state, city, or community
 
@@ -63,7 +63,8 @@ access-to-business/
 │   │                                    /wins /next /pivot /validate /hire /cofounder /proposal
 │   ├── playbooks/
 │   │   ├── README.md                 ← Playbook directory index
-│   │   ├── investor-binder.md        ← Full 17-section binder build system + templates
+│   │   ├── investor-binder.md        ← Binder build system (Sections 1–11)
+│   │   ├── investor-binder-due-diligence.md ← Binder Sections 12–17 + data room
 │   │   ├── validation.md             ← Customer discovery, assumption mapping, PMF signals
 │   │   ├── gtm-sales.md              ← Outreach, pipeline, pricing, closing
 │   │   ├── metrics-finance.md        ← Burn, runway, unit economics, financial model
@@ -74,13 +75,20 @@ access-to-business/
 │   │   ├── fundraising.md            ← Fundraising strategy and round planning
 │   │   ├── operations.md             ← SOPs, automation, tool stack, systems
 │   │   ├── resilience.md             ← Founder psychology, rejection, pivots, burnout
-│   │   ├── first-revenue.md          ← Pre-revenue to first dollar strategies
-│   │   ├── customer-discovery.md     ← Interview scripts, discovery frameworks
-│   │   ├── pricing-strategy.md       ← Pricing models, packaging, optimization
-│   │   ├── competitive-intelligence.md ← Competitor research, positioning, battlecards
-│   │   ├── network-building.md       ← Relationship building, intros, community
-│   │   ├── ninety-day-sprints.md     ← 90-day execution plans by stage
-│   │   ├── automation.md             ← Workflow automation, tools, integrations
+│   │   ├── first-revenue.md          ← Pre-revenue to first dollar (Paths 1–3)
+│   │   ├── first-revenue-scalable.md ← Scalable revenue paths (Paths 4–6 + $1K sprint)
+│   │   ├── customer-discovery.md     ← Interview scripts 1–4
+│   │   ├── customer-discovery-advanced.md ← Scripts 5–6 + tracking template
+│   │   ├── pricing-strategy.md       ← Pricing frameworks + first price
+│   │   ├── pricing-strategy-advanced.md ← Psychology, testing, worksheet
+│   │   ├── competitive-intelligence.md ← Research, matrix, positioning (Steps 1–4)
+│   │   ├── competitive-intelligence-management.md ← Monitoring + communication
+│   │   ├── network-building.md       ← 5 networks + Give First + conferences
+│   │   ├── network-building-advisors.md ← Advisor asks, agreements, tracking
+│   │   ├── ninety-day-sprints.md     ← 90-day sprints (Stages 0–2)
+│   │   ├── ninety-day-sprints-growth.md ← 90-day sprint (Stage 3 + checkpoint)
+│   │   ├── automation.md             ← Sales, ops, marketing automation
+│   │   ├── automation-advanced.md    ← Admin automation, audit, stack by stage
 │   │   ├── tool-stack.md             ← Recommended tools by stage and function
 │   │   ├── funding-types.md          ← Funding options: bootstrap to Series A+
 │   │   └── time-blocking.md          ← Founder time management and scheduling
@@ -128,7 +136,8 @@ access-to-business/
 │   │   └── trademarks-trade-secrets-copyright.md
 │   ├── regional/
 │   │   ├── README.md                 ← How to create a state/region deployment
-│   │   └── missouri.md               ← Reference implementation: Missouri ecosystem
+│   │   ├── missouri.md               ← Reference implementation: Missouri ecosystem
+│   │   └── california.md             ← California: Bay Area, LA, San Diego
 │   ├── advisor/
 │   │   ├── README.md                 ← Advisor toolkit overview
 │   │   ├── diagnostic-frameworks.md  ← Founder assessment, stage validation
@@ -246,7 +255,8 @@ Load the matching playbook when a topic comes up organically (outside of a /comm
 
 | Topic | Load File |
 |-------|-----------|
-| Investor binder, pitch deck, fundraising | `references/playbooks/investor-binder.md` |
+| Investor binder, pitch deck, fundraising (Sections 1–11) | `references/playbooks/investor-binder.md` |
+| Financial model, cap table, the ask, legal docs, data room, Q&A prep (Sections 12–17) | `references/playbooks/investor-binder-due-diligence.md` |
 | Idea validation, customer discovery | `references/playbooks/validation.md` |
 | Sales, outreach, pricing, pipeline | `references/playbooks/gtm-sales.md` |
 | Burn, runway, unit economics, OKRs | `references/playbooks/metrics-finance.md` |
@@ -257,13 +267,20 @@ Load the matching playbook when a topic comes up organically (outside of a /comm
 | Fundraising strategy and rounds | `references/playbooks/fundraising.md` |
 | SOPs, tools, automation | `references/playbooks/operations.md` |
 | Burnout, rejection, pivot, psychology | `references/playbooks/resilience.md` |
-| First dollar, pre-revenue monetization | `references/playbooks/first-revenue.md` |
-| Customer interviews, discovery scripts | `references/playbooks/customer-discovery.md` |
+| First dollar, pre-revenue monetization (Paths 1–3) | `references/playbooks/first-revenue.md` |
+| Waitlist deposits, services wrapper, info products, $1K sprint (Paths 4–6) | `references/playbooks/first-revenue-scalable.md` |
+| Customer interviews, discovery scripts (Scripts 1–4) | `references/playbooks/customer-discovery.md` |
+| Power user interviews, cold outreach discovery, tracking template | `references/playbooks/customer-discovery-advanced.md` |
 | Pricing models, packaging, price optimization | `references/playbooks/pricing-strategy.md` |
-| Competitor analysis, battlecards, market positioning | `references/playbooks/competitive-intelligence.md` |
+| Pricing psychology, testing methods, stage guidance, worksheet | `references/playbooks/pricing-strategy-advanced.md` |
+| Competitor analysis, battlecards, market positioning (Steps 1–4) | `references/playbooks/competitive-intelligence.md` |
+| Competitive monitoring, quarterly reviews, talking to investors about competitors | `references/playbooks/competitive-intelligence-management.md` |
 | Networking, intros, community, relationship building | `references/playbooks/network-building.md` |
-| 90-day planning, quarterly sprints, milestones | `references/playbooks/ninety-day-sprints.md` |
-| Workflow automation, Zapier, Make, integrations | `references/playbooks/automation.md` |
+| Formal advisor asks, advisory agreements, equity, relationship tracking | `references/playbooks/network-building-advisors.md` |
+| 90-day planning, quarterly sprints, Stages 0–2 | `references/playbooks/ninety-day-sprints.md` |
+| 90-day sprint Stage 3, scale-readiness, weekly checkpoint template | `references/playbooks/ninety-day-sprints-growth.md` |
+| Workflow automation, Zapier, Make — sales, ops, marketing | `references/playbooks/automation.md` |
+| Admin automation, audit template, stack by stage, common traps | `references/playbooks/automation-advanced.md` |
 | Tool recommendations, SaaS stack, software by stage | `references/playbooks/tool-stack.md` |
 | Funding options, bootstrapping, grants, angels, VC | `references/playbooks/funding-types.md` |
 | Time management, scheduling, founder calendar | `references/playbooks/time-blocking.md` |
@@ -352,6 +369,7 @@ Load when location-specific startup ecosystem questions arise.
 |-------|-----------|
 | How to deploy for a new state/region | `references/regional/README.md` |
 | Missouri ecosystem, accelerators, formation, incentives | `references/regional/missouri.md` |
+| California ecosystem, Bay Area, LA, San Diego, formation | `references/regional/california.md` |
 
 ## Advisor & Investor Toolkit Routing
 

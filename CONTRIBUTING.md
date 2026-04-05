@@ -41,6 +41,23 @@ flowchart LR
 2. Add it to the appropriate file in `references/templates/`
 3. Follow the existing template format: title, when to use, the template, notes
 
+### Add Decision Frameworks
+1. Create a new file in `references/decisions/` (e.g., `when-to-pivot.md`)
+2. Structure as a decision flowchart with clear criteria
+3. Include a mermaid diagram showing the decision tree
+4. Update the Decision Flowchart Routing table in `SKILL.md`
+
+### Add Integrations Guides
+1. Create a new file in `references/integrations/` (e.g., `hubspot-setup.md`)
+2. Cover setup, configuration, and common startup use cases
+3. Keep instructions step-by-step and tool-version-independent
+4. Update the Integrations Routing table in `SKILL.md`
+
+### Add Advisor Tools
+1. Add to the appropriate file in `references/advisor/`
+2. Focus on diagnostic frameworks, session prep, or portfolio tracking
+3. Update the Advisor & Investor Toolkit Routing table in `SKILL.md`
+
 ## Style Guidelines
 
 - **Tone:** Calm, direct, practical. No hype.
