@@ -23,6 +23,9 @@ graph LR
         TOPIC --> CONTRACTS[contracts/]
         TOPIC --> ACCOUNTING[accounting/]
         TOPIC --> IP[ip/]
+        TOPIC --> ADVISOR[advisor/]
+        TOPIC --> DECISIONS[decisions/]
+        TOPIC --> INTEGRATIONS[integrations/]
         STAGE --> REGIONAL[regional/]
     end
 
@@ -35,6 +38,9 @@ graph LR
         CONTRACTS --> RESPONSE
         ACCOUNTING --> RESPONSE
         IP --> RESPONSE
+        ADVISOR --> RESPONSE
+        DECISIONS --> RESPONSE
+        INTEGRATIONS --> RESPONSE
         REGIONAL --> RESPONSE
     end
 
