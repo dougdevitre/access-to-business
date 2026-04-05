@@ -106,6 +106,8 @@ Cash:
 5. Offer interactive tools: *"Want to model your runway? Open `apps/runway-calculator.html`. For unit economics, try `apps/unit-economics-calculator.html`."*
 6. Ask: *"Which number concerns you most right now?"* → route to fix
 
+**Related:** `/runway` for cash focus | `/uniteconomics` for CAC/LTV deep dive | `/burn` for expense audit | `traction-benchmarks.md` for what "good" looks like | `metrics-finance.md` playbook
+
 ---
 
 ### `/runway`
@@ -123,6 +125,8 @@ Cash:
 4. Give 3 specific actions based on their runway situation
 5. Offer: *"Want to model scenarios? Open `apps/runway-calculator.html` for an interactive calculator."*
 
+**Related:** `/burn` for expense breakdown | `/metrics` for full dashboard | `resilience-advanced.md` crisis protocol if < 3 months | `fundraising.md` for bridge round strategy
+
 ---
 
 ### `/burn`
@@ -135,6 +139,8 @@ Cash:
 3. Compare to last month if they know it
 4. Flag the biggest line item: *"Your largest expense is [X]. Is it generating revenue?"*
 5. Identify 1 cut that could extend runway by 30+ days
+
+**Related:** `/runway` for cash timeline | `/metrics` for full picture | `automation.md` to reduce manual costs | `operations.md` for SOP efficiency
 
 ---
 
@@ -166,6 +172,8 @@ CAC Payback = CAC ÷ (ARPU × Gross Margin %)
 
 4. Give 1–2 specific levers to improve the weakest metric
 5. Offer: *"Want to play with the numbers? Open `apps/unit-economics-calculator.html` for interactive modeling."*
+
+**Related:** `/metrics` for full dashboard | `/runway` for cash focus | `pricing-strategy.md` if pricing is the issue | `traction-benchmarks.md` for stage benchmarks
 
 ---
 
@@ -205,6 +213,8 @@ TAB 5 — SCENARIOS
 ```
 
 3. Flag: *"Investors look for: Is burn justified by growth? Is the path to profitability visible? Are your assumptions defensible?"*
+
+**Related:** `/binder financial` for investor-ready model | `/uniteconomics` for CAC/LTV inputs | `metrics-finance.md` playbook | `investor-binder-due-diligence.md` Section 12
 
 ---
 
@@ -246,6 +256,8 @@ Happy to share what we've learned if useful.
 
 5. Ask: *"Do you want a 3-email follow-up sequence too?"*
 
+**Related:** `/followup` for stalled leads | `/icp` to sharpen targeting | `/objection` for handling responses | `sales-templates.md` for more formats | `customer-discovery.md` for research outreach
+
 ---
 
 ### `/followup`
@@ -283,6 +295,8 @@ If the timing ever works, here's my calendar: [link].
 Rooting for you either way.
 ```
 
+**Related:** `/outreach` to write the initial message | `/objection` if they respond with pushback | `gtm-sales.md` for full pipeline playbook | `automation.md` for auto-follow-up sequences
+
 ---
 
 ### `/objection [objection]`
@@ -306,6 +320,8 @@ Rooting for you either way.
 | "What's your moat?" | *"Our unfair advantage is [X] — here's why it compounds."* |
 
 4. Roleplay the response if they want practice: *"Want to try it? I'll play the objector."*
+
+**Related:** `/simulate` for investor objections | `/outreach` to improve initial message | `/position` to strengthen core pitch | `competitive-intelligence.md` for competitor objections
 
 ---
 
@@ -334,6 +350,8 @@ Anti-ICP: [Who to avoid and why]
 
 3. Ask: *"Does this match your 3 best current customers?"* If not — revise.
 
+**Related:** `/outreach` to reach your ICP | `/position` for messaging | `/validate` to test ICP assumptions | `customer-discovery.md` for interview scripts
+
 ---
 
 ### `/position`
@@ -359,6 +377,8 @@ We [unique proof point]
 ```
 
 3. Test it: *"Read this out loud. Does it sound like something you'd say to a real customer? If not, let's rewrite it."*
+
+**Related:** `/icp` to define who you serve | `/outreach` to use the positioning | `marketing-brand.md` for full brand playbook | `pitch/marketing-copy-library.md` for taglines and copy
 
 ---
 
@@ -398,6 +418,8 @@ NEXT STEP
 Questions? [Name] | [Email] | [Phone]
 ```
 
+**Related:** `/outreach` for initial contact | `/followup` if proposal stalls | `sales-templates.md` for proposal alternatives | `contracts/saas-subscription-agreement.md` for formal contracts
+
 ---
 
 ## COACHING & ACCOUNTABILITY COMMANDS
@@ -417,6 +439,8 @@ Questions? [Name] | [Email] | [Phone]
    - What's slipping
    - What the gap between stated priority and actual activity reveals
 5. Give 1 specific reorientation task
+
+**Related:** `/blockers` to dig into what's stuck | `/wins` to recognize progress | `/next` for single next action | `checklists.md` for weekly stage-appropriate tasks
 
 ---
 
@@ -440,6 +464,8 @@ Questions? [Name] | [Email] | [Phone]
 3. Remove or route around the blocker
 4. Give the smallest possible next action
 
+**Related:** `/recover` for emotional blocks | `/decide` for decision paralysis | `/next` for single next action | `resilience.md` for burnout and overwhelm
+
 ---
 
 ### `/wins`
@@ -455,6 +481,8 @@ Questions? [Name] | [Email] | [Phone]
 3. Connect wins to the larger trajectory: *"Three months ago you had no customers. Now you have [X]. That's real."*
 4. Ask: *"What would it take to repeat that win this week?"*
 
+**Related:** `/status` for full progress check | `/next` to keep momentum | `/sprint` to build on wins | `traction-benchmarks.md` to see how wins compare to benchmarks
+
 ---
 
 ### `/next`
@@ -469,6 +497,8 @@ Questions? [Name] | [Email] | [Phone]
    - Stage 3: Next action = whatever is blocking the fundraise or revenue target
 3. Give 1 task. Not 3. Not a list. Just 1.
 4. *"Do that. Come back when it's done."*
+
+**Related:** `/focus` to lock in on the task | `/validate` if the next action is a test | `/blockers` if they can't identify what's next | `ninety-day-sprints.md` for structured planning
 
 ---
 
@@ -498,6 +528,8 @@ Q4: Will they pay what you need to be sustainable?
 4. Give a specific pivot hypothesis to test
 5. Remind: *"Pivot ≠ failure. Slack, Instagram, YouTube — all pivots. Panic pivot = failure. Pivot based on data."*
 
+**Related:** `/validate` to test the new direction | `/decide` for structured decision-making | `resilience.md` for pivot psychology | `decisions/should-i-raise.md` if pivot affects fundraising
+
 ---
 
 ### `/validate [idea]`
@@ -519,6 +551,8 @@ Q4: Will they pay what you need to be sustainable?
 3. Rank by risk (highest uncertainty × highest impact if wrong)
 4. Give the fastest test for the top 2 assumptions
 5. Rule: *"Don't build until assumptions 1 and 2 are validated."*
+
+**Related:** `/icp` to define who to test with | `validation.md` for full playbook | `customer-discovery.md` for interview scripts | `first-revenue.md` for pre-sales validation
 
 ---
 
@@ -561,6 +595,8 @@ THIS IS NOT A FIT IF YOU:
    - First salesperson: 0.1–0.5%
    - Advisor: 0.1–0.25%
 
+**Related:** `/cofounder` for co-founder equity | `team-hiring.md` playbook | `team-hr-templates.md` for offer letters | `decisions/when-to-hire.md` for timing framework | `legal-formation.md` for vesting/equity structure
+
 ---
 
 ### `/cofounder`
@@ -601,3 +637,5 @@ Other:
 3. For any unmarked item, give a conversation starter:
    - *"Here's how to open the equity conversation: 'I want to make sure we both feel great about this long-term. Can we talk through the split and vesting?'"*
 4. Remind: *"A handshake agreement is not enough. More co-founder disputes come from undocumented expectations than bad intentions."*
+
+**Related:** `/hire` for team equity | `legal-templates.md` for co-founder agreement template | `resilience-advanced.md` for co-founder conflict resolution | `legal-formation.md` for vesting setup

@@ -37,6 +37,8 @@ Load this file when the user types: `/start` `/focus` `/sprint` `/recover` `/dec
 5. Recommend the right mode + first task
 6. Execute immediately — don't wait
 
+**Related:** `/help` for all commands | `/focus` or `/sprint` to start working | `apps/intake-app.html` for interactive onboarding
+
 ---
 
 ## `/focus [topic]`
@@ -49,6 +51,8 @@ Load this file when the user types: `/start` `/focus` `/sprint` `/recover` `/dec
 3. Give exactly 1 task using the Task Response Format
 4. Stay present — don't offer alternatives until the task is done
 5. When done: *"That's done. What's next?"*
+
+**Related:** `/sprint` for longer sessions | `/next` if unsure what to focus on | `/blockers` if stuck
 
 **Example:**
 ```
@@ -69,6 +73,8 @@ Load this file when the user types: `/start` `/focus` `/sprint` `/recover` `/dec
 4. Present all tasks upfront so the founder sees the arc
 5. Work through each one — celebrate every completion
 6. End with: *"Sprint complete. Here's what you shipped: [list]"*
+
+**Related:** `/focus` for single-task mode | `/wins` to celebrate after | `/status` to track progress
 
 **Example:**
 ```
@@ -95,6 +101,8 @@ Load this file when the user types: `/start` `/focus` `/sprint` `/recover` `/dec
 5. If they don't know, give the smallest possible task in their current priority area
 6. One win first. Everything else after.
 
+**Related:** `/focus` after recovery | `/wins` to rebuild momentum | `resilience.md` playbook for deeper support
+
 ---
 
 ## `/decide [question]`
@@ -109,6 +117,8 @@ Load this file when the user types: `/start` `/focus` `/sprint` `/recover` `/dec
 5. Give a clear recommendation with rationale
 6. Ask: *"Are you in?"*
 7. Assign the first execution task immediately
+
+**Related:** `/pivot` for bigger direction changes | `decisions/` flowcharts for structured frameworks | `/focus` to execute the decision
 
 **Example:**
 ```
@@ -147,6 +157,8 @@ Load this file when the user types: `/start` `/focus` `/sprint` `/recover` `/dec
 - Tool setup and SOPs
 
 4. Give 3 task options from the matching list. Let them pick one. Execute immediately.
+
+**Related:** `/focus` to lock in | `/recover` if energy is very low | `resilience.md` for burnout prevention
 
 ---
 
