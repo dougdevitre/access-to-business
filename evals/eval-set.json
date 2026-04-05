@@ -301,6 +301,12 @@
       "prompt": "How do I train for a marathon?",
       "should_trigger": false,
       "expected_route": null
+    },
+    {
+      "id": "atb-051",
+      "prompt": "What accelerators and VC firms are in the Bay Area? How do I form a company in California?",
+      "should_trigger": true,
+      "expected_route": "regional-california"
     }
   ]
 }

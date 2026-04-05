@@ -36,6 +36,7 @@
     "references/integrations"
   ],
   "regional_deployments": [
-    "missouri"
+    "missouri",
+    "california"
   ]
 }
