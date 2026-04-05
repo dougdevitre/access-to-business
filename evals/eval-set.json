@@ -337,6 +337,150 @@
       "prompt": "I got rejected by 15 investors in a row. I don't know if I should keep going.",
       "should_trigger": true,
       "expected_route": "resilience"
+    },
+    {
+      "id": "atb-057",
+      "prompt": "How do I position my product and pick a marketing channel?",
+      "should_trigger": true,
+      "expected_route": "marketing-brand"
+    },
+    {
+      "id": "atb-058",
+      "prompt": "Help me write LinkedIn content and a launch plan for my new feature",
+      "should_trigger": true,
+      "expected_route": "marketing-brand"
+    },
+    {
+      "id": "atb-059",
+      "prompt": "What's my burn multiple? Help me build a financial model.",
+      "should_trigger": true,
+      "expected_route": "metrics-finance"
+    },
+    {
+      "id": "atb-060",
+      "prompt": "I need to build SOPs for my team and figure out our operating cadence",
+      "should_trigger": true,
+      "expected_route": "operations"
+    },
+    {
+      "id": "atb-061",
+      "prompt": "Should I build an MVP with code or use no-code tools? What's the fastest way to ship?",
+      "should_trigger": true,
+      "expected_route": "product-mvp"
+    },
+    {
+      "id": "atb-062",
+      "prompt": "Help me plan my fundraising strategy. When should I raise a seed round?",
+      "should_trigger": true,
+      "expected_route": "fundraising"
+    },
+    {
+      "id": "atb-063",
+      "prompt": "What startup accelerators are in Austin? What about Texas incentives and formation?",
+      "should_trigger": true,
+      "expected_route": "regional-texas"
+    },
+    {
+      "id": "atb-064",
+      "prompt": "I need to write an offer letter and onboard my first hire. What equity should I give?",
+      "should_trigger": true,
+      "expected_route": "team-hr-templates"
+    },
+    {
+      "id": "atb-065",
+      "prompt": "Help me write a press release for my product launch",
+      "should_trigger": true,
+      "expected_route": "pr-media-templates"
+    },
+    {
+      "id": "atb-066",
+      "prompt": "I need to set up a waitlist page and launch email sequence for my community",
+      "should_trigger": true,
+      "expected_route": "community-marketing-templates"
+    },
+    {
+      "id": "atb-067",
+      "prompt": "Help me draft a partnership proposal and vendor negotiation letter",
+      "should_trigger": true,
+      "expected_route": "partner-vendor-templates"
+    },
+    {
+      "id": "atb-068",
+      "prompt": "I need a decision memo template and OKR format for my team standup",
+      "should_trigger": true,
+      "expected_route": "internal-comms-templates"
+    },
+    {
+      "id": "atb-069",
+      "prompt": "Help me onboard a new customer and set up an NPS survey",
+      "should_trigger": true,
+      "expected_route": "customer-templates"
+    },
+    {
+      "id": "atb-070",
+      "prompt": "I need to protect my startup's intellectual property. Should I trademark first or patent?",
+      "should_trigger": true,
+      "expected_route": "ip-trademarks"
+    },
+    {
+      "id": "atb-071",
+      "prompt": "We handle student data. Do we need to be FERPA compliant?",
+      "should_trigger": true,
+      "expected_route": "industry-compliance"
+    },
+    {
+      "id": "atb-072",
+      "prompt": "Help me draft a master services agreement for a consulting engagement",
+      "should_trigger": true,
+      "expected_route": "contracts-msa"
+    },
+    {
+      "id": "atb-073",
+      "prompt": "I need help with my startup's bookkeeping. What chart of accounts should I use?",
+      "should_trigger": true,
+      "expected_route": "accounting"
+    },
+    {
+      "id": "atb-074",
+      "prompt": "What's the best entity type for my situation? LLC vs C-Corp vs S-Corp?",
+      "should_trigger": true,
+      "expected_route": "decisions-entity-type"
+    },
+    {
+      "id": "atb-075",
+      "prompt": "When should I make my first full-time hire vs keep using contractors?",
+      "should_trigger": true,
+      "expected_route": "decisions-when-to-hire"
+    },
+    {
+      "id": "atb-076",
+      "prompt": "Help me create a GDPR privacy policy and handle CCPA compliance",
+      "should_trigger": true,
+      "expected_route": "data-privacy"
+    },
+    {
+      "id": "atb-077",
+      "prompt": "What does SOC 2 compliance involve? We're getting enterprise security questionnaires.",
+      "should_trigger": true,
+      "expected_route": "soc2"
+    },
+    {
+      "id": "atb-078",
+      "prompt": "Help me write a demo script and speaker notes for my investor presentation",
+      "should_trigger": true,
+      "expected_route": "presentation-toolkit"
+    },
+    {
+      "id": "atb-079",
+      "prompt": "Can you help me organize my cat's birthday party?",
+      "should_trigger": false,
+      "expected_route": null
+    },
+    {
+      "id": "atb-080",
+      "prompt": "What's the best programming language to learn as a beginner?",
+      "should_trigger": false,
+      "expected_route": null
     }
   ]
 }
