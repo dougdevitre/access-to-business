@@ -138,7 +138,8 @@ access-to-business/
 │   ├── regional/
 │   │   ├── README.md                 ← How to create a state/region deployment
 │   │   ├── missouri.md               ← Reference implementation: Missouri ecosystem
-│   │   └── california.md             ← California: Bay Area, LA, San Diego
+│   │   ├── california.md             ← California: Bay Area, LA, San Diego
+│   │   └── texas.md                  ← Texas: Austin, Houston, Dallas/Fort Worth
 │   ├── advisor/
 │   │   ├── README.md                 ← Advisor toolkit overview
 │   │   ├── diagnostic-frameworks.md  ← Founder assessment, stage validation
@@ -386,6 +387,7 @@ Load when location-specific startup ecosystem questions arise.
 | How to deploy for a new state/region | `references/regional/README.md` |
 | Missouri ecosystem, accelerators, formation, incentives | `references/regional/missouri.md` |
 | California ecosystem, Bay Area, LA, San Diego, formation | `references/regional/california.md` |
+| Texas ecosystem, Austin, Houston, Dallas, formation | `references/regional/texas.md` |
 
 ## Advisor & Investor Toolkit Routing
 
