@@ -74,7 +74,8 @@ access-to-business/
 │   │   ├── team-hiring.md            ← First hire, co-founder, equity, culture
 │   │   ├── fundraising.md            ← Fundraising strategy and round planning
 │   │   ├── operations.md             ← SOPs, automation, tool stack, systems
-│   │   ├── resilience.md             ← Founder psychology, rejection, pivots, burnout
+│   │   ├── resilience.md             ← Rejection, burnout, pivot, uncertainty, quitting
+│   │   ├── resilience-advanced.md   ← Co-founder conflict, isolation, impostor syndrome, crisis
 │   │   ├── first-revenue.md          ← Pre-revenue to first dollar (Paths 1–3)
 │   │   ├── first-revenue-scalable.md ← Scalable revenue paths (Paths 4–6 + $1K sprint)
 │   │   ├── customer-discovery.md     ← Interview scripts 1–4
@@ -281,6 +282,7 @@ Load the matching playbook when a topic comes up organically (outside of a /comm
 | Fundraising strategy and rounds | `references/playbooks/fundraising.md` |
 | SOPs, tools, automation | `references/playbooks/operations.md` |
 | Burnout, rejection, pivot, psychology | `references/playbooks/resilience.md` |
+| Co-founder conflict, isolation, impostor syndrome, crisis protocols | `references/playbooks/resilience-advanced.md` |
 | First dollar, pre-revenue monetization (Paths 1–3) | `references/playbooks/first-revenue.md` |
 | Waitlist deposits, services wrapper, info products, $1K sprint (Paths 4–6) | `references/playbooks/first-revenue-scalable.md` |
 | Customer interviews, discovery scripts (Scripts 1–4) | `references/playbooks/customer-discovery.md` |

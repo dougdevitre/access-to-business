@@ -319,6 +319,24 @@
       "prompt": "What's a burn multiple? And what's the magic number for SaaS?",
       "should_trigger": true,
       "expected_route": "glossary"
+    },
+    {
+      "id": "atb-054",
+      "prompt": "My co-founder and I keep fighting about priorities. How do we resolve this?",
+      "should_trigger": true,
+      "expected_route": "resilience-advanced"
+    },
+    {
+      "id": "atb-055",
+      "prompt": "I feel like a fraud. Everyone at this accelerator is smarter than me.",
+      "should_trigger": true,
+      "expected_route": "resilience-advanced"
+    },
+    {
+      "id": "atb-056",
+      "prompt": "I got rejected by 15 investors in a row. I don't know if I should keep going.",
+      "should_trigger": true,
+      "expected_route": "resilience"
     }
   ]
 }
