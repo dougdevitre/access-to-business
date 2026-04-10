@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access to Business — AI-Powered Startup Coach</title>
+<meta name="description" content="Open-source AI startup coach, execution engine, pitch generator, and investor binder builder. Part of the Access To civic tech initiative.">
+<meta name="theme-color" content="#0f1117">
+<meta property="og:title" content="Access to Business">
+<meta property="og:description" content="AI-powered startup coach, execution engine, pitch generator, and investor binder builder.">
+<meta property="og:type" content="website">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f1117;
+    --bg-card: #1a1d27;
+    --bg-deep: #12141c;
+    --border: #2a2d3a;
+    --text: #e2e4e9;
+    --text-muted: #8b8fa3;
+    --text-heading: #ffffff;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+    --purple: #7c3aed;
+    --green: #22c55e;
+    --yellow: #fbbf24;
+    --orange: #fb923c;
+    --red: #f87171;
+    --blue: #2563eb;
+    --radius: 12px;
+    --max-width: 1120px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(15, 17, 23, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-heading);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-brand .pillar-badge {
+    background: var(--purple);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text-heading); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--accent-hover); }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 140px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-badge strong { color: var(--accent); }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-heading);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-muted);
+    max-width: 540px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 24px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Sections */
+  section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* Capability cards */
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .capability-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    transition: all 0.25s;
+  }
+
+  .capability-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  .capability-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+
+  .capability-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+  }
+
+  .capability-card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Stages */
+  .stages-track {
+    display: flex;
+    gap: 0;
+    position: relative;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .stage-card {
+    flex: 1;
+    min-width: 180px;
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    margin: 0 6px;
+    transition: all 0.25s;
+  }
+
+  .stage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  .stage-number {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stage-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+  }
+
+  .stage-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .s0 .stage-number { color: var(--yellow); }
+  .s1 .stage-number { color: var(--orange); }
+  .s2 .stage-number { color: var(--red); }
+  .s3 .stage-number { color: var(--purple); }
+  .s4 .stage-number { color: var(--blue); }
+
+  .s0:hover { border-color: var(--yellow); }
+  .s1:hover { border-color: var(--orange); }
+  .s2:hover { border-color: var(--red); }
+  .s3:hover { border-color: var(--purple); }
+  .s4:hover { border-color: var(--blue); }
+
+  /* Tools */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .tool-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tool-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  .tool-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+  }
+
+  .tool-card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .tool-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Commands */
+  .commands-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+  }
+
+  .commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .command-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+
+  .command-item:hover { background: var(--bg-deep); }
+
+  .command-name {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    min-width: 100px;
+  }
+
+  .command-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* Family */
+  .family-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  .family-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .family-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .family-card.current {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .family-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--bg-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .family-card.current .family-num {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .family-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 2px;
+  }
+
+  .family-info span {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  /* Getting Started */
+  .getting-started {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    text-align: center;
+  }
+
+  .getting-started h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 12px;
+  }
+
+  .getting-started p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-glow);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 auto 12px;
+  }
+
+  .steps h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 6px;
+  }
+
+  .steps p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-left {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .footer-left a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer-left a:hover { text-decoration: underline; }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text-heading); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      gap: 16px;
+    }
+    .nav-toggle { display: block; }
+
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+
+    .stages-track { flex-wrap: wrap; }
+    .stage-card { min-width: 140px; }
+
+    .commands-section { padding: 24px 18px; }
+    .commands-grid { grid-template-columns: 1fr; }
+
+    .getting-started { padding: 32px 20px; }
+
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 120px 16px 60px; }
+    .stats-bar { grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px 48px; }
+    .stat-item { padding: 18px 12px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      Access to Business
+      <span class="pillar-badge">Pillar 7</span>
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#stages">Stages</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#commands">Commands</a></li>
+      <li><a href="#family">Access To</a></li>
+      <li><a href="https://github.com/dougdevitre/access-to-business" class="nav-cta">GitHub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Open Source &middot; MIT License &middot; <strong>v1.1.0</strong></div>
+    <h1>Your AI Startup Coach</h1>
+    <p class="hero-subtitle">
+      A hands-on execution engine that builds with you. Every session ends with something shipped &mdash; a draft, a template, a pitch, a decision.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/dougdevitre/access-to-business" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+      <a href="https://github.com/dougdevitre/access-to-business/blob/main/GETTING_STARTED.md" class="btn btn-secondary">
+        Getting Started
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number">36</div>
+    <div class="stat-label">Commands</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">21</div>
+    <div class="stat-label">Playbooks</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">Templates</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">4</div>
+    <div class="stat-label">Interactive Tools</div>
+  </div>
+</div>
+
+<!-- Capabilities -->
+<section id="capabilities">
+  <div class="section-header">
+    <h2>What It Does</h2>
+    <p>Eight integrated capability areas that cover the full startup lifecycle.</p>
+  </div>
+  <div class="capabilities-grid">
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(99,102,241,0.15); color: #818cf8;">&#9654;</div>
+      <h3>Execution Coaching</h3>
+      <p>Slash commands that keep you moving. Focus sessions, sprints, recovery mode, and energy-based routing.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(124,58,237,0.15); color: #a78bfa;">&#9733;</div>
+      <h3>Investor Binder</h3>
+      <p>Full 17-section binder build system with readiness scoring and copy-paste templates.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(236,72,153,0.15); color: #f472b6;">&#9998;</div>
+      <h3>Pitch Generator</h3>
+      <p>Verbal pitch scripts, deck design system, one-sheets, and marketing copy library.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(34,197,94,0.15); color: #4ade80;">&#36;</div>
+      <h3>Financial Tools</h3>
+      <p>Burn rate calculator, runway projections, unit economics, and financial model scaffolding.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(251,191,36,0.15); color: #fbbf24;">&#9993;</div>
+      <h3>Sales &amp; GTM</h3>
+      <p>Cold outreach templates, ICP builder, objection handling scripts, and pipeline management.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(248,113,113,0.15); color: #f87171;">&#9878;</div>
+      <h3>Legal &amp; Compliance</h3>
+      <p>Entity formation guides, contract templates, HIPAA, SOC2, GDPR, and PCI-DSS frameworks.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(56,189,248,0.15); color: #38bdf8;">&#128196;</div>
+      <h3>Templates Library</h3>
+      <p>100+ copy-paste-ready templates across 11 categories: investor, sales, legal, HR, PR, and more.</p>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon" style="background: rgba(251,146,60,0.15); color: #fb923c;">&#127758;</div>
+      <h3>Regional Ecosystems</h3>
+      <p>State-specific accelerators, grants, legal resources, and formation guides. Deploy for any state.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Startup Stages -->
+<section id="stages">
+  <div class="section-header">
+    <h2>Startup Stage Progression</h2>
+    <p>The skill adapts to your stage, from first idea to scaling operations.</p>
+  </div>
+  <div class="stages-track">
+    <div class="stage-card s0">
+      <div class="stage-number">0</div>
+      <div class="stage-name">Idea</div>
+      <div class="stage-desc">Validate before building</div>
+    </div>
+    <div class="stage-card s1">
+      <div class="stage-number">1</div>
+      <div class="stage-name">Pre-Revenue</div>
+      <div class="stage-desc">Get your first 10 customers</div>
+    </div>
+    <div class="stage-card s2">
+      <div class="stage-number">2</div>
+      <div class="stage-name">Early Revenue</div>
+      <div class="stage-desc">Build repeatability</div>
+    </div>
+    <div class="stage-card s3">
+      <div class="stage-number">3</div>
+      <div class="stage-name">Growth</div>
+      <div class="stage-desc">Systems, capital, and scale</div>
+    </div>
+    <div class="stage-card s4">
+      <div class="stage-number">4</div>
+      <div class="stage-name">Scaling</div>
+      <div class="stage-desc">Efficiency and team</div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Tools -->
+<section id="tools">
+  <div class="section-header">
+    <h2>Interactive Tools</h2>
+    <p>Self-contained browser apps you can use right now. No dependencies, no sign-up.</p>
+  </div>
+  <div class="tools-grid">
+    <a href="apps/intake-app.html" class="tool-card">
+      <h3>Startup Intake Assessment</h3>
+      <p>Multi-step form to identify your stage, priorities, and recommended next actions.</p>
+      <span class="tool-tag">Launch App &rarr;</span>
+    </a>
+    <a href="apps/pitch-timer.html" class="tool-card">
+      <h3>Pitch Practice Timer</h3>
+      <p>Visual countdown timer with speaker notes. Presets for 5, 10, 15, and 20-minute pitches.</p>
+      <span class="tool-tag">Launch App &rarr;</span>
+    </a>
+    <a href="apps/runway-calculator.html" class="tool-card">
+      <h3>Runway Calculator</h3>
+      <p>Calculate your burn rate and months of runway with color-coded status indicators.</p>
+      <span class="tool-tag">Launch App &rarr;</span>
+    </a>
+    <a href="apps/unit-economics-calculator.html" class="tool-card">
+      <h3>Unit Economics Calculator</h3>
+      <p>Compute LTV, CAC, and payback period with health indicators for your SaaS metrics.</p>
+      <span class="tool-tag">Launch App &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- Commands -->
+<section id="commands">
+  <div class="section-header">
+    <h2>Command Reference</h2>
+    <p>Just type a command to get started. The skill handles the rest.</p>
+  </div>
+  <div class="commands-section">
+    <div class="commands-grid">
+      <div class="command-item">
+        <span class="command-name">/start</span>
+        <span class="command-desc">Full onboarding &mdash; identifies your stage and priorities</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/help</span>
+        <span class="command-desc">See all available commands</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/focus</span>
+        <span class="command-desc">Lock into one task until it's done</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/sprint</span>
+        <span class="command-desc">60-minute deep work with 3-5 micro-tasks</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/recover</span>
+        <span class="command-desc">Get unstuck with the smallest next step</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/decide</span>
+        <span class="command-desc">Compare options and commit to one</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/energy</span>
+        <span class="command-desc">Route tasks based on your current energy</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/binder</span>
+        <span class="command-desc">Build your 17-section investor binder</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/score</span>
+        <span class="command-desc">Rate your investor binder readiness</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/pitch</span>
+        <span class="command-desc">Draft your pitch (verbal, deck, or one-sheet)</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/deck</span>
+        <span class="command-desc">Build or review your pitch deck</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/metrics</span>
+        <span class="command-desc">Review your key startup metrics</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/runway</span>
+        <span class="command-desc">Calculate burn rate and runway</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/outreach</span>
+        <span class="command-desc">Draft sales or investor outreach messages</span>
+      </div>
+      <div class="command-item">
+        <span class="command-name">/validate</span>
+        <span class="command-desc">Run customer validation exercises</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Getting Started -->
+<section id="get-started">
+  <div class="getting-started">
+    <h2>Get Started in 3 Steps</h2>
+    <p>Install the skill, answer three questions, and start building.</p>
+    <div class="steps">
+      <div>
+        <div class="step-num">1</div>
+        <h4>Install</h4>
+        <p>Download from GitHub Releases and upload to Claude.ai Settings, or clone the repo.</p>
+      </div>
+      <div>
+        <div class="step-num">2</div>
+        <h4>Type /start</h4>
+        <p>Answer three questions: your idea, your priority (customers or funding), and your time.</p>
+      </div>
+      <div>
+        <div class="step-num">3</div>
+        <h4>Build</h4>
+        <p>The skill routes you to the right mode and you start shipping output immediately.</p>
+      </div>
+    </div>
+    <a href="https://github.com/dougdevitre/access-to-business" class="btn btn-primary">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      Get Access to Business
+    </a>
+  </div>
+</section>
+
+<!-- Access To Family -->
+<section id="family">
+  <div class="section-header">
+    <h2>The Access To Family</h2>
+    <p>Seven open-source civic tech pillars. Each one makes access easier.</p>
+  </div>
+  <div class="family-grid">
+    <a href="https://github.com/dougdevitre/access-to-justice" class="family-card">
+      <div class="family-num">1</div>
+      <div class="family-info">
+        <h4>Access to Justice</h4>
+        <span>Legal aid navigation</span>
+      </div>
+    </a>
+    <a href="https://github.com/dougdevitre/access-to-education" class="family-card">
+      <div class="family-num">2</div>
+      <div class="family-info">
+        <h4>Access to Education</h4>
+        <span>K-12 standards &amp; educator tools</span>
+      </div>
+    </a>
+    <a href="https://github.com/dougdevitre/access-to-housing" class="family-card">
+      <div class="family-num">3</div>
+      <div class="family-info">
+        <h4>Access to Housing</h4>
+        <span>Real estate intelligence</span>
+      </div>
+    </a>
+    <a href="https://github.com/dougdevitre/access-to-services" class="family-card">
+      <div class="family-num">4</div>
+      <div class="family-info">
+        <h4>Access to Services</h4>
+        <span>Social services navigation</span>
+      </div>
+    </a>
+    <a href="https://github.com/dougdevitre/access-to-peace" class="family-card">
+      <div class="family-num">5</div>
+      <div class="family-info">
+        <h4>Access to Peace</h4>
+        <span>Conflict resolution</span>
+      </div>
+    </a>
+    <a href="https://github.com/dougdevitre/access-to-safety" class="family-card">
+      <div class="family-num">6</div>
+      <div class="family-info">
+        <h4>Access to Safety</h4>
+        <span>Domestic violence resources</span>
+      </div>
+    </a>
+    <a href="https://github.com/dougdevitre/access-to-business" class="family-card current">
+      <div class="family-num">7</div>
+      <div class="family-info">
+        <h4>Access to Business</h4>
+        <span>Startup coaching &amp; execution</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-left">
+    Built by <a href="https://github.com/dougdevitre">Doug DeVitre</a> &middot; Part of the Access To Initiative &middot; MIT License
+  </div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/dougdevitre/access-to-business">GitHub</a></li>
+    <li><a href="https://github.com/dougdevitre/access-to-business/blob/main/CONTRIBUTING.md">Contributing</a></li>
+    <li><a href="https://github.com/dougdevitre/access-to-business/blob/main/CHANGELOG.md">Changelog</a></li>
+    <li><a href="https://github.com/dougdevitre/access-to-business/issues">Issues</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
