@@ -95,6 +95,19 @@ The skill adapts to your stage:
 - Integration guides (Stripe, Airtable)
 - State-specific resource guides
 
+## Interactive Tools
+
+Four self-contained browser apps ship alongside the skill. Open the HTML file in a browser — no install, no account.
+
+| App | Purpose |
+|---|---|
+| [`apps/intake-app.html`](apps/intake-app.html) | Structured founder intake assessment |
+| [`apps/pitch-timer.html`](apps/pitch-timer.html) | Pitch rehearsal timer with section pacing |
+| [`apps/runway-calculator.html`](apps/runway-calculator.html) | Burn rate and runway projection |
+| [`apps/unit-economics-calculator.html`](apps/unit-economics-calculator.html) | CAC, LTV, payback, and margin modeling |
+
+The skill will offer these when they match what you're working on — or you can open them directly.
+
 ## Contributing
 
 Want to add your state's startup ecosystem? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [Regional Deployment Guide](references/regional/README.md).

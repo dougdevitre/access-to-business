@@ -19,9 +19,9 @@ Access to Business is an open-source Claude AI skill (Pillar 7 of the Access To 
   - `advisor/` — Diagnostic frameworks, portfolio tools, session prep
   - `decisions/` — Decision flowcharts (should-i-raise, entity-type, build-vs-buy, when-to-hire)
   - `integrations/` — Stripe setup, Airtable starter bases
-  - `regional/` — State-specific deployments (Missouri, California)
+  - `regional/` — State-specific deployments (Missouri, California, Texas)
 - `apps/` — Self-contained HTML apps (intake, pitch timer, runway calculator, unit economics)
-- `evals/` — 51 eval test cases for skill triggering
+- `evals/` — 80 eval test cases for skill triggering
 - `docs/` — Architecture documentation
 
 ## Key Conventions
