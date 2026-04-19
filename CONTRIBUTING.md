@@ -112,8 +112,7 @@ Look for issues labeled **`good first issue`** on GitHub. These are self-contain
 
 ## Code of Conduct
 
-Be respectful, constructive, and founder-friendly. This project exists to help people
-build businesses — contributions should reflect that mission.
+Be respectful, constructive, and founder-friendly. This project exists to help people build businesses — contributions should reflect that mission. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for the full policy.
 
 ## License
 

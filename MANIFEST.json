@@ -21,6 +21,8 @@
   "commands": 36,
   "playbooks": 21,
   "templates": 100,
+  "evals": 80,
+  "apps": 4,
   "reference_directories": [
     "references/commands",
     "references/playbooks",

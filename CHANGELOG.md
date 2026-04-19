@@ -10,6 +10,26 @@ flowchart LR
     style B fill:#4a90d9,stroke:#2c5f8a,color:#fff
 ```
 
+## [Unreleased]
+
+### Added
+- `CODE_OF_CONDUCT.md` (Contributor Covenant v2.1) — replaces the 3-line stub previously embedded in `CONTRIBUTING.md`
+- `README.md` — table of contents, "What's Inside" inventory, FAQ, "Getting Help" section, CI status badge
+- `README.md` — third install option (Claude Code CLI) and clarified existing options
+- `README.md` — `Interactive Apps` branch in the architecture diagram and a new `Interactive Tools` row in the capabilities table linking the 4 HTML apps
+- `GETTING_STARTED.md` — `Interactive Tools` section documenting the 4 browser apps
+- `MANIFEST.json` — `evals: 80` and `apps: 4` fields for machine-readable inventory
+
+### Changed
+- `README.md` — repository-structure diagram now shows all 12 reference directories (added `advisor`, `decisions`, `integrations`) and lists Missouri, California, and Texas as reference state deployments
+- `CLAUDE.md` — eval count corrected from 51 to 80 (matches `evals/eval-set.json`); regional list now includes Texas
+- `CONTRIBUTING.md` — Code of Conduct section now links to the standalone file
+
+### Fixed
+- Documentation drift: eval count, state deployment list, and reference-directory count are now consistent across `README.md`, `CLAUDE.md`, `MANIFEST.json`, and disk
+
+---
+
 ## [1.1.0] — 2026-04-05
 
 ### Added
