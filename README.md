@@ -51,7 +51,7 @@ Access to Business is a Claude AI skill that acts as a hands-on startup coach. I
 - **36 slash commands** across 3 groups (session / binder / ops)
 - **4 interactive browser apps** — intake assessment, pitch timer, runway calculator, unit economics
 - **80 eval test cases** covering skill routing and triggering
-- **12 reference directories** loaded on demand, not all at once
+- **12 reference directories** loaded on demand, not all at once — including playbooks, templates, pitch, compliance, contracts, accounting, IP, advisor toolkit, decision flowcharts, integrations, regional deployments, and commands
 - **3 state deployments shipped** — Missouri, California, Texas (and a deployment guide for yours)
 
 ## Architecture
@@ -195,9 +195,11 @@ See [GETTING_STARTED.md](GETTING_STARTED.md) for a full walkthrough.
 3. Start a session and type `/start`
 
 ### Option 2: Claude.ai (browser)
-1. Download the latest `.skill` file from [Releases](https://github.com/dougdevitre/access-to-business/releases)
-2. Go to **Claude.ai → Settings → Skills**
-3. Upload the `.skill` file and start a new conversation with `/start`
+1. Clone this repo to your machine
+2. In **Claude.ai → Settings → Skills**, upload the folder as a custom skill (or zip it and upload)
+3. Start a new conversation and type `/start`
+
+_A one-click `.skill` bundle is tracked as a follow-up — see [issue tracker](https://github.com/dougdevitre/access-to-business/issues) for status._
 
 ### Option 3: Fork for local development
 1. Fork the repo and clone your fork

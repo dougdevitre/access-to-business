@@ -179,3 +179,7 @@ The CPA who knows your business for 3 years is 10x more valuable than one you ca
 - They've never dealt with a SAFE note
 - They can't produce clean financial statements for an investor in 48 hours
 - They file extensions every year without a proactive plan
+
+---
+
+*This guide provides educational information about selecting and working with a CPA, not tax, accounting, or financial advice. Tax and accounting obligations depend on your entity type, state of formation, revenue, investor base, and jurisdiction. Consult a qualified CPA or financial advisor for your specific situation.*

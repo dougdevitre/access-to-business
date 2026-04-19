@@ -1,0 +1,5 @@
+# Default owner for everything in the repo.
+# Listed owners are automatically requested for review on pull requests.
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-security/customizing-your-repository/about-code-owners
+
+* @dougdevitre

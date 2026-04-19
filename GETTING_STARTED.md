@@ -20,19 +20,19 @@ flowchart LR
 
 ## Installation
 
-### Option 1: Claude.ai (Recommended)
+### Option 1: Claude Code (CLI)
 
-1. Download the latest `.skill` file from [Releases](https://github.com/dougdevitre/access-to-business/releases)
+1. Clone this repository into your Claude Code skills directory
+2. The `SKILL.md` file is auto-detected as the entrypoint
+3. Start a session and type `/start`
 
-2. Go to **Claude.ai > Settings > Skills**
-3. Upload the `.skill` file
-4. Start a new conversation and type `/start`
-
-### Option 2: Clone the Repo
+### Option 2: Claude.ai (browser)
 
 1. Clone this repository
-2. Point your Claude skill directory to the repo
-3. The `SKILL.md` file will be automatically detected
+2. In **Claude.ai → Settings → Skills**, upload the folder as a custom skill (or zip and upload)
+3. Start a new conversation and type `/start`
+
+A one-click `.skill` bundle is tracked as a follow-up release-workflow item — see the [issue tracker](https://github.com/dougdevitre/access-to-business/issues) for status.
 
 ## Your First Session
 

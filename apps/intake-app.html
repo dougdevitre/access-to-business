@@ -127,9 +127,9 @@
     if (step === 0) {
       el.innerHTML =
         '<div class="card"><h2>Tell me about your startup</h2>' +
-        '<div class="field-group"><label>Your name</label>' +
+        '<div class="field-group"><label for="inp-name">Your name</label>' +
         '<input id="inp-name" value="' + esc(data.name) + '" placeholder="First name" /></div>' +
-        '<div class="field-group"><label>What\'s your startup? (one sentence)</label>' +
+        '<div class="field-group"><label for="inp-startup">What\'s your startup? (one sentence)</label>' +
         '<input id="inp-startup" value="' + esc(data.startup) + '" placeholder="e.g. A platform that helps co-parents document safely" /></div></div>';
       document.getElementById("inp-name").addEventListener("input", function(e) { data.name = e.target.value; renderButtons(); });
       document.getElementById("inp-startup").addEventListener("input", function(e) { data.startup = e.target.value; renderButtons(); });
@@ -170,7 +170,7 @@
         html += '<div class="option-btn' + sel + '" data-time="' + t.id + '"><span class="icon">' + t.icon + '</span>' + t.label + '</div>';
       });
       html += '</div>' +
-        '<div class="field-group" style="margin-top:16px"><label>Biggest challenge right now (optional)</label>' +
+        '<div class="field-group" style="margin-top:16px"><label for="inp-challenge">Biggest challenge right now (optional)</label>' +
         '<textarea id="inp-challenge" placeholder="e.g. I can\'t figure out pricing, I\'m scared to reach out to investors...">' + esc(data.challenge) + '</textarea></div></div>';
       el.innerHTML = html;
       el.querySelectorAll("[data-time]").forEach(function(btn) {

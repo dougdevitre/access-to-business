@@ -310,3 +310,7 @@ Before hiring a founder or key employee:
 - New employees should review their prior employer's IP agreement with an attorney
 - Founders should be clean from prior employer claims before company incorporation
 - Document what a founder brought to the company vs. what was developed after
+
+---
+
+*This document provides educational information about trademarks, trade secrets, copyright, and IP assignments, not legal advice. IP strategy decisions have long-term consequences for company valuation and defensibility. Consult a qualified IP attorney before filing applications, asserting rights, or negotiating IP assignments.*

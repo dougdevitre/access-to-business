@@ -378,3 +378,7 @@ Information Rights: Quarterly financials, annual audited statements,
 - 30-day no-shop period
 
 **Engage a startup attorney** before signing any term sheet. The negotiation cost is trivial compared to the long-term impact of bad terms.
+
+---
+
+*This document provides educational information about DPAs, NDAs, and term sheets, not legal advice. Data protection obligations (GDPR, CCPA, etc.) and term sheet mechanics have material financial and legal consequences. Consult a qualified startup attorney before signing any DPA, NDA, or term sheet.*

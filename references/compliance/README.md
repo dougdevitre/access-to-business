@@ -83,3 +83,7 @@ When a founder first asks about compliance, start with this framing:
 4. Pursue SOC 2 when enterprise customers require it (not before)
 
 **Common mistake:** Founders pursue SOC 2 too early (expensive, time-consuming) before they have enterprise customers actually asking for it.
+
+---
+
+*This directory provides educational information about compliance frameworks (HIPAA, SOC 2, GDPR, CCPA, PCI-DSS, FERPA, FINRA). It is not legal advice. Regulatory obligations depend on your jurisdiction, industry, customer base, and data types. Consult a qualified compliance attorney or auditor before relying on any of this content for an actual compliance program.*

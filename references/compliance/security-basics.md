@@ -149,3 +149,7 @@ RECOVERY
 | Compliance automation | Vanta, Drata (see soc2.md) | Same |
 | Password manager | Bitwarden Teams ($3/user/mo) | 1Password Business |
 | Endpoint security | Malwarebytes (free) | CrowdStrike, SentinelOne |
+
+---
+
+*This document provides educational information about security practices, not legal or professional security consulting advice. Regulatory guidance is directional — verify all requirements with a qualified security professional or compliance auditor before relying on this content for a real audit, breach response, or customer security questionnaire.*

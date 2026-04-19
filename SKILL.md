@@ -271,9 +271,11 @@ Load the matching playbook when a topic comes up organically (outside of a /comm
 
 | Topic | Load File |
 |-------|-----------|
-| Investor binder, pitch deck, fundraising (Sections 1–11) | `references/playbooks/investor-binder.md` |
+| Investor binder, pitch deck, fundraising (Sections 1–5) | `references/playbooks/investor-binder.md` |
+| Product/demo, business model, traction, GTM, competitive, team (Sections 6–11) | `references/playbooks/investor-binder-product-team.md` |
 | Financial model, cap table, the ask, legal docs, data room, Q&A prep (Sections 12–17) | `references/playbooks/investor-binder-due-diligence.md` |
 | Idea validation, customer discovery | `references/playbooks/validation.md` |
+| Jobs To Be Done framing, 1-week validation sprint | `references/playbooks/validation-advanced.md` |
 | Sales, outreach, pricing, pipeline | `references/playbooks/gtm-sales.md` |
 | Burn, runway, unit economics, OKRs | `references/playbooks/metrics-finance.md` |
 | MVP, roadmap, features, shipping | `references/playbooks/product-mvp.md` |
@@ -292,10 +294,11 @@ Load the matching playbook when a topic comes up organically (outside of a /comm
 | Pricing psychology, testing methods, stage guidance, worksheet | `references/playbooks/pricing-strategy-advanced.md` |
 | Competitor analysis, battlecards, market positioning (Steps 1–4) | `references/playbooks/competitive-intelligence.md` |
 | Competitive monitoring, quarterly reviews, talking to investors about competitors | `references/playbooks/competitive-intelligence-management.md` |
-| Networking, intros, community, relationship building | `references/playbooks/network-building.md` |
+| Networking intros, customer/investor/advisor networks (1–3) | `references/playbooks/network-building.md` |
+| Peer and talent networks (4–5), give-first, conferences, communities | `references/playbooks/network-building-advanced.md` |
 | Formal advisor asks, advisory agreements, equity, relationship tracking | `references/playbooks/network-building-advisors.md` |
-| 90-day planning, quarterly sprints, Stages 0–2 | `references/playbooks/ninety-day-sprints.md` |
-| 90-day sprint Stage 3, scale-readiness, weekly checkpoint template | `references/playbooks/ninety-day-sprints-growth.md` |
+| 90-day planning, quarterly sprints, Stages 0–1 | `references/playbooks/ninety-day-sprints.md` |
+| 90-day sprint Stages 2–3, scale-readiness, weekly checkpoint template | `references/playbooks/ninety-day-sprints-growth.md` |
 | Workflow automation, Zapier, Make — sales, ops, marketing | `references/playbooks/automation.md` |
 | Admin automation, audit template, stack by stage, common traps | `references/playbooks/automation-advanced.md` |
 | Tool recommendations, SaaS stack, software by stage | `references/playbooks/tool-stack.md` |
@@ -493,3 +496,74 @@ See `references/regional/README.md` for the full deployment guide.
   a CPA or financial advisor for tax, accounting, and investment decisions.
 - **Compliance:** Regulatory guidance is directional. Verify all requirements with qualified
   professionals before implementation.
+
+---
+
+## Routing Aliases (machine-readable)
+
+Authoritative mapping from eval `expected_route` names to concrete skill targets. Every entry in `evals/eval-set.json` where `should_trigger: true` uses an alias from this table. CI verifies every alias resolves.
+
+| Alias | Type | Target |
+|-------|------|--------|
+| `accounting` | directory | `references/accounting/` |
+| `advisor-diagnostic-frameworks` | file | `references/advisor/diagnostic-frameworks.md` |
+| `advisor-session-prep` | file | `references/advisor/session-prep.md` |
+| `automation` | file | `references/playbooks/automation.md` |
+| `binder-build` | command | `/binder` |
+| `board-advisor-templates` | file | `references/templates/board-advisor-templates.md` |
+| `checklists` | file | `references/checklists.md` |
+| `community-marketing-templates` | file | `references/templates/community-marketing-templates.md` |
+| `competitive-intelligence` | file | `references/playbooks/competitive-intelligence.md` |
+| `compliance-hipaa` | file | `references/compliance/hipaa.md` |
+| `contract-negotiation` | file | `references/contracts/contract-negotiation.md` |
+| `contracts-msa` | file | `references/contracts/master-services-agreement.md` |
+| `contracts-saas` | file | `references/contracts/saas-subscription-agreement.md` |
+| `crisis-difficult-templates` | file | `references/templates/crisis-difficult-templates.md` |
+| `customer-discovery` | file | `references/playbooks/customer-discovery.md` |
+| `customer-templates` | file | `references/templates/customer-templates.md` |
+| `data-privacy` | file | `references/compliance/data-privacy.md` |
+| `decisions-build-vs-buy` | file | `references/decisions/build-vs-buy.md` |
+| `decisions-entity-type` | file | `references/decisions/entity-type.md` |
+| `decisions-should-i-raise` | file | `references/decisions/should-i-raise.md` |
+| `decisions-when-to-hire` | file | `references/decisions/when-to-hire.md` |
+| `deck-design-system` | file | `references/pitch/deck-design-system.md` |
+| `first-revenue` | file | `references/playbooks/first-revenue.md` |
+| `funding-types` | file | `references/playbooks/funding-types.md` |
+| `fundraising` | file | `references/playbooks/fundraising.md` |
+| `glossary` | file | `references/glossary.md` |
+| `gtm-sales` | file | `references/playbooks/gtm-sales.md` |
+| `industry-compliance` | file | `references/compliance/industry-compliance.md` |
+| `integrations-stripe` | file | `references/integrations/stripe-setup.md` |
+| `internal-comms-templates` | file | `references/templates/internal-comms-templates.md` |
+| `investor-templates` | file | `references/templates/investor-templates.md` |
+| `ip-patents` | file | `references/ip/patents.md` |
+| `ip-trademarks` | file | `references/ip/trademarks-trade-secrets-copyright.md` |
+| `legal-formation` | file | `references/playbooks/legal-formation.md` |
+| `marketing-brand` | file | `references/playbooks/marketing-brand.md` |
+| `metrics-finance` | file | `references/playbooks/metrics-finance.md` |
+| `network-building` | file | `references/playbooks/network-building.md` |
+| `ninety-day-sprints` | file | `references/playbooks/ninety-day-sprints.md` |
+| `one-sheet-system` | file | `references/pitch/one-sheet-system.md` |
+| `operations` | file | `references/playbooks/operations.md` |
+| `ops-commands` | file | `references/commands/ops-commands.md` |
+| `partner-vendor-templates` | file | `references/templates/partner-vendor-templates.md` |
+| `pitch-coaching` | file | `references/pitch/pitch-coaching.md` |
+| `pr-media-templates` | file | `references/templates/pr-media-templates.md` |
+| `presentation-toolkit` | file | `references/pitch/presentation-toolkit.md` |
+| `pricing-strategy` | file | `references/playbooks/pricing-strategy.md` |
+| `product-mvp` | file | `references/playbooks/product-mvp.md` |
+| `recovery-mode` | command | `/recover` |
+| `regional-california` | file | `references/regional/california.md` |
+| `regional-missouri` | file | `references/regional/missouri.md` |
+| `regional-texas` | file | `references/regional/texas.md` |
+| `resilience` | file | `references/playbooks/resilience.md` |
+| `resilience-advanced` | file | `references/playbooks/resilience-advanced.md` |
+| `sales-templates` | file | `references/templates/sales-templates.md` |
+| `session-start` | command | `/start` |
+| `soc2` | file | `references/compliance/soc2.md` |
+| `team-hiring` | file | `references/playbooks/team-hiring.md` |
+| `team-hr-templates` | file | `references/templates/team-hr-templates.md` |
+| `time-blocking` | file | `references/playbooks/time-blocking.md` |
+| `tool-stack` | file | `references/playbooks/tool-stack.md` |
+| `traction-benchmarks` | file | `references/traction-benchmarks.md` |
+| `validation` | file | `references/playbooks/validation.md` |

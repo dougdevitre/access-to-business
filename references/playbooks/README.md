@@ -66,13 +66,16 @@ These files extend a parent playbook with advanced content. Load when the founde
 
 | File | Extends | Content |
 |------|---------|---------|
+| `investor-binder-product-team.md` | `investor-binder.md` | Sections 6–11: product/demo, business model, traction, GTM, competitive analysis, team |
 | `investor-binder-due-diligence.md` | `investor-binder.md` | Sections 12–17: financial model, cap table, the ask, legal, customer evidence, Q&A prep, data room |
+| `validation-advanced.md` | `validation.md` | Jobs To Be Done framing, 1-week validation sprint plan |
 | `first-revenue-scalable.md` | `first-revenue.md` | Paths 4–6: waitlist deposits, services wrapper, info products, path comparison, $1K sprint |
 | `customer-discovery-advanced.md` | `customer-discovery.md` | Scripts 5–6: power user + cold outreach, general rules, interview tracking template |
 | `pricing-strategy-advanced.md` | `pricing-strategy.md` | Pricing page design, psychology, common mistakes, testing methods, stage guidance, worksheet |
 | `competitive-intelligence-management.md` | `competitive-intelligence.md` | Ongoing monitoring, quarterly review template, talking about competitors |
+| `network-building-advanced.md` | `network-building.md` | Networks 4–5 (peer, talent), give-first framework, conference strategy, online communities |
 | `network-building-advisors.md` | `network-building.md` | Mentor/advisor asks, advisory agreement terms, equity, relationship tracking |
-| `ninety-day-sprints-growth.md` | `ninety-day-sprints.md` | Stage 3 growth sprint, scale-readiness scorecard, weekly checkpoint template |
+| `ninety-day-sprints-growth.md` | `ninety-day-sprints.md` | Stages 2–3 sprint plans, scale-readiness scorecard, weekly checkpoint template |
 | `automation-advanced.md` | `automation.md` | Admin automation, quick wins, stack by stage, monthly audit, common traps |
 | `resilience-advanced.md` | `resilience.md` | Co-founder conflict, isolation, impostor syndrome, identity, crisis protocols |
 

@@ -14,19 +14,38 @@ flowchart LR
 
 ### Added
 - `CODE_OF_CONDUCT.md` (Contributor Covenant v2.1) — replaces the 3-line stub previously embedded in `CONTRIBUTING.md`
+- `SECURITY.md` — vulnerability disclosure policy with 90-day coordinated disclosure process
+- `.github/FUNDING.yml` — sponsor configuration stub
+- `.github/CODEOWNERS` — default owner for auto-review routing
 - `README.md` — table of contents, "What's Inside" inventory, FAQ, "Getting Help" section, CI status badge
 - `README.md` — third install option (Claude Code CLI) and clarified existing options
 - `README.md` — `Interactive Apps` branch in the architecture diagram and a new `Interactive Tools` row in the capabilities table linking the 4 HTML apps
 - `GETTING_STARTED.md` — `Interactive Tools` section documenting the 4 browser apps
 - `MANIFEST.json` — `evals: 80` and `apps: 4` fields for machine-readable inventory
+- `SKILL.md` — `Routing Aliases` appendix: authoritative table mapping every eval `expected_route` to its concrete target (command, playbook, mode, or directory)
+- `.github/workflows/validate.yml` — three new CI checks: MANIFEST evals/apps/commands counts match disk; every eval `expected_route` resolves to a Routing Alias; alias targets exist on disk
+- Educational disclaimers appended to 6 legal/financial/compliance files that were missing them: `references/compliance/security-basics.md`, `references/compliance/README.md`, `references/contracts/contract-negotiation.md`, `references/contracts/dpa-nda-termsheet.md`, `references/accounting/startup-cpa-guide.md`, `references/ip/trademarks-trade-secrets-copyright.md`
+- `apps/*.html` — `<label for>`/`<input id>` associations restored in all 4 browser apps; `role="timer"` and `aria-live` on the pitch-timer live display
+- 3 new progressive-disclosure companion playbooks: `validation-advanced.md`, `network-building-advanced.md`, `investor-binder-product-team.md`
 
 ### Changed
-- `README.md` — repository-structure diagram now shows all 12 reference directories (added `advisor`, `decisions`, `integrations`) and lists Missouri, California, and Texas as reference state deployments
+- `README.md` — repository-structure diagram now shows all 12 reference directories (added `advisor`, `decisions`, `integrations`) and lists Missouri, California, and Texas as reference state deployments; "What's Inside" now explicitly names every reference directory
+- `README.md` + `GETTING_STARTED.md` — removed premature promise of a downloadable `.skill` file from GitHub Releases; install instructions now reflect the actual clone-and-point flow. A one-click `.skill` release workflow is tracked as a follow-up.
 - `CLAUDE.md` — eval count corrected from 51 to 80 (matches `evals/eval-set.json`); regional list now includes Texas
 - `CONTRIBUTING.md` — Code of Conduct section now links to the standalone file
+- `MANIFEST.json` — `commands: 36` → `35` to match the actual count in `references/commands/`
+- `SKILL.md` — playbook routing table updated for split files (investor-binder now Sections 1–5, product-team covers Sections 6–11; network-building now Networks 1–3, advanced covers Networks 4–5; ninety-day-sprints-growth now covers Stages 2–3)
+- `references/playbooks/README.md` — listings updated for the 3 new companion files
+- `references/regional/california.md` — softened "world-class talent" phrasing per tone convention
 
 ### Fixed
-- Documentation drift: eval count, state deployment list, and reference-directory count are now consistent across `README.md`, `CLAUDE.md`, `MANIFEST.json`, and disk
+- Documentation drift: eval count, state deployment list, reference-directory count, and command count are now consistent across `README.md`, `CLAUDE.md`, `MANIFEST.json`, `SKILL.md`, and disk
+- Eval route nomenclature drift: all 62 unique `expected_route` values now resolve via the SKILL.md Routing Aliases table (previously 18 had no SKILL.md counterpart)
+- Form accessibility: labels and inputs in all 4 HTML apps are now programmatically associated
+
+### Known Tech Debt (tracked for follow-up)
+- `references/playbooks/investor-binder-due-diligence.md` (320 lines) and `references/playbooks/ninety-day-sprints.md` (326 lines) are slightly over the 300-line CLAUDE.md guideline. Further splitting would fragment the Sections 12–17 and Stage 0–1 narratives; left intact as a pragmatic exception.
+- `.skill` file release workflow (GitHub Actions job that zips the repo into a downloadable artifact on tag push) is not yet implemented.
 
 ---
 

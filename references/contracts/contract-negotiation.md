@@ -239,3 +239,7 @@ POST-SIGNATURE
 [ ] Customer added to billing system with correct terms
 [ ] Onboarding initiated per agreement start date
 ```
+
+---
+
+*This guide provides educational information about contract negotiation practices, not legal advice. Every contract involves jurisdiction-specific legal consequences. Engage a qualified attorney before signing, redlining, or negotiating any agreement described here.*

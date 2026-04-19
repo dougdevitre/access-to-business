@@ -43,7 +43,7 @@ This is educational context — not legal, tax, or financial advice.
 - **QSBS exclusion partially recognized** — California does NOT conform to federal Section 1202 QSBS exclusion (gains are taxed at state level)
 - **High tax burden** — top marginal state income tax rate is 13.3%; significant franchise tax ($800 minimum)
 - **Three major metros:** Bay Area (VC/tech), Los Angeles (media/commerce/space), San Diego (biotech/defense)
-- **University pipeline:** Stanford, UC Berkeley, UCLA, Caltech, USC, UCSD — world-class talent
+- **University pipeline:** Stanford, UC Berkeley, UCLA, Caltech, USC, UCSD — deep engineering, research, and design talent
 
 ---
 

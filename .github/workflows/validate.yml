@@ -105,3 +105,77 @@ jobs:
               exit(1)
           print('  All playbook cross-references valid.')
           "
+
+      - name: Check MANIFEST inventory counts match disk
+        run: |
+          echo "Checking MANIFEST.json inventory counts..."
+          python3 -c "
+          import json, glob, re
+          m = json.load(open('MANIFEST.json'))
+
+          eval_count = len(json.load(open('evals/eval-set.json'))['test_cases'])
+          if m.get('evals') != eval_count:
+              print(f'ERROR: MANIFEST.evals={m.get(\"evals\")} but eval-set.json has {eval_count} test cases')
+              exit(1)
+          print(f'  Evals: {eval_count} (matches MANIFEST)')
+
+          app_count = len(glob.glob('apps/*.html'))
+          if m.get('apps') != app_count:
+              print(f'ERROR: MANIFEST.apps={m.get(\"apps\")} but apps/ has {app_count} HTML files')
+              exit(1)
+          print(f'  Apps: {app_count} (matches MANIFEST)')
+
+          cmds = set()
+          for f in glob.glob('references/commands/*.md'):
+              if f.endswith('README.md'): continue
+              with open(f) as fh:
+                  for match in re.findall(r'(?:^|\s)(/[a-z][a-z0-9-]*)\b', fh.read(), re.MULTILINE):
+                      if not any(x in match for x in ['/github', '/claude', '/www']):
+                          cmds.add(match)
+          if m.get('commands') != len(cmds):
+              print(f'ERROR: MANIFEST.commands={m.get(\"commands\")} but {len(cmds)} distinct commands found in references/commands/')
+              exit(1)
+          print(f'  Commands: {len(cmds)} (matches MANIFEST)')
+          "
+
+      - name: Validate eval route aliases resolve via SKILL.md
+        run: |
+          echo "Checking every eval expected_route resolves to a SKILL.md Routing Alias..."
+          python3 -c "
+          import json, re, os
+          with open('SKILL.md') as f:
+              skill = f.read()
+          m = re.search(r'## Routing Aliases.*?\n(.*)', skill, re.DOTALL)
+          if not m:
+              print('ERROR: SKILL.md is missing the \"Routing Aliases\" section')
+              exit(1)
+          table = m.group(1)
+          aliases = {}
+          for row in re.finditer(r'\|\s*\`([a-z0-9-]+)\`\s*\|\s*(command|file|directory)\s*\|\s*\`([^\`]+)\`\s*\|', table):
+              alias, kind, target = row.group(1), row.group(2), row.group(3)
+              aliases[alias] = (kind, target)
+          print(f'  Loaded {len(aliases)} aliases from SKILL.md')
+
+          errors = []
+          for alias, (kind, target) in aliases.items():
+              if kind == 'file' and not os.path.exists(target):
+                  errors.append(f'{alias} -> {target} (file missing)')
+              elif kind == 'directory' and not os.path.isdir(target.rstrip('/')):
+                  errors.append(f'{alias} -> {target} (directory missing)')
+          if errors:
+              print('ERROR: Alias targets do not exist on disk:')
+              for e in errors: print(f'  - {e}')
+              exit(1)
+
+          cases = json.load(open('evals/eval-set.json'))['test_cases']
+          unresolved = []
+          for c in cases:
+              if c.get('should_trigger') and c.get('expected_route'):
+                  if c['expected_route'] not in aliases:
+                      unresolved.append(f'{c[\"id\"]}: expected_route \"{c[\"expected_route\"]}\" not in Routing Aliases')
+          if unresolved:
+              print('ERROR: Unresolved eval routes:')
+              for u in unresolved: print(f'  - {u}')
+              exit(1)
+          print(f'  All {sum(1 for c in cases if c.get(\"should_trigger\") and c.get(\"expected_route\"))} positive eval routes resolve.')
+          "
