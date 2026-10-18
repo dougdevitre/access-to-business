@@ -1,5 +1,10 @@
 # Access to Business
 
+<!-- BEGIN DISCLAIMER: synced from dougdevitre/access-to, edit it there -->
+> [!IMPORTANT]
+> **Educational information only.** Access to Business is not legal, medical, mental health, financial or safety advice, and using it creates no professional relationship. **In danger now? Call 911. For crisis support, call or text 988.** Confirm anything important with the official source or a licensed professional. Read the full [disclaimer](DISCLAIMER.md).
+<!-- END DISCLAIMER -->
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](CHANGELOG.md)
 [![CI](https://github.com/dougdevitre/access-to-business/actions/workflows/validate.yml/badge.svg)](.github/workflows/validate.yml)
