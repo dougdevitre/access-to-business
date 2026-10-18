@@ -50,6 +50,7 @@
   .btn-outline:hover { background: var(--bg); }
   .btn-row { display: flex; justify-content: space-between; margin-top: 20px; }
   .field-group { margin-bottom: 16px; }
+  .field-hint { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
   .result-section { margin-bottom: 16px; }
   .result-section h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
   .result-section p { font-size: 0.875rem; color: var(--text-muted); }
@@ -205,8 +206,9 @@
     if (step === 0) {
       el.innerHTML =
         '<div class="card"><h2>Tell me about your startup</h2>' +
-        '<div class="field-group"><label>Your name</label>' +
-        '<input id="inp-name" value="' + esc(data.name) + '" placeholder="First name" /></div>' +
+        '<div class="field-group"><label for="inp-name">First name or initials (optional)</label>' +
+        '<input id="inp-name" value="' + esc(data.name) + '" autocomplete="off" aria-describedby="inp-name-hint" />' +
+        '<p class="field-hint" id="inp-name-hint">Leave blank to stay anonymous. Only shown on this screen, never in the text you copy.</p></div>' +
         '<div class="field-group"><label>What\'s your startup? (one sentence)</label>' +
         '<input id="inp-startup" value="' + esc(data.startup) + '" placeholder="e.g. A platform that helps co-parents document safely" /></div></div>';
       document.getElementById("inp-name").addEventListener("input", function(e) { data.name = e.target.value; renderButtons(); });
@@ -263,7 +265,9 @@
       var stageInfo = STAGES.filter(function(s) { return s.id === data.stage; })[0];
       var priorityInfo = PRIORITIES.filter(function(p) { return p.id === data.priority; })[0];
       var timeInfo = TIME_OPTIONS.filter(function(t) { return t.id === data.time; })[0];
+      // The name is a greeting on this screen only; getCopyText() never includes it.
       var copyText = getCopyText();
+      var who = data.name.trim();
 
       var routeHtml = "";
       routing.routes.forEach(function(r) {
@@ -276,7 +280,7 @@
 
       el.innerHTML =
         '<div class="card"><h2>Your Startup Profile</h2>' +
-        '<div class="result-section"><p><strong>' + esc(data.name) + '</strong> — ' + esc(data.startup) + '</p>' +
+        '<div class="result-section"><p>' + (who ? '<strong>' + esc(who) + '</strong> — ' : '') + esc(data.startup) + '</p>' +
         '<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">' +
         '<span class="badge badge-blue">' + stageInfo.icon + ' Stage ' + data.stage + ': ' + stageInfo.label + '</span>' +
         '<span class="badge badge-green">' + priorityInfo.icon + ' ' + priorityInfo.label + '</span>' +
@@ -330,7 +334,7 @@
   }
 
   function canNext() {
-    if (step === 0) return data.name && data.startup;
+    if (step === 0) return !!data.startup;
     if (step === 1) return data.stage !== null;
     if (step === 2) return data.priority !== null;
     if (step === 3) return data.time !== null;
