@@ -205,3 +205,148 @@ jobs:
               raise SystemExit(1)
           print(f"  No app requires identifying details ({len(pages)} apps); the intake prompt leaves out the name.")
           PY
+
+      - name: Check apps work on phones and with a keyboard
+        run: |
+          echo "Checking input heights, focus rings, labels, radio groups and landmarks..."
+          python3 - <<'PY'
+          import glob, re
+
+          def css_rules(html):
+              """(selector, declarations) for every innermost rule in the page's <style> blocks."""
+              css = re.sub(r"/\*.*?\*/", "", "".join(re.findall(r"<style[^>]*>(.*?)</style>", html, re.S)), flags=re.S)
+              rules, stack, start = [], [], 0
+              for i, ch in enumerate(css):
+                  if ch == "{":
+                      stack.append((css[start:i].strip(), i + 1))
+                      start = i + 1
+                  elif ch == "}":
+                      if stack:
+                          sel, body_start = stack.pop()
+                          body = css[body_start:i]
+                          if "{" not in body and not sel.startswith("@"):
+                              rules.append((sel, body))
+                      start = i + 1
+              return rules
+
+          def body(src, fn):
+              m = re.search(r"function\s+" + fn + r"\s*\([^)]*\)\s*\{", src)
+              if not m:
+                  return None
+              i, depth = m.end(), 1
+              while depth and i < len(src):
+                  depth += {"{": 1, "}": -1}.get(src[i], 0)
+                  i += 1
+              return src[m.end():i - 1]
+
+          def px(decls, prop):
+              return [float(v) for v in re.findall(r"(?:^|[;\s])" + prop + r"\s*:\s*(\d+(?:\.\d+)?)px", decls)]
+
+          # A selector part that styles a text box: an input/textarea/select tag (not a class
+          # such as .opt-input), not limited to checkboxes or radios, with no :pseudo-class.
+          FIELD_TAG = re.compile(r"(?<![\w.#-])(input|textarea|select)\b")
+          def text_field_parts(sel):
+              return [p.strip() for p in sel.split(",") if FIELD_TAG.search(p)
+                      and not re.search(r'type="?(checkbox|radio)', p)]
+
+          pages = sorted(glob.glob("apps/*.html"))
+          errors = [] if pages else ["no apps found in apps/"]
+          for f in pages:
+              html = open(f, encoding="utf-8").read()
+              rules = css_rules(html)
+              def fail(msg):
+                  errors.append(f"{f}: {msg}")
+
+              # Text boxes: textarea, select, or any input that is not a checkbox, radio, range or hidden.
+              has_text_field = any(not re.search(r'type="(checkbox|radio|range|hidden)"', t)
+                                   for t in re.findall(r"<(?:input|textarea|select)\b[^>]*>", html))
+
+              # 1. Each kind of text box (input, textarea, select) is at least 44px tall,
+              #    and no rule shrinks a field below that.
+              if has_text_field:
+                  kinds = {k for k in ("input", "textarea", "select")
+                           if any(not re.search(r'type="(checkbox|radio|range|hidden)"', t)
+                                  for t in re.findall(r"<" + k + r"\b[^>]*>", html))}
+                  sized = set()
+                  for sel, decls in rules:
+                      parts = [p for p in text_field_parts(sel) if ":" not in p.replace("::", ":")]
+                      if not parts:
+                          continue
+                      heights = px(decls, "min-height") + px(decls, "height")
+                      if any(h >= 44 for h in heights):
+                          sized |= {FIELD_TAG.search(p).group(1) for p in parts}
+                      for h in heights:
+                          if h < 44:
+                              fail(f"'{sel}' sets a field height of {h:g}px (needs 44px or more)")
+                  for k in sorted(kinds - sized):
+                      fail(f"no CSS rule gives <{k}> text boxes a min-height of at least 44px")
+
+              # 2. Focus is a visible ring, not only a border-colour change.
+              for sel, decls in rules:
+                  if text_field_parts(sel) and re.search(r"outline\s*:\s*(none|0)\b", decls):
+                      fail(f"'{sel}' removes the focus outline from text boxes")
+              ring = [sel for sel, decls in rules
+                      if ":focus-visible" in sel and FIELD_TAG.search(sel)
+                      and any(w >= 2 for w in px(decls, "outline") + px(decls, "outline-width"))]
+              if has_text_field and not ring:
+                  fail("no :focus-visible rule draws a 2px+ outline on text boxes")
+
+              # 3. Every field is tied to its label: <label for> matching the field's id,
+              #    or a radio/checkbox nested inside its <label>.
+              label_for = set(re.findall(r'<label\b[^>]*\bfor="([^"]+)"', html))
+              for m in re.finditer(r"<(input|textarea|select)\b[^>]*>", html):
+                  tag = m.group(0)
+                  fid = re.search(r'\bid="([^"]+)"', tag)
+                  before = html[:m.start()]
+                  nested = before.rfind("<label") > before.rfind("</label>")
+                  if fid and (fid.group(1) in label_for or "aria-label" in tag):
+                      continue
+                  if re.search(r'type="(radio|checkbox)"', tag) and nested:
+                      continue
+                  fail(f"field is not tied to a label (needs <label for> matching its id): {tag[:70]}")
+              for m in re.finditer(r"<label\b([^>]*)>(.*?)</label>", html, re.S):
+                  if "for=" not in m.group(1) and not re.search(r"<(input|textarea|select)\b", m.group(2)):
+                      text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>|'\s*\+[^+]*\+\s*'", "", m.group(2))).strip()
+                      fail(f"label '{text[:50]}' is not tied to a field")
+
+              # 4. Choices are real controls: no clickable <div>/<span>.
+              if re.search(r"<(div|span)\b[^>]*\bonclick=", html):
+                  fail("a <div> or <span> has an onclick handler (use a button or radio)")
+              if re.search(r"<(div|span)\b[^>]*class=\"option-btn", html):
+                  fail("an .option-btn choice is a <div>/<span>, not a radio <label>")
+
+              # 5. Landmarks and reduced motion.
+              if "<main" not in html:
+                  fail("no <main> landmark")
+              if "transition" in html and not re.search(
+                      r"@media\s*\(prefers-reduced-motion:\s*reduce\)\s*\{\s*\*[^{]*\{[^}]*transition:\s*none", html):
+                  fail("has transitions but no prefers-reduced-motion block that turns them all off")
+
+          # The intake app's stage, priority and time choices are labelled radio groups,
+          # and the copied text uses the time's label, not its id.
+          f = "apps/intake-app.html"
+          html = open(f, encoding="utf-8").read()
+          group_fn, copy_fn = body(html, "radioGroup"), body(html, "getCopyText")
+          checks = {
+              "radioGroup() builds the choices": group_fn is not None,
+              "choices sit in role=radiogroup with aria-labelledby": group_fn is not None
+                  and re.search(r'role="radiogroup" aria-labelledby="', group_fn),
+              "each choice is a native radio inside its <label>": group_fn is not None
+                  and re.search(r"<label[^>]*>'?[\s+']*'<input[^>]*type=\"radio\"", group_fn),
+              "stage, priority and time all use radioGroup()": all(
+                  re.search(r'radioGroup\(\s*"' + g + '"', html) for g in ("stage", "priority", "time")),
+              "no click-only data-stage/priority/time choices": not re.search(r"data-(stage|priority|time)=", html),
+              "copied text uses the time label": copy_fn is not None and "TIME_OPTIONS" in copy_fn
+                  and not re.search(r"\+\s*data\.time\b", copy_fn),
+          }
+          for name, ok in checks.items():
+              if not ok:
+                  errors.append(f"{f}: failed: {name}")
+
+          if errors:
+              print("ERROR: Phone and keyboard checks failed:")
+              for e in errors:
+                  print(f"  - {e}")
+              raise SystemExit(1)
+          print(f"  All {len(pages)} apps: 44px text boxes, focus rings, tied labels, radio groups, <main>, reduced motion.")
+          PY
