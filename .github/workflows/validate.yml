@@ -105,3 +105,43 @@ jobs:
               exit(1)
           print('  All playbook cross-references valid.')
           "
+
+      - name: Check in-app disclaimer
+        run: |
+          echo "Checking the disclaimer in every app..."
+          python3 - <<'PY'
+          import glob, re
+          NOTICE = ("Educational information only. Access to Business is not legal, medical, "
+                    "mental health, financial or safety advice, and using it creates no "
+                    "professional relationship. In danger now? Call 911. For crisis support, "
+                    "call or text 988. Confirm anything important with the official source "
+                    "or a licensed professional.")
+          FULL_LINK = "https://github.com/dougdevitre/access-to-business/blob/main/DISCLAIMER.md"
+          pages = sorted(glob.glob("apps/*.html"))
+          errors = [] if pages else ["no apps found in apps/"]
+          for f in pages:
+              html = open(f, encoding="utf-8").read()
+              text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", html))
+              notice = html.find('class="atd-notice"')
+              checks = {
+                  "short notice text": NOTICE in text,
+                  "911 as a tel: link": re.search(r'<a[^>]*href="tel:911"[^>]*>911</a>', html),
+                  "988 as a tel: link": re.search(r'<a[^>]*href="tel:988"[^>]*>988</a>', html),
+                  "link to the full disclaimer": FULL_LINK in html,
+                  "notice shown before the app": -1 < notice < html.find("<h1"),
+                  "labelled acknowledgment dialog": re.search(r'<dialog[^>]*aria-labelledby="atd-ack-title"', html),
+                  "I understand button": ">I understand</button>" in html,
+                  "versioned storage key": '"disclaimer-ack-v1"' in html,
+                  "storage reads and writes guarded": len(re.findall(r"try \{[^}]*(localStorage|getItem|setItem)", html)) >= 3,
+                  "Esc does not dismiss": re.search(r'addEventListener\("cancel"[\s\S]*?preventDefault\(\)', html),
+              }
+              for name, ok in checks.items():
+                  if not ok:
+                      errors.append(f"{f}: missing {name}")
+          if errors:
+              print("ERROR: In-app disclaimer checks failed:")
+              for e in errors:
+                  print(f"  - {e}")
+              raise SystemExit(1)
+          print(f"  Disclaimer present in all {len(pages)} apps.")
+          PY
