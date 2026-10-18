@@ -12,6 +12,7 @@
     color: #e2e4e9;
     min-height: 100vh;
     padding: 20px;
+    overflow-wrap: break-word;
   }
   .container { max-width: 640px; margin: 0 auto; }
   h1 {
@@ -47,21 +48,27 @@
     color: #8b8fa3;
     margin-bottom: 6px;
   }
+  /* Border #6b7084: 3.4:1 on the card, so the box edge is visible (WCAG 1.4.11) */
   .input-group input[type="number"] {
     width: 100%;
+    min-height: 44px;
     padding: 12px 14px;
     background: #12141c;
-    border: 1px solid #2a2d3a;
+    border: 1px solid #6b7084;
     border-radius: 8px;
     color: #e2e4e9;
     font-size: 1rem;
-    outline: none;
     transition: border-color 0.2s;
   }
-  .input-group input[type="number"]:focus { border-color: #6366f1; }
+  .input-group input[type="number"]:focus { border-color: #818cf8; }
+  input:focus-visible {
+    outline: 3px solid #c7c8ff;
+    outline-offset: 2px;
+  }
+  /* Two columns; one when the text is large or the screen is narrow */
   .results-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(6.5rem, calc(50% - 8px))), 1fr));
     gap: 16px;
     margin-bottom: 20px;
   }
@@ -83,6 +90,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
+    overflow-wrap: anywhere;
   }
   .runway-bar-container {
     background: #12141c;
@@ -121,27 +129,41 @@
     color: #8b8fa3;
     margin-bottom: 8px;
   }
-  .slider-group label span { color: #6366f1; font-weight: 600; }
+  .slider-group label span { color: #818cf8; font-weight: 600; }
+  /* 44px tall touch area; the visible track stays 6px */
   input[type="range"] {
     -webkit-appearance: none;
+    appearance: none;
+    display: block;
     width: 100%;
+    height: 44px;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
     height: 6px;
-    background: #2a2d3a;
+    background: #6b7084;
     border-radius: 3px;
-    outline: none;
+  }
+  input[type="range"]::-moz-range-track {
+    height: 6px;
+    background: #6b7084;
+    border-radius: 3px;
   }
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    background: #6366f1;
+    margin-top: -7px;
+    background: #818cf8;
     border-radius: 50%;
     cursor: pointer;
   }
   input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
-    background: #6366f1;
+    background: #818cf8;
     border-radius: 50%;
     cursor: pointer;
     border: none;
@@ -154,6 +176,9 @@
     margin-top: 12px;
   }
   .whatif-result .result-value { font-size: 1.25rem; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
   /* Disclaimer notice (every page) and one-time acknowledgment dialog */
   .atd-notice {
     margin: -20px -20px 20px;
@@ -229,7 +254,7 @@
 <aside class="atd-notice" aria-label="Disclaimer">
   <p>Educational information only. Access to Business is not legal, medical, mental health, financial or safety advice, and using it creates no professional relationship. In danger now? Call <a class="atd-tel" href="tel:911">911</a>. For crisis support, call or text <a class="atd-tel" href="tel:988">988</a>. Confirm anything important with the official source or a licensed professional. <a class="atd-more" href="https://github.com/dougdevitre/access-to-business/blob/main/DISCLAIMER.md">Read the full disclaimer</a></p>
 </aside>
-<div class="container">
+<main class="container">
   <h1>Startup Runway Calculator</h1>
   <p class="subtitle">Know exactly how long your cash will last</p>
 
@@ -279,7 +304,7 @@
   <div class="card" id="whatifCard" style="display:none;">
     <h2>What If? Adjust Burn Rate</h2>
     <div class="slider-group">
-      <label>Adjusted Monthly Burn <span id="sliderVal">$0</span></label>
+      <label for="burnSlider">Adjusted Monthly Burn <span id="sliderVal">$0</span></label>
       <input type="range" id="burnSlider" min="0" max="200000" step="1000" oninput="whatif()">
     </div>
     <div class="whatif-result">
@@ -292,7 +317,7 @@
     </div>
   </div>
 
-</div>
+</main>
 
 <script>
 function fmt(n) {

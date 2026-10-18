@@ -12,6 +12,7 @@
     color: #e2e4e9;
     min-height: 100vh;
     padding: 20px;
+    overflow-wrap: break-word;
   }
   .container { max-width: 640px; margin: 0 auto; }
   h1 {
@@ -47,21 +48,27 @@
     color: #8b8fa3;
     margin-bottom: 6px;
   }
+  /* Border #6b7084: 3.4:1 on the card, so the box edge is visible (WCAG 1.4.11) */
   .input-group input {
     width: 100%;
+    min-height: 44px;
     padding: 12px 14px;
     background: #12141c;
-    border: 1px solid #2a2d3a;
+    border: 1px solid #6b7084;
     border-radius: 8px;
     color: #e2e4e9;
     font-size: 1rem;
-    outline: none;
     transition: border-color 0.2s;
   }
-  .input-group input:focus { border-color: #6366f1; }
+  .input-group input:focus { border-color: #818cf8; }
+  input:focus-visible {
+    outline: 3px solid #c7c8ff;
+    outline-offset: 2px;
+  }
+  /* Two columns; one when the text is large or the screen is narrow */
   .input-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(6.5rem, calc(50% - 6px))), 1fr));
     gap: 12px;
   }
   .metric-card {
@@ -82,7 +89,7 @@
   .ind-green { background: #22c55e; box-shadow: 0 0 8px #22c55e66; }
   .ind-yellow { background: #eab308; box-shadow: 0 0 8px #eab30866; }
   .ind-red { background: #ef4444; box-shadow: 0 0 8px #ef444466; }
-  .metric-info { flex: 1; }
+  .metric-info { flex: 1; min-width: 0; overflow-wrap: anywhere; }
   .metric-name {
     font-size: 0.8rem;
     color: #8b8fa3;
@@ -95,10 +102,15 @@
     font-weight: 700;
     color: #fff;
   }
+  /* #8b8fa3: 5.7:1 on the metric card (#555 was 2.4:1) */
   .metric-benchmark {
     font-size: 0.75rem;
-    color: #555;
+    color: #8b8fa3;
     margin-top: 3px;
+  }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
   }
   .verdict-box {
     text-align: center;
@@ -193,7 +205,7 @@
 <aside class="atd-notice" aria-label="Disclaimer">
   <p>Educational information only. Access to Business is not legal, medical, mental health, financial or safety advice, and using it creates no professional relationship. In danger now? Call <a class="atd-tel" href="tel:911">911</a>. For crisis support, call or text <a class="atd-tel" href="tel:988">988</a>. Confirm anything important with the official source or a licensed professional. <a class="atd-more" href="https://github.com/dougdevitre/access-to-business/blob/main/DISCLAIMER.md">Read the full disclaimer</a></p>
 </aside>
-<div class="container">
+<main class="container">
   <h1>Unit Economics Calculator</h1>
   <p class="subtitle">Understand your per-customer profitability</p>
 
@@ -227,7 +239,7 @@
     <div id="verdictContainer"></div>
   </div>
 
-</div>
+</main>
 
 <script>
 function fmt(n) {
@@ -294,13 +306,15 @@ function calc() {
     }
   ];
 
+  // The dot's colour is also given as words for screen readers
+  var STATUS = { green: 'healthy', yellow: 'needs work', red: 'weak' };
   var html = '';
   for (var i = 0; i < metrics.length; i++) {
     var m = metrics[i];
     html += '<div class="metric-card">' +
-      '<div class="indicator ind-' + m.color + '"></div>' +
+      '<div class="indicator ind-' + m.color + '" aria-hidden="true"></div>' +
       '<div class="metric-info">' +
-      '<div class="metric-name">' + m.name + '</div>' +
+      '<div class="metric-name">' + m.name + '<span class="sr-only"> (' + STATUS[m.color] + ')</span></div>' +
       '<div class="metric-value">' + m.value + '</div>' +
       '<div class="metric-benchmark">' + m.bench + '</div>' +
       '</div></div>';
