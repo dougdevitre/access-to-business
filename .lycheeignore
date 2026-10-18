@@ -1,0 +1,12 @@
+# Exclusions for the Link check workflow (.github/workflows/link-check.yml).
+# One regular expression per line, matched against the URL. Every entry says why.
+# tel: and mailto: are excluded in the workflow's lychee args.
+
+# temporary — remove when the domain is reattached (dougdevitre.org, the Access To
+# hub, has been down since its CNAME was deleted on 2026-04-07).
+^https?://(www\.)?dougdevitre\.org
+
+# BROKEN — needs a human (found 2026-10-18). README "Getting Help" links to
+# GitHub Discussions, but Discussions are turned off for this repository, so the
+# page is a 404. Either turn Discussions on or change the README line.
+^https://github\.com/dougdevitre/access-to-business/discussions$
