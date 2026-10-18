@@ -3,11 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](CHANGELOG.md)
 [![CI](https://github.com/dougdevitre/access-to-business/actions/workflows/validate.yml/badge.svg)](.github/workflows/validate.yml)
-[![Pillar](https://img.shields.io/badge/Access%20To-Pillar%207-purple.svg)](https://github.com/dougdevitre)
+[![Pillar](https://img.shields.io/badge/Access%20To-Pillar%207-purple.svg)](https://dougdevitre.org)
 
 **AI-powered startup coach, execution engine, pitch generator, and investor binder builder.**
 
-Part of the [Access To](https://github.com/dougdevitre) open-source civic tech initiative.
+> Part of **[Access To](https://dougdevitre.org)** — open-source tools for the access gaps that matter most. [See all projects →](https://dougdevitre.org/#pillars)
 
 > [Getting Started](GETTING_STARTED.md) · [Architecture](docs/architecture.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
 
