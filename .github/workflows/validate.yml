@@ -145,3 +145,63 @@ jobs:
               raise SystemExit(1)
           print(f"  Disclaimer present in all {len(pages)} apps.")
           PY
+
+      - name: Check apps do not require identifying details
+        run: |
+          echo "Checking that no app requires a name or copies it into the Claude prompt..."
+          python3 - <<'PY'
+          import glob, re
+
+          def body(src, fn):
+              """Source of `function fn(...) { ... }`, or None if it is missing."""
+              m = re.search(r"function\s+" + fn + r"\s*\([^)]*\)\s*\{", src)
+              if not m:
+                  return None
+              i, depth = m.end(), 1
+              while depth and i < len(src):
+                  depth += {"{": 1, "}": -1}.get(src[i], 0)
+                  i += 1
+              return src[m.end():i - 1]
+
+          NAME_REF = re.compile(r"data\s*(\.\s*name\b|\[\s*['\"]name['\"]\s*\])")
+          IDENTIFYING = re.compile(r"\b(name|e-?mail|phone|telephone|address)\b", re.I)
+          pages = sorted(glob.glob("apps/*.html"))
+          errors = [] if pages else ["no apps found in apps/"]
+
+          # Any field asking for a name, email, phone or address must say it is optional.
+          for f in pages:
+              html = open(f, encoding="utf-8").read()
+              for label in re.findall(r"<label\b[^>]*>(.*?)</label>", html, re.S):
+                  text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", label)).strip()
+                  if IDENTIFYING.search(text) and "(optional)" not in text:
+                      errors.append(f"{f}: field '{text}' asks for identifying details but is not marked (optional)")
+              for tag in re.findall(r"<input\b[^>]*>", html):
+                  if re.search(r'type\s*=\s*["\'](email|tel)["\']', tag) and "required" in tag:
+                      errors.append(f"{f}: required email or phone input: {tag}")
+
+          # The intake app: the name is optional, on screen only, never in the copied prompt.
+          f = "apps/intake-app.html"
+          html = open(f, encoding="utf-8").read()
+          copy_fn, next_fn = body(html, "getCopyText"), body(html, "canNext")
+          name_input = re.search(r"<input\b[^>]*\bid=\"inp-name\"[^>]*>", html)
+          copy_lines = [l for l in html.splitlines() if re.search(r"copyText|writeText", l)]
+          checks = {
+              "copy text built by getCopyText()": copy_fn is not None,
+              "copy text leaves out the name": copy_fn is not None and not NAME_REF.search(copy_fn)
+                  and not any(NAME_REF.search(l) for l in copy_lines),
+              "step validation in canNext()": next_fn is not None,
+              "name not required to continue": next_fn is not None and not NAME_REF.search(next_fn),
+              "name field labelled as optional": re.search(
+                  r'<label for="inp-name">First name or initials \(optional\)</label>', html),
+              "name field has no required attribute": name_input and not re.search(r"\brequired\b", name_input.group(0)),
+          }
+          for name, ok in checks.items():
+              if not ok:
+                  errors.append(f"{f}: failed: {name}")
+          if errors:
+              print("ERROR: Identifying-details checks failed:")
+              for e in errors:
+                  print(f"  - {e}")
+              raise SystemExit(1)
+          print(f"  No app requires identifying details ({len(pages)} apps); the intake prompt leaves out the name.")
+          PY
