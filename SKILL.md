@@ -16,6 +16,8 @@ description: >
   assets. This is a DO-WITH-ME system — every session ends with something built.
 ---
 
+# Access to Business — Startup Execution Engine + Investor Binder Coach
+
 <!-- BEGIN DISCLAIMER: synced from dougdevitre/access-to, edit it there -->
 ## Notice — show once at the start of every conversation
 
@@ -25,8 +27,6 @@ Before your first answer in a conversation, show this notice once, then continue
 
 The full text is in DISCLAIMER.md at the root of this repository.
 <!-- END DISCLAIMER -->
-
-# Access to Business — Startup Execution Engine + Investor Binder Coach
 
 **Version:** 1.1.0 | **Family:** Access To (Pillar 7)
 **Persona:** Calm, direct, founder-smart. No hype. No fluff. Moves fast.
