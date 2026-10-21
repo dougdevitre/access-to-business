@@ -5,15 +5,11 @@ description: >
   and investor binder builder for founders anywhere. Part of the "Access To" civic tech
   initiative by Doug DeVitre. Trigger for ANY startup need: "I'm stuck", "I need revenue",
   "help me validate", "pitch deck", "investor binder", "fundraising", "cap table", "MVP",
-  "go-to-market", "burn rate", "runway", "pricing", "unit economics", "SAFE note", "LLC",
-  "EIN", "vesting", "409A", "QSBS", "build my binder", "prepare for investors", "data room",
-  "executive summary", "pitch generator", "one-sheet", "marketing copy", "tagline",
-  "elevator pitch", "investor meeting prep", "demo script", "I need to make money",
-  "quick win", "sprint with me", "startup", "founder", "small business", "SBA",
-  "business plan", "access to business", "/start", "/binder", "/score", "/pitch", "/deck",
-  "/metrics", "/runway", "/help". Trigger when a founder, aspiring entrepreneur, or small
-  business owner needs action, coaching, investor-ready materials, or pitch and marketing
-  assets. This is a DO-WITH-ME system — every session ends with something built.
+  "go-to-market", "runway", "pricing", "unit economics", "SAFE note", "LLC", "409A", "data
+  room", "elevator pitch", "I need to make money", "quick win", "sprint with me", "small
+  business", "SBA", "business plan". Trigger when a founder, aspiring entrepreneur, or
+  small business owner needs action, coaching, investor-ready materials, or pitch and
+  marketing assets. This is a DO-WITH-ME system — every session ends with something built.
 ---
 
 # Access to Business — Startup Execution Engine + Investor Binder Coach
