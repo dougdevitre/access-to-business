@@ -58,7 +58,7 @@ graph LR
 |------|-----------------|-------------|------|----------|
 | **Patent** | Novel inventions, processes, software methods | 2–4 years (utility) | $15K–$50K+ | 20 years from filing |
 | **Trademark** | Brand name, logo, slogan | 8–18 months | $1,500–$5,000 | Indefinitely (with maintenance) |
-| **Copyright** | Original creative works (code, content, design) | Automatic on creation; registration for enforcement | $35–$55 (registration) | Life + 70 years |
+| **Copyright** | Original creative works (code, content, design) | Automatic on creation; registration for enforcement | $45–$65 (online registration) | Life + 70 years |
 | **Trade Secret** | Confidential business information | Immediate (if protected properly) | Cost of protection | Indefinitely (if kept secret) |
 
 ---

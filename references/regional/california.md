@@ -202,7 +202,7 @@ This is educational context — not legal, tax, or financial advice.
 
 **Delaware C-Corp pros:**
 - Required/preferred by virtually all institutional investors
-- Federal QSBS eligibility (up to $10M tax-free gain — but California taxes the gain)
+- Federal QSBS eligibility (up to $15M tax-free gain for stock issued after July 4, 2025; $10M before — but California taxes the gain)
 - Flexible stock structure (common, preferred, options)
 - Well-established case law for corporate governance
 
@@ -292,7 +292,7 @@ This is educational context — not legal, tax, or financial advice.
 - Bylaws, board resolutions, stock option plan, IP assignments
 
 ### Step 6: Delaware Annual Requirements
-- Franchise tax: ~$400/year minimum (due March 1)
+- Franchise tax: $175–$400/year minimum plus $50 annual report fee (due March 1)
 - Annual report filing
 
 ---
@@ -316,8 +316,8 @@ This is educational context — not legal, tax, or financial advice.
 - **Website:** calseed.fund
 
 ### Small Business Innovation Research (SBIR) / STTR
-- **Phase I:** Up to $275,000
-- **Phase II:** Up to $1,750,000
+- **Phase I:** Up to about $314,000 (SBA guideline; agencies vary)
+- **Phase II:** Up to about $2.1 million
 - **Website:** sbir.gov
 - **Note:** California companies win more SBIR awards than any other state
 
@@ -440,7 +440,7 @@ This is educational context — not legal, tax, or financial advice.
 ### California Consumer Privacy Act (CCPA / CPRA)
 - Applies to businesses with >$25M revenue, >100K consumers' data, or >50% revenue from selling data
 - Requires privacy policy, opt-out mechanisms, data access/deletion rights
-- Penalties: Up to $7,500 per intentional violation
+- Penalties: Up to $7,988 per intentional violation (2025 inflation-adjusted amount)
 - Startups should build privacy compliance early
 
 ### California Employment Law
