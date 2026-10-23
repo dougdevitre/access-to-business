@@ -200,9 +200,21 @@ See [GETTING_STARTED.md](GETTING_STARTED.md) for a full walkthrough.
 3. Start a session and type `/start`
 
 ### Option 2: Claude.ai (browser)
-1. Download the latest `.skill` file from [Releases](https://github.com/dougdevitre/access-to-business/releases)
-2. Go to **Claude.ai → Settings → Skills**
-3. Upload the `.skill` file and start a new conversation with `/start`
+
+Add Access to Business to Claude at [claude.ai](https://claude.ai) in a few clicks. It works on the Free, Pro, Max, Team and Enterprise plans.
+
+1. **Download the install file:** [access-to-business.zip](https://github.com/dougdevitre/access-to-business/releases/download/skill-latest/access-to-business.zip)
+2. **Don't unzip it.** Claude needs the `.zip` file just as it downloaded.
+3. **Turn on code execution.** Skills need it.
+   - **Free, Pro or Max:** open **Settings > Capabilities** and turn on **Code execution and file creation**.
+   - **Team or Enterprise:** an organization owner opens **Organization settings > Plugins & skills**, clicks the **Policy** tab, and turns on both **Code execution and file creation** and **Skills**.
+4. **Upload it:** open **Customize > Skills**, click **+**, then **+ Create skill**, then **Upload a skill**, and choose `access-to-business.zip`.
+5. **Turn it on:** in **Customize > Skills**, switch on **access-to-business**. Claude will now use it for any startup question. Start a new conversation with `/start`.
+
+These steps come from Claude's help center: [Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+If the link 404s, the first release hasn't been published yet.
+
+Maintainers and forks: `scripts/build-skill-zip.sh` builds the same file into `dist/`. The Skill package workflow republishes it on every change to `main`.
 
 ### Option 3: Fork for local development
 1. Fork the repo and clone your fork

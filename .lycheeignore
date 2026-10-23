@@ -10,3 +10,8 @@
 # GitHub Discussions, but Discussions are turned off for this repository, so the
 # page is a 404. Either turn Discussions on or change the README line.
 ^https://github\.com/dougdevitre/access-to-business/discussions$
+
+# The install file is published by .github/workflows/skill-package.yml when this
+# change reaches main, so it 404s until the first skill-latest release exists.
+# TEMPORARY: remove this line once the release is published.
+^https://github\.com/dougdevitre/access-to-business/releases/download/skill-latest/
