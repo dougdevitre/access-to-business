@@ -30,7 +30,7 @@ This Code of Conduct applies within all project spaces — issues, pull requests
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening a private issue or contacting the project maintainer, [Doug DeVitre](https://github.com/dougdevitre). All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening a private issue or contacting the project maintainer, [Doug Devitre](https://github.com/dougdevitre). All complaints will be reviewed and investigated promptly and fairly.
 
 Maintainers are responsible for clarifying and enforcing standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior deemed inappropriate, threatening, offensive, or harmful. This may include warnings, temporary bans, or permanent removal from the project.
 

@@ -4,7 +4,7 @@
   "description": "AI-powered startup coach, execution engine, pitch generator, and investor binder builder",
   "family": "Access To",
   "pillar": 7,
-  "author": "Doug DeVitre",
+  "author": "Doug Devitre",
   "license": "MIT",
   "repository": "https://github.com/dougdevitre/access-to-business",
   "entrypoint": "SKILL.md",

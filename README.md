@@ -293,4 +293,4 @@ MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
-**Built by [Doug DeVitre](https://github.com/dougdevitre) · Part of the Access To Initiative**
+**Built by [Doug Devitre](https://github.com/dougdevitre) · Part of the Access To Initiative**
