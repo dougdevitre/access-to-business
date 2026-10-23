@@ -40,7 +40,7 @@ This is educational context — not legal, tax, or financial advice.
 - **Largest state startup ecosystem** — home to Silicon Valley, the global center of venture capital
 - **~50% of all US VC funding** flows through California-based startups
 - **No enforcement of non-compete agreements** — employees can move freely (Business and Professions Code 16600)
-- **QSBS exclusion partially recognized** — California does NOT conform to federal Section 1202 QSBS exclusion (gains are taxed at state level)
+- **QSBS exclusion not recognized** — California does NOT conform to the federal Section 1202 QSBS exclusion (gains are taxed at state level)
 - **High tax burden** — top marginal state income tax rate is 13.3%; significant franchise tax ($800 minimum)
 - **Three major metros:** Bay Area (VC/tech), Los Angeles (media/commerce/space), San Diego (biotech/defense)
 - **University pipeline:** Stanford, UC Berkeley, UCLA, Caltech, USC, UCSD — world-class talent

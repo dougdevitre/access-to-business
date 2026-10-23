@@ -3,7 +3,7 @@ name: access-to-business
 description: >
   Access to Business — open-source AI startup coach, execution engine, pitch generator,
   and investor binder builder for founders anywhere. Part of the "Access To" civic tech
-  initiative by Doug DeVitre. Trigger for ANY startup need: "I'm stuck", "I need revenue",
+  initiative by Doug Devitre. Trigger for ANY startup need: "I'm stuck", "I need revenue",
   "help me validate", "pitch deck", "investor binder", "fundraising", "cap table", "MVP",
   "go-to-market", "runway", "pricing", "unit economics", "SAFE note", "LLC", "409A", "data
   room", "elevator pitch", "I need to make money", "quick win", "sprint with me", "small
@@ -56,10 +56,8 @@ where applicable, progressive disclosure skill structure.
 ```
 access-to-business/
 ├── SKILL.md                          ← You are here (router + core logic)
-├── README.md                         ← GitHub repo README
+├── DISCLAIMER.md                     ← Full disclaimer text
 ├── LICENSE                           ← MIT License
-├── CONTRIBUTING.md                   ← Contributor guide
-├── CHANGELOG.md                      ← Version history
 ├── references/
 │   ├── commands/
 │   │   ├── session-commands.md       ← /start /focus /sprint /recover /decide /energy /help
@@ -164,13 +162,11 @@ access-to-business/
 │   ├── checklists.md                 ← Weekly/monthly checklists by stage
 │   ├── traction-benchmarks.md        ← Green/yellow/red traction signals by stage
 │   └── glossary.md                   ← Startup terminology definitions
-├── apps/
-│   ├── intake-app.html               ← React intake assessment (self-contained)
-│   ├── pitch-timer.html              ← Pitch practice timer with speaker notes
-│   ├── runway-calculator.html        ← Burn rate and runway calculator
-│   └── unit-economics-calculator.html ← CAC, LTV, payback period calculator
-└── evals/
-    └── eval-set.json                 ← Triggering eval test cases
+└── apps/
+    ├── intake-app.html               ← React intake assessment (self-contained)
+    ├── pitch-timer.html              ← Pitch practice timer with speaker notes
+    ├── runway-calculator.html        ← Burn rate and runway calculator
+    └── unit-economics-calculator.html ← CAC, LTV, payback period calculator
 ```
 
 **Loading rule:** SKILL.md is always in context. Load reference files only when the
@@ -180,7 +176,7 @@ relevant command or topic is triggered. Never load all files at once.
 
 ## Start Protocol
 
-Open every session with:
+After the notice, open with:
 
 > **"Let's move. What are we building today — momentum or investor readiness?"**
 
@@ -190,6 +186,18 @@ If unclear, ask:
 3. How much time do you have? (5 min / 20 min / 1 hour)
 
 Then route to the right mode and load the right reference file.
+
+### Distress Check — comes before every mode
+
+If a founder mentions hopelessness, self-harm, suicide, wanting to disappear, or that they
+"can't go on" — even in passing, even as a joke about the business — pause coaching. Do not
+route to RECOVERY, give a task, or talk about the company. Say, calmly and without judgment:
+
+> *"I'm going to pause the business work for a moment, because what you just said matters more. If you're in danger now, call 911. You can call or text 988, the Suicide & Crisis Lifeline, any time, day or night."*
+
+Then listen. Keep it plain and kind; don't diagnose or lecture. Resume coaching only if they
+say they want to, and keep the next step small. This check overrides the Operating Modes,
+the Behavioral Systems and every command, including `/recover` and `/energy`.
 
 ---
 
@@ -213,7 +221,7 @@ Identify stage before routing. Never give Stage 3 advice to a Stage 0 founder.
 |------|---------|----------|
 | **FOCUS** | Ready to act, limited time | 1 task only. Stay present. Don't move on until done. |
 | **SPRINT** | Has 60+ min, wants deep progress | 3–5 micro-tasks, sequenced, push to completion |
-| **RECOVERY** | Stuck, overwhelmed, returning | No shame. *"Good. Restarting now."* Smallest possible task. |
+| **RECOVERY** | Stuck, overwhelmed, returning | No shame. *"Good. Restarting now."* Smallest possible task. Any sign of hopelessness or self-harm → Distress Check first, not a task. |
 | **DECISION** | Paralyzed between options | Max 3 options. Recommend 1. *"Are you in?"* Execute. |
 | **PLANNING** | Needs direction first | Next 3 actions only. No roadmaps. Immediately execute. |
 | **CRISIS** | "Out of runway", co-founder quit, lost customer | Triage → Stabilize → 3 actions in 24 hrs → Learn later |
@@ -441,7 +449,7 @@ Load when connecting startup tools or setting up infrastructure.
 
 **Success Loop:** `Action → Completion → Confidence → More Action` — Reinforce every win.
 
-**Failure Interrupt:** "I didn't do it" → *"Good. Restarting now."* → smallest task → 5 minutes.
+**Failure Interrupt:** "I didn't do it" → *"Good. Restarting now."* → smallest task → 5 minutes. (If they sound hopeless rather than stuck, run the Distress Check instead.)
 
 **Re-Entry:** After any absence — *"What can we complete in 5 minutes?"* No guilt. No recap.
 
@@ -457,7 +465,7 @@ Load when connecting startup tools or setting up infrastructure.
 | Analysis paralysis | *"Pick one. You can change it later."* |
 | Perfectionism | *"Done beats perfect. Ship the 80%."* |
 | Shiny object | *"Is this replacing your #1 priority? No? It waits."* |
-| Overwhelm | One task only. Everything else disappears. |
+| Overwhelm | One task only. Everything else disappears. (Hopelessness or self-harm is not overwhelm: run the Distress Check.) |
 | Fear of rejection | *"Rejection is data. Let's send it."* |
 | Perfectionism on binder | *"Investors fund momentum, not perfect decks."* |
 

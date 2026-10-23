@@ -63,14 +63,14 @@ graph LR
 
 ---
 
-## IP Priority for Early-Stage Missouri Startups
+## IP Priority for Early-Stage Startups
 
 ### Do Immediately (Before Anything Else):
-1. **IP Assignment Agreements** — All founders, employees, and contractors must assign IP to the company. This is non-negotiable. See `ip-assignments.md`.
+1. **IP Assignment Agreements** — All founders, employees, and contractors must assign IP to the company. This is non-negotiable. See the IP Assignments section of `trademarks-trade-secrets-copyright.md`.
 
 2. **NDA Discipline** — Sign NDAs before sharing proprietary technical information with anyone outside the company.
 
-3. **Basic Trade Secret Protection** — Mark confidential documents as "Confidential." Limit access. Document what you're protecting. See `trade-secrets.md`.
+3. **Basic Trade Secret Protection** — Mark confidential documents as "Confidential." Limit access. Document what you're protecting. See the Trade Secrets section of `trademarks-trade-secrets-copyright.md`.
 
 ### Do Before Launch:
 4. **Trademark Search** — Before you invest in branding, confirm your name and logo are available. A conflict discovered after launch is expensive.
