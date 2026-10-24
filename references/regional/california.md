@@ -349,8 +349,8 @@ This is educational context — not legal, tax, or financial advice.
 ### Federal Tax Benefits (Applicable to CA Startups)
 
 **QSBS (Section 1202):**
-- Federal: Up to $10M tax-free capital gains exclusion
-- **California: Does NOT conform** — gains are fully taxable at state level
+- Federal: Up to $15M of gain excluded for stock issued after July 4, 2025; $10M for stock issued on or before that date (26 U.S.C. §1202(b)(4))
+- **California: Does NOT conform** — gains are fully taxable at state level. Source: FTB: "California does not conform to the qualified small business stock deferral and gain exclusion" (IRC Sections 1045 and 1202), [2024 Schedule D (540) instructions](https://www.ftb.ca.gov/forms/2024/2024-540-d-instructions.html)
 - Practical impact: A CA founder selling QSBS stock for $10M gain pays $0 federal tax but ~$1.3M in California tax
 
 **R&D Tax Credit:**
