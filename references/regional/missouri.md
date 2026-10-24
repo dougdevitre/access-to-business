@@ -38,7 +38,7 @@ This is educational context — not legal, tax, or financial advice.
 
 ## 1. Missouri Startup Quick Facts
 
-- **No state-level capital gains tax** on QSBS — one of few states with this advantage
+- **Missouri capital gains subtraction** — individuals can subtract 100% of capital gain reported for federal tax purposes, which covers any QSBS gain not already excluded federally (RSMo §143.121). DOR gives conflicting start years (2025 or 2026); see the QSBS section below and confirm with DOR or a tax professional
 - **Missouri Angel Investment Incentive** — 40%–60% state tax credit for qualified investments, starting January 1, 2027
 - **Strong life sciences + defense corridors** — BJC/WashU, Boeing, Centene create enterprise customer opportunities
 - **Lower cost of living** than coastal hubs — salary leverage for early hires
@@ -551,7 +551,7 @@ This is educational context — not legal, tax, or financial advice.
 - **Eligibility (holder):**
   - Must be original issuance (not secondary market purchase)
   - Must hold for 5+ years for the full exclusion (stock acquired after July 4, 2025: 50% after 3 years, 75% after 4, nothing under 3 years; stock acquired on or before July 4, 2025 must be held more than 5 years; 26 U.S.C. §1202(a)(1), (a)(4), (a)(5))
-- **Missouri note:** Missouri does NOT tax QSBS gains either — unlike many states that do. This is a material advantage for Missouri startups.
+- **Missouri note:** Gain excluded under §1202 is not in federal adjusted gross income, which is where Missouri adjusted gross income starts (RSMo §143.121). Separately, Missouri lets individuals subtract 100% of capital gain reported for federal tax purposes (RSMo §143.121, claimed on Form MO-A), so a QSBS gain that is only partly excluded federally can still be subtracted on the Missouri return. Trusts and other fiduciaries, and pass-through entities paying the PTE tax, do not qualify; corporations qualify only from the tax year after the top individual rate falls to 4.5% or lower (it is 4.7% for 2025). The start year is not settled: the [DOR capital gains subtraction FAQ](https://dor.mo.gov/faq/taxation/individual/capital-gains-subtraction.html) says both "effective for the 2025 tax year" and that it "applies to tax years beginning on or after January 1, 2026," while the [DOR 2025 tax legislative changes summary](https://dor.mo.gov/taxation/individual/tax-types/income/year-changes/documents/2025-Tax-Legislative-Changes.pdf) (HBs 594 & 508) says it is effective for individuals starting January 1, 2025. Confirm the year with DOR or a tax professional before relying on it. This is a material advantage for Missouri startups compared with states that tax QSBS gains, such as California.
 - **Practical impact** (example, assuming the stock qualifies and the gain is within the per-issuer limit): A Missouri C-Corp founder or early investor with $1M basis who sells for $11M pays $0 federal tax on the $10M gain only after holding long enough. For stock acquired after July 4, 2025, the whole gain is excluded from federal income tax only after holding 5 years or more. Sold after 3 or 4 years, only 50% or 75% is excluded and the rest is federally taxable; sold before 3 years, none is excluded. Stock acquired on or before July 4, 2025 must be held more than 5 years. Model the timing with a tax professional before planning a sale
 
 ### R&D Tax Credit (Section 41)
