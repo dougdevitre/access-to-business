@@ -65,6 +65,23 @@
       ]
     },
     {
+      "id": "qsbs-holding-tiers",
+      "claim": "Section 1202 exclusion by holding period: stock acquired after July 4, 2025 gets 50% at 3 years, 75% at 4 years, 100% at 5 years or more (26 USC 1202(a)(1)(B), (a)(5)); stock acquired on or before that date needs more than 5 years (100% if acquired after September 27, 2010, (a)(4))",
+      "value": "50% of the gain at 3 years, 75% at 4 years, 100% at 5 years or more",
+      "match": [
+        "50% of the gain at 3 years, 75% at 4 years, 100% at 5 years or more",
+        "50% after 3 years, 75% after 4"
+      ],
+      "source": "https://www.law.cornell.edu/uscode/text/26/1202",
+      "verified_on": "2026-10-24",
+      "recheck_days": 90,
+      "files": [
+        "references/playbooks/legal-formation.md",
+        "references/regional/california.md",
+        "references/regional/missouri.md"
+      ]
+    },
+    {
       "id": "form-1099-threshold-2026",
       "claim": "The Form 1099 information-return threshold is $2,000 for payments made after December 31, 2025 ($600 before), indexed for inflation for calendar years after 2026 (26 USC 6041(a), (h), as amended by P.L. 119-21 §70433)",
       "value": "$2,000 paid for 2026 payments; ≥ $600 through 2025",

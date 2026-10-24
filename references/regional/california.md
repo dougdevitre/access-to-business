@@ -351,7 +351,8 @@ This is educational context — not legal, tax, or financial advice.
 **QSBS (Section 1202):**
 - Federal: Up to $15M of gain excluded for stock issued after July 4, 2025; $10M for stock issued on or before that date (26 U.S.C. §1202(b)(4))
 - **California: Does NOT conform** — gains are fully taxable at state level. Source: FTB: "California does not conform to the qualified small business stock deferral and gain exclusion" (IRC Sections 1045 and 1202), [2024 Schedule D (540) instructions](https://www.ftb.ca.gov/forms/2024/2024-540-d-instructions.html)
-- Practical impact: A CA founder selling QSBS stock for $10M gain pays $0 federal tax but ~$1.3M in California tax
+- Holding period: stock acquired after July 4, 2025 must be held at least 3 years for any exclusion: 50% of the gain at 3 years, 75% at 4 years, 100% at 5 years or more (26 U.S.C. §1202(a)(1)(B), (a)(5)). Stock acquired on or before July 4, 2025 must be held more than 5 years (100% exclusion for stock acquired after September 27, 2010; §1202(a)(4))
+- Practical impact (example, assuming the stock qualifies and the gain is within the per-issuer limit): A CA founder with a $10M gain on QSBS acquired after July 4, 2025 excludes the whole gain from federal income tax only after holding 5 years or more. Sold after 3 or 4 years, only 50% or 75% is excluded and the rest is federally taxable; sold before 3 years, none is excluded. California taxes the full gain in every case (~$1.3M at the top rate). Model the timing with a tax professional before planning a sale
 
 **R&D Tax Credit:**
 - Federal: 20% of qualified research expenses
