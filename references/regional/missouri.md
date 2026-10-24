@@ -282,7 +282,7 @@ This is educational context — not legal, tax, or financial advice.
 
 **Delaware C-Corp pros:**
 - Required/preferred by virtually all institutional investors
-- QSBS eligibility (up to $15M tax-free gain for stock issued after July 4, 2025; $10M before)
+- QSBS eligibility (up to $15M tax-free gain for stock acquired after July 4, 2025; $10M before)
 - Flexible stock structure (common, preferred, options)
 - Well-established case law for corporate governance
 - Easy to add investors without restructuring
@@ -543,16 +543,16 @@ This is educational context — not legal, tax, or financial advice.
 ## Federal Tax Benefits (Highly Relevant to Missouri Startups)
 
 ### Qualified Small Business Stock (QSBS) — Section 1202
-- **Benefit:** Up to **$15 million** (or 10x basis) in federal capital gains tax exclusion for stock issued after July 4, 2025; **$10 million** for earlier stock
+- **Benefit:** Up to **$15 million** (or 10x basis) in federal capital gains tax exclusion for stock acquired after July 4, 2025; **$10 million** for earlier stock
 - **Eligibility (company):**
   - Must be a C-Corporation (LLC does not qualify)
   - Assets must be under $75M at time of issuance ($50M for stock issued on or before July 4, 2025)
   - Must be an active business (not professional services, finance, hospitality)
 - **Eligibility (holder):**
   - Must be original issuance (not secondary market purchase)
-  - Must hold for 5+ years for the full exclusion (stock issued after July 4, 2025: 50% after 3 years, 75% after 4)
+  - Must hold for 5+ years for the full exclusion (stock acquired after July 4, 2025: 50% after 3 years, 75% after 4, nothing under 3 years; stock acquired on or before July 4, 2025 must be held more than 5 years; 26 U.S.C. §1202(a)(1), (a)(4), (a)(5))
 - **Missouri note:** Missouri does NOT tax QSBS gains either — unlike many states that do. This is a material advantage for Missouri startups.
-- **Practical impact:** A Missouri C-Corp founder or early investor with $1M basis who sells for $11M pays $0 federal tax on the $10M gain
+- **Practical impact** (example, assuming the stock qualifies and the gain is within the per-issuer limit): A Missouri C-Corp founder or early investor with $1M basis who sells for $11M pays $0 federal tax on the $10M gain only after holding long enough. For stock acquired after July 4, 2025, the whole gain is excluded from federal income tax only after holding 5 years or more. Sold after 3 or 4 years, only 50% or 75% is excluded and the rest is federally taxable; sold before 3 years, none is excluded. Stock acquired on or before July 4, 2025 must be held more than 5 years. Model the timing with a tax professional before planning a sale
 
 ### R&D Tax Credit (Section 41)
 - **Credit:** 20% of qualified research expenses above base amount; simplified method available

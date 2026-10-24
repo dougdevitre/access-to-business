@@ -198,7 +198,7 @@ Before taking any money or writing any code together:
 
 ## QSBS (Qualified Small Business Stock)
 
-- **Up to $15 million** in federal capital gains tax exclusion for stock issued after July 4, 2025 (**$10 million** for earlier stock)
+- **Up to $15 million** in federal capital gains tax exclusion for stock acquired after July 4, 2025 (**$10 million** for earlier stock)
 - Requires: C-Corp, original issuance (not secondary), held 5+ years for the full exclusion (post-July 4, 2025 stock: 50% after 3 years, 75% after 4)
 - Company must have < $75M in assets at time of issuance ($50M for stock issued on or before July 4, 2025)
 - **One of the most valuable tax benefits for early startup founders and investors**
